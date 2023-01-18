@@ -3,12 +3,34 @@ const Product = require('../models/Products')
 
 
 const getProducts = async(req, res) => {
-    try{
+    
+    /* try{
         const products = await Product.find({erased: false});
         if(products){
             
             res.status(200).json({ message: "Products found", products });
         }
+    }catch(err){
+        res.status(404).json({message: "Products not found", err});
+    } */
+
+    const title = req.query.title;
+    try{
+        const products = await Product.find({erased: false});
+        if(products){
+            if(title){
+                const productsTitle = products.filter(product => product.title.toLowerCase().includes(title.toLowerCase()));
+                if(productsTitle.length){
+                    return res.status(200).json({ message: "Products found", productsTitle });
+                }else{
+                    return res.status(404).json({ message: "Products not found" });
+                }
+            }else{
+                res.status(200).json({ message: "Products found", products });
+            }
+            
+        }
+
     }catch(err){
         res.status(404).json({message: "Products not found", err});
     }
