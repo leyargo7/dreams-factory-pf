@@ -3,8 +3,24 @@ const Product = require('../models/Products')
 
 
 const getProducts = async(req, res) => {
-    const products = await Product.find();
-    res.json(products);
+    try{
+        const products = await Product.find();
+        res.status(200).json({ message: "Products found", products });
+    }catch(err){
+        res.status(400).json({message: "Products not found", err});
+    }
+    
+    
+};
+
+const getProduct = async(req, res) => {
+    try{
+        const {id} = req.params;
+        const product = await Product.findOne({_id: id});
+        res.status(200).json({ message: "Product found", product });
+    }catch(err){
+        res.status(400).json({message: "Product not found", err});
+    }
 };
 
 
@@ -34,9 +50,7 @@ const updateProduct = (req, res) => {
     res.json({msg: 'update Product'});
 };
 
-const getProduct = (req, res) => {
-    res.json({msg: 'get Product'});
-};
+
 
 const deleteProduct = (req, res) => {
     res.json({msg: 'delete Product'});
