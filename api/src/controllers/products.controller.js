@@ -4,10 +4,13 @@ const Product = require('../models/Products')
 
 const getProducts = async(req, res) => {
     try{
-        const products = await Product.find();
-        res.status(200).json({ message: "Products found", products });
+        const products = await Product.find({erased: false});
+        if(products){
+            
+            res.status(200).json({ message: "Products found", products });
+        }
     }catch(err){
-        res.status(400).json({message: "Products not found", err});
+        res.status(404).json({message: "Products not found", err});
     }
     
     
@@ -19,7 +22,7 @@ const getProduct = async(req, res) => {
         const product = await Product.findOne({_id: id});
         res.status(200).json({ message: "Product found", product });
     }catch(err){
-        res.status(400).json({message: "Product not found", err});
+        res.status(404).json({message: "Product not found", err});
     }
 };
 
@@ -59,14 +62,22 @@ const updateProduct = async(req, res) => {
         }
 
     }catch(err){
-        res.status(400).json({msg: "Product not found", err});
+        res.status(404).json({msg: "Product not found", err});
     }
 };
 
 
 
-const deleteProduct = (req, res) => {
-    res.json({msg: 'delete Product'});
+const deleteProduct = async(req, res) => {
+   try{
+        const {id} = req.params;
+        const product = await Product.findOne({_id: id});
+        product.erased = true;
+        await product.save();
+        res.status(200).json({msg: "Product deleted", product});
+   }catch(err){
+         res.status(404).json({msg: "Product not found", err});
+   }
 };
 
 module.exports = {

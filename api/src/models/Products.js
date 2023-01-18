@@ -130,8 +130,9 @@ const ProductSchema = new Schema({
         type: String,
         trim: true,
     },
-    cosito: {
-        type: String,
+    erased: {
+        type: Boolean,
+        default: false,
     },
 }, {
     timestamps: true,

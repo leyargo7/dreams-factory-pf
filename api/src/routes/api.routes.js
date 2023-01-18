@@ -19,6 +19,10 @@ router.get("/api", (req, res) => {
                         "http://localhost:3001/api/category/storages",],
             POST:"",
             createProduct: "http://localhost:3001/api/product",
+            PUT:"",
+            updateProduct: "http://localhost:3001/api/product/:id",
+            DELETE:"",
+            deleteProduct: "http://localhost:3001/api/product/:id",
     });
 });
 
