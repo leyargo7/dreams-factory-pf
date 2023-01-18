@@ -4193,10 +4193,10 @@ const storages = [
     "brand": "Samsung",
     "model": "970 EVO",
     "storageInterface": "PCIe 3.0 x4",
-    "rpm": "1 TB",
+    "rpm": "1 TB",
     "type": "SSD",
     "cacheMemory": "1024 MB",
-    "description": ['INNOVATIVE V NAND TECHNOLOGY: Powered by Samsung V NAND Technology, the 970 EVO SSD’s NVMe interface (PCIe M.2 2280) offers enhanced bandwidth, low latency, and power efficiency ideal for tech enthusiasts, high end gamers, and 4K & 3D content designers', 'BREAKTHROUGH READ WRITE SPEEDS: Sequential read and write performance levels of up to 3,500MB/s and 2,500MB/s, respectively; Random Read (4KB, QD32): Up to 500,000 IOPS Random Read', 'PERFORMANCE OPTIMIZATION AND DATA SECURITY: Seamless cloning and file transfers with Samsung Magician Software, the ideal SSD management solution for performance optimization and data security with automatic firmware updates','SUPERIOR HEAT DISSIPATION: Samsung’s Dynamic Thermal Guard automatically monitors and maintains optimal operating temperatures to minimize performance','5-YEAR LIMITED WARRANTY: 5-year limited warranty or 600 TBW (Terabytes Written)'],
+    "description": ['INNOVATIVE V NAND TECHNOLOGY: Powered by Samsung V NAND Technology, the 970 EVO SSDs NVMe interface (PCIe M.2 2280) offers enhanced bandwidth, low latency, and power efficiency ideal for tech enthusiasts, high end gamers, and 4K & 3D content designers', 'BREAKTHROUGH READ WRITE SPEEDS: Sequential read and write performance levels of up to 3,500MB/s and 2,500MB/s, respectively; Random Read (4KB, QD32): Up to 500,000 IOPS Random Read', 'PERFORMANCE OPTIMIZATION AND DATA SECURITY: Seamless cloning and file transfers with Samsung Magician Software, the ideal SSD management solution for performance optimization and data security with automatic firmware updates','SUPERIOR HEAT DISSIPATION: Samsung’s Dynamic Thermal Guard automatically monitors and maintains optimal operating temperatures to minimize performance','5-YEAR LIMITED WARRANTY: 5-year limited warranty or 600 TBW (Terabytes Written)'],
     "rating": "5",
   },
   {
@@ -4636,3 +4636,17 @@ const storages = [
     "rating": "4.8"
   }
 ]
+
+module.exports = {
+  cases,
+  keyboard,
+  case_fan,
+  power_supply,
+  ram,
+  cpu_fan,
+  mouse,
+  gpus,
+  motherboard,
+  processors,
+  storages,
+}
