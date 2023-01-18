@@ -46,8 +46,21 @@ const createProduct = async(req, res) => {
     res.json({msg: 'create Product'});
 };
 
-const updateProduct = (req, res) => {
-    res.json({msg: 'update Product'});
+const updateProduct = async(req, res) => {
+    try{
+        const {id} = req.params;
+        const data = req.body;
+        const product = await Product.findOne({_id: id},)
+        if(!product){
+            return res.status(400).json({msg: 'Product not found'});
+        }else{
+            const actPro = await Product.updateOne({_id: id},data);
+            res.status(200).json({msg: "Product updated", actPro});
+        }
+
+    }catch(err){
+        res.status(400).json({msg: "Product not found", err});
+    }
 };
 
 
