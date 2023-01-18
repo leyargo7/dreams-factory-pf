@@ -4,9 +4,14 @@ const initialState = {
 
  function rootReducer (state = initialState, action){
     switch(action.type) {
+        case 'GET_PRODUCTS':
+            return {
+                ...state,
+                all: action.payload
+            }
         default:
             return {...state};
     }
 }
  
-export default rootReducer;  // Se exporta para que lo agarre el store
+export default rootReducer;  
