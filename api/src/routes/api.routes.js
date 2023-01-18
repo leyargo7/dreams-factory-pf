@@ -4,6 +4,7 @@ const router = Router();
 
 router.get("/api", (req, res) => {
     res.json({ message: "Welcome API DREAMS FACTORY",
+            GET: "",
             allProducts: "http://localhost:3001/api/products",
             categories: ["http://localhost:3001/api/category/cases",
                         "http://localhost:3001/api/category/keyboards",
@@ -15,8 +16,9 @@ router.get("/api", (req, res) => {
                         "http://localhost:3001/api/category/gpus",
                         "http://localhost:3001/api/category/motherboard",
                         "http://localhost:3001/api/category/proccessors",
-                        "http://localhost:3001/api/category/storages"
-        ]
+                        "http://localhost:3001/api/category/storages",],
+            POST:"",
+            createProduct: "http://localhost:3001/api/product",
     });
 });
 

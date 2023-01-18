@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const Product = require("../models/Products");
-const mongoose = require("mongoose");
+//const Product = require("../models/Products");
+
 const {
   getProducts,
   createProduct,
@@ -14,13 +14,7 @@ const router = Router();
 
 router.get("/products", getProducts);
 
-router.get("/products/cases", async(req, res) => {
-  const products = await Product.find({category: "cases"});
-  res.json(products);
-
-});
-
-router.post("/products", createProduct);
+router.post("/product", createProduct);
 
 router.get("/products/:id", getProduct);
 

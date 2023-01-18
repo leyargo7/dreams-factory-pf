@@ -9,10 +9,25 @@ const getProducts = async(req, res) => {
 
 
 const createProduct = async(req, res) => {
-    const {title, img, rating, price, brand, model, sidePanel, color, cabinetType, description, inStock, category, quantity, style, backlit, wireless, rpm, airFlow, noiseLevel, efficiency, size, type, trackingMethod, storageInterface, memory, clockSpeed, chipset, formFactor, memorySlots, socketType, speed, cacheMemory } = req.body;
-    const newProduct = new Product({title, img, rating, price, brand, model, sidePanel, color, cabinetType, description, inStock, category, quantity, style, backlit, wireless, rpm, airFlow, noiseLevel, efficiency, size, type, trackingMethod, storageInterface, memory, clockSpeed, chipset, formFactor, memorySlots, socketType, speed, cacheMemory});
-    await newProduct.save();
-    res.json(newProduct);
+    
+    try{
+        const data = req.body;
+        if(!data.title){
+            return res.status(400).json({msg: 'Title is required'});
+        }
+        if(!data.category){
+            return res.status(400).json({msg: 'Category is required'});
+        }
+        else{
+            const product = new Product(req.body);
+            await product.save();
+            res.json(product);
+        }
+    }catch(err){
+        res.status(400).json({msg: err.message});
+    }
+
+    res.json({msg: 'create Product'});
 };
 
 const updateProduct = (req, res) => {
