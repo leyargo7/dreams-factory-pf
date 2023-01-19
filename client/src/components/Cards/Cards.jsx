@@ -13,7 +13,7 @@ const Cards = ({ currentProducts }) => {
               title={ev.title}
               img={ev.img}
               rating={ev.rating}
-              price={`$${ev.price}`}
+              price={ev.price}
             />
           </div>
         );
