@@ -13,3 +13,19 @@
   color: yellow;
   text-decoration: none;
 }
+
+.logonavbar{
+  height:70px;
+  width: auto;
+  margin-top: 8px;
+}
+
+.login{
+  height:35px;
+  width: auto;
+}
+
+.cart{
+  height:39px;
+  width: auto;
+}

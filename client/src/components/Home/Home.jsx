@@ -33,7 +33,8 @@ export default function Home() {
         />
       </div>
 
-      <Cards currentProducts={currentProducts}/>
+      <Cards currentProducts={currentProducts} />
+    
     </div>
   );
 }
