@@ -1,0 +1,15 @@
+.nav{
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  color: yellow;
+}
+
+.searchbar{
+  color: yellow;
+  text-decoration: none;
+}
