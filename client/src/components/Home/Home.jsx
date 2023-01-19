@@ -27,6 +27,7 @@ export default function Home() {
     <div>
       <div>
         <Pagination
+          currentPage={currentPage}
           productPerPage={productPerPage}
           allProduct={allProducts.length}
           pagination={pagination}

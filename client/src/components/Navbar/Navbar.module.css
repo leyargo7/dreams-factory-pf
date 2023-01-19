@@ -5,12 +5,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
-  color: yellow;
+  background-color: black;  
+  font-size: 30px;
+  font-family: chiller;
+  box-shadow: 0 3px 3px rgba(43, 0, 160,0.5);
 }
 
 .searchbar{
-  color: yellow;
+  color: rgb(179, 0, 180);
   text-decoration: none;
 }
 

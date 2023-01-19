@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Searchbar from "../Searchbar/Searchbar";
+import logo from "../../images/logo2.jpg";
+import login from "../../images/login2.jpg";
+import cart from "../../images/carrito-compras3.jpg";
 import s from "./Navbar.module.css";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login2.jpg";
@@ -13,7 +16,7 @@ const Navbar = () => {
       </NavLink>
       <Searchbar />
       <NavLink className={s.searchbar} to='/about'>
-        About
+        <h2>About</h2>
       </NavLink>
       <NavLink className={s.searchbar} to='/login'>
       <img className={s.login} src={login} alt="logo" />
