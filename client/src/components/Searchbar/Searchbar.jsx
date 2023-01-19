@@ -1,11 +1,13 @@
 import React from "react";
+import s from "./Searchbar.module.css";
 
 const Searchbar = () => {
   return (
     <div>
       <form>
-        <input type='text' placeholder='Search...' />
+        <input className={s.search} type='text' placeholder='Search...' />
         <button
+          className={s.btn}
           type='submit'
           onClick={(e) => {
             e.preventDefault();

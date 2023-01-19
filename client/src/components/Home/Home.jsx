@@ -27,6 +27,7 @@ export default function Home() {
     <div>
       <div>
         <Pagination
+          currentPage={currentPage}
           productPerPage={productPerPage}
           setCurrentPage={setCurrentPage}
           allProduct={allProducts.length}
@@ -35,7 +36,16 @@ export default function Home() {
         />
       </div>
 
-      <Cards currentProducts={currentProducts}/>
+      <Cards currentProducts={currentProducts} />
+
+      <div>
+        <Pagination
+          currentPage={currentPage}
+          productPerPage={productPerPage}
+          allProduct={allProducts.length}
+          pagination={pagination}
+        />
+      </div>
     </div>
   );
 }

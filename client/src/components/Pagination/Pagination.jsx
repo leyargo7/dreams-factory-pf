@@ -1,6 +1,11 @@
 import React from "react";
-
-export default function Pagination({ productPerPage, setCurrentPage,allProduct, pagination, currentPage }) {
+import s from "./Pagination.module.css";
+export default function Pagination({
+  currentPage,
+  productPerPage,
+  allProduct,
+  pagination,
+}) {
   const pageNumbers = [];
   let numberPage = Math.ceil(allProduct / productPerPage)
   for (let i = 1; i <= Math.ceil(allProduct / productPerPage); i++) {
@@ -8,31 +13,22 @@ export default function Pagination({ productPerPage, setCurrentPage,allProduct, 
   }
   return (
     <div className='pagination'>
-      <ul>
-        <button disabled={currentPage ===1}
-        //  className={s.Button} 
-         onClick={()=> {
-          setCurrentPage(currentPage === 1?
-            currentPage :
-            currentPage - 1
-            )}
-        }> Prev</button>
-      
-        {pageNumbers &&
-          pageNumbers.map((ev) => (
-            <button disabled={currentPage ===(ev)}
-            //  className={s.Btn}
-              key={ev} onClick={() => pagination(ev)}>
-              {ev}
-            </button>
-          ))}
-          <button disabled={currentPage === pageNumbers.length}
-          //  className={s.Button} 
-           onClick={() =>
-          setCurrentPage(currentPage === numberPage?
-            currentPage :
-            currentPage + 1)}>Next</button>
-      </ul>
+      {currentPage > 1 ? (
+        <button className={s.btn} onClick={() => pagination(currentPage - 1)}>&#9664;</button>
+      ) : (
+        <button className={s.btn}>&#9664;</button>
+      )}
+      {pageNumbers &&
+        pageNumbers.map((ev) => (
+          <button className={s.btn} key={ev} onClick={() => pagination(ev)}>
+            {ev}
+          </button>
+        ))}
+      {currentPage < allProduct / productPerPage ? (
+        <button className={s.btn} onClick={() => pagination(currentPage + 1)}>&#9654;</button>
+      ) : (
+        <button className={s.btn}>&#9654;</button>
+      )}
     </div>
   );
 }
