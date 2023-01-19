@@ -13,7 +13,7 @@ const Searchbar = () => {
             e.preventDefault();
             alert("submited");
           }}
-        >Search</button>
+        >SEARCH</button>
       </form>
     </div>
   );
