@@ -1,0 +1,37 @@
+.nav{
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;  
+  font-size: 30px;
+  font-family: chiller;
+  box-shadow: 0 3px 3px rgba(43, 0, 160,0.5);
+}
+
+.searchbar{
+  color: rgb(179, 0, 180);
+  text-decoration: none;
+}
+
+h2{
+  margin: 0;
+}
+
+.logonavbar{
+  height:70px;
+  width: auto;
+  margin-top: 8px;
+}
+
+.login{
+  height:35px;
+  width: auto;
+}
+
+.cart{
+  height:39px;
+  width: auto;
+}

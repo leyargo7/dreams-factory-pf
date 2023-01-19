@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(169, 3, 140,0.7);
+  color: white;
+  font-weight: 700;
+  margin: 15px 5px;
+  padding: 5px 10px;
+  box-shadow: 0px 3px 0 rgba(59, 0, 140,0.7);
+  cursor:pointer;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  background-color: rgba(139, 0, 140,0.7);
+  box-shadow: 0px 1px 0 rgba(23, 0, 140,0.7);
+}
