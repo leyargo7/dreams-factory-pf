@@ -11,7 +11,7 @@ export default function Home() {
 
   // Para paginado
   const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage, setPoductPerPage] = useState(15);
+  const [productPerPage] = useState(15);
   const indexLastProduct = currentPage * productPerPage;
   const indexFirstPoduct = indexLastProduct - productPerPage;
   const currentProducts = allProducts.slice(indexFirstPoduct, indexLastProduct);
@@ -28,8 +28,10 @@ export default function Home() {
       <div>
         <Pagination
           productPerPage={productPerPage}
+          setCurrentPage={setCurrentPage}
           allProduct={allProducts.length}
           pagination={pagination}
+          currentPage={currentPage}
         />
       </div>
 

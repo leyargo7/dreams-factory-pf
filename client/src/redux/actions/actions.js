@@ -10,3 +10,11 @@ export function getProducts () {
         });
     };
 };
+
+export function getProductsByName(payload){
+    console.log("Action",payload)
+    return{
+        type:"GET_PRODUCTS_BY_NAME",
+        payload:payload,
+    }
+}

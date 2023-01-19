@@ -1,5 +1,6 @@
 const initialState = {
-    all : [],   
+    all : [],
+    filteredProducts: []   
 }
 
  function rootReducer (state = initialState, action){
@@ -9,6 +10,22 @@ const initialState = {
                 ...state,
                 all: action.payload
             }
+            case 'GET_PRODUCTS_BY_NAME':
+                const searchProducts=state.all.filter((p)=>{
+                    return p.name.includes(action.payload);
+                })
+                if(searchProducts){
+                    return{
+                        ...state,
+                        filteredProducts:searchProducts,
+                    };
+                }else{
+                    return{
+                        ...state,
+                        filterdProducts: false,
+                    };
+                }
+
         default:
             return {...state};
     }
