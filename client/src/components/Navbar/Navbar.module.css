@@ -1,21 +1,26 @@
 .nav{
+  user-select: none;
   z-index: 1;
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: black;  
-  font-size: 30px;
+  background-color: black;
+  padding: 0 60px;  
+  font-size: 20px;
   font-family: chiller;
   box-shadow: 0 3px 3px rgba(43, 0, 160,0.5);
 }
 
-.searchbar{
-  color: rgb(179, 0, 180);
+.link{
+  color: rgb(198, 18, 214);
   text-decoration: none;
+  transition: all 0.1s ease-in-out;
 }
-
+.link:hover{
+  color: white;
+}
 .logonavbar{
   height:70px;
   width: auto;
@@ -23,7 +28,7 @@
 }
 
 .login{
-  height:35px;
+  height:40px;
   width: auto;
 }
 
