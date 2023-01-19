@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getProducts} from "../actions/actions"
+import {getProducts} from "../redux/actions/actions"
 import Card from "./Card";
 import Pagination from "./Pagination";
 
