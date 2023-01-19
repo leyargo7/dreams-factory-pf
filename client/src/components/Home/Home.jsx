@@ -27,13 +27,23 @@ export default function Home() {
     <div>
       <div>
         <Pagination
+          currentPage={currentPage}
           productPerPage={productPerPage}
           allProduct={allProducts.length}
           pagination={pagination}
         />
       </div>
 
-      <Cards currentProducts={currentProducts}/>
+      <Cards currentProducts={currentProducts} />
+
+      <div>
+        <Pagination
+          currentPage={currentPage}
+          productPerPage={productPerPage}
+          allProduct={allProducts.length}
+          pagination={pagination}
+        />
+      </div>
     </div>
   );
 }
