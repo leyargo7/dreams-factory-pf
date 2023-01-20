@@ -47,7 +47,7 @@ const getCategoryMotherboard = async (req, res) => {
 };
 
 const getCategoryProccessors = async (req, res) => {
-    const categories = await Product.find({category: "proccessors"});
+    const categories = await Product.find({category: "processors"});
     res.json(categories);
 };
 
