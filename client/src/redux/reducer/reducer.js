@@ -1,6 +1,5 @@
 const initialState = {
     all : [],
-    filteredProducts: []   
 }
 
  function rootReducer (state = initialState, action){
@@ -10,21 +9,19 @@ const initialState = {
                 ...state,
                 all: action.payload
             }
-            case 'GET_PRODUCTS_BY_NAME':
-                const searchProducts=state.all.filter((p)=>{
-                    return p.name.includes(action.payload);
-                })
-                if(searchProducts){
-                    return{
-                        ...state,
-                        filteredProducts:searchProducts,
-                    };
-                }else{
-                    return{
-                        ...state,
-                        filterdProducts: false,
-                    };
-                }
+            
+                // case"USER_FAVOURITE":
+                // return{
+                //     ...state,
+                //     Favourites: action.payload
+                // }
+                // case "DELETE_FAVOURITE":
+                //     let filteredFavourites = state.Favourites
+                //     filteredFavourites = filteredFavourites.filter(e=>e.idProduct !== action.payload)
+                //     return{
+                //         ...state,
+                //         Favourites: filteredFavourites
+                //     }
 
         default:
             return {...state};

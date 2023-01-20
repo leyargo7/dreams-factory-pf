@@ -11,10 +11,16 @@ export function getProducts () {
     };
 };
 
-export function getProductsByName(payload){
-    console.log("Action",payload)
-    return{
-        type:"GET_PRODUCTS_BY_NAME",
-        payload:payload,
-    }
-}
+
+// export function getFavourite(){
+//     return async function (dispatch) {
+//         return dispatch({ type: 'USER_FAVOURITE', payload: data.Products })  
+//     }
+// }
+
+// export function deleteFavourite(){
+//     return async function (dispatch) {
+//         return dispatch({type: 'DELETE_FAVOURITE', payload:data.products})
+//     }
+// }
+
