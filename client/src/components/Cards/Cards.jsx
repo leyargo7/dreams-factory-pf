@@ -14,6 +14,7 @@ const Cards = ({ currentProducts }) => {
               img={ev.img}
               rating={ev.rating}
               price={ev.price}
+              id={ev._id}
             />
           </div>
         );

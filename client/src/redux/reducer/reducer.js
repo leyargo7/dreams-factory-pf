@@ -1,8 +1,13 @@
-import { GET_PRODUCTS, GET_CATEGORIES, CLEAN_CATEGORIES } from "../actions/actions";
+import { 
+    GET_PRODUCTS, 
+    GET_CATEGORIES, 
+    CLEAN_CATEGORIES, 
+    ID_PRODUCT } from "../actions/actions";
 
 const initialState = {
     all: [],
-    category: []
+    category: [],
+    idProduct: [],
 }
 
 function rootReducer(state = initialState, action) {
@@ -21,6 +26,11 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 category: []
+            }
+        case ID_PRODUCT:
+            return{
+                ...state,
+                idProduct: action.payload
             }
         default:
             return { ...state };
