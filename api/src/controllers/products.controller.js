@@ -145,8 +145,15 @@ const updateProduct = (req, res) => {
     res.json({msg: 'update Product'});
 };
 
-const getProduct = (req, res) => {
-    res.json({msg: 'get Product'});
+const getProduct = async(req, res) => {
+    const {id} = req.params
+    try {
+        if(!id) return res.status(400).json({msg: "Id NOT found it"})
+        const product = await Product.findById(id)
+        if(!product) return res.status(404).json({msg: 'Product NOT found it'}) 
+        res.status(200).json({msg: 'Product found it', product})
+    } catch (error) {
+ }
 };
 
 const deleteProduct = (req, res) => {

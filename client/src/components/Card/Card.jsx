@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import s from "./Card.module.css";
 
-export default function Card({ title, img, rating, price }) {
+export default function Card({ title, img, rating, price, id }) {
   /* propiedades que le paso en home */
   return (
     <div className={s.shell}>
@@ -15,6 +16,7 @@ export default function Card({ title, img, rating, price }) {
         <h4 style={{margin:"10px 0 0 0"}}><span style={{userSelect: "none",color:"rgb(179, 0, 180)"}}>&#9733;</span> {rating}</h4>
         <h2 style={{margin:"0 0 10px 0"}}><span style={{userSelect: "none",color:"rgb(179, 0, 180)"}}>$</span>{price}</h2>
       </div>
+      <button><Link to={`/product/${id}`}>See more</Link></button>
     </div>
   );
 }
