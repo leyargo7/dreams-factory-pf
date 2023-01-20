@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/actions";
 import Cards from "../Cards/Cards";
+import CategorySelector from "../CategorySelector/CategorySelector";
 import Pagination from "../Pagination/Pagination";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
   return (
     <div>
       <div>
+        <CategorySelector/>
         <Pagination
           currentPage={currentPage}
           productPerPage={productPerPage}

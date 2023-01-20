@@ -20,7 +20,7 @@ export default function Pagination({
       )}
       {pageNumbers &&
         pageNumbers.map((ev) => (
-          <button className={s.btn} key={ev} onClick={() => pagination(ev)}>
+          <button className={currentPage === ev ? s.active : s.btn} key={ev} onClick={() => pagination(ev)}>
             {ev}
           </button>
         ))}
