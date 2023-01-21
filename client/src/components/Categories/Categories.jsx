@@ -55,7 +55,6 @@ const Categories = () => {
 
   return (
     <div className={s.categories}>
-      <CategorySelector />
       <br />
       <Filters handleSortDesc={handleSortDesc} />
       <br />
