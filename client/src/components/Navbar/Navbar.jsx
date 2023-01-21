@@ -4,10 +4,12 @@ import Searchbar from "../Searchbar/Searchbar";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login3.jpg";
 import cart from "../../images/carrito-compras3.jpg";
+import { useDispatch } from "react-redux";
+import { cleanCategories } from "../../redux/actions/actions";
 import s from "./Navbar.module.css";
 
 const Navbar = () => {
-
+  const dispatch = useDispatch();
 
   const modalOpen = (e) => {
     e.preventDefault();
@@ -56,10 +58,13 @@ const Navbar = () => {
     window.location.reload();
   }; */
 
-
+const handleToHome = () => {
+  dispatch(cleanCategories());
+  localStorage.removeItem("storedCurrent");
+}
   return (
     <div className={s.nav}>
-      <NavLink className={s.link} to="/">
+      <NavLink onClick={handleToHome} className={s.link} to="/">
         <img className={s.logonavbar} src={logo} alt="logo" />
 
       </NavLink>
