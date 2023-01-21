@@ -5,11 +5,10 @@ import s from "./Cards.module.css";
 const Cards = ({ currentProducts }) => {
   return (
     <div className={s.deck}>
-      {currentProducts?.map((ev) => {
+      {currentProducts?.map((ev,i) => {
         return (
-          <div>
-            <Card
-              key={ev._id}
+          <div key={i}>
+            <Card              
               title={ev.title}
               img={ev.img}
               rating={ev.rating}
