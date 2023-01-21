@@ -34,7 +34,6 @@ export default function Home() {
           setCurrentPage={setCurrentPage}
           allProduct={allProducts.length}
           pagination={pagination}
-          currentPage={currentPage}
         />
       </div>
 

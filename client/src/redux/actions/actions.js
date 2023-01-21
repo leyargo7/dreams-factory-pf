@@ -10,7 +10,6 @@ export function getProducts() {
         return dispatch({
             type: GET_PRODUCTS,
             payload: getProducts.data
-
         });
     };
 };

@@ -9,7 +9,7 @@ const Cards = ({ currentProducts }) => {
         return (
           <div>
             <Card
-              key={ev._id}
+              key={ev.idProduct}
               title={ev.title}
               img={ev.img}
               rating={ev.rating}

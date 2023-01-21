@@ -2,7 +2,10 @@ import { GET_PRODUCTS, GET_CATEGORIES, CLEAN_CATEGORIES } from "../actions/actio
 
 const initialState = {
     all: [],
-    category: []
+    allPryoducts: [],
+    category: [],
+    user: {},
+    Favorites: []
 }
 
 function rootReducer(state = initialState, action) {
