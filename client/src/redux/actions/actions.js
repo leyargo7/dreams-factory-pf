@@ -4,6 +4,7 @@ export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_CATEGORIES = "GET_CATEGORIES";
 export const CLEAN_CATEGORIES = "CLEAN_CATEGORIES";
 export const ID_PRODUCT = 'ID_PRODUCT';
+export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME';
 
 export function getProducts() {
     return async function (dispatch) {
@@ -15,6 +16,17 @@ export function getProducts() {
         });
     };
 };
+
+export function getProductByName (name) {
+    return async function (dispatch) {
+        const getProductByName = await axios.get("http://localhost:3001/api/products?title=" + name);
+        return dispatch ({
+            type: GET_PRODUCT_BY_NAME,
+            payload: getProductByName.data
+            
+        });
+    };
+}
 
 export function getCategories(category) {
     return async (dispatch) => {
