@@ -5,6 +5,7 @@ export const GET_CATEGORIES = "GET_CATEGORIES";
 export const CLEAN_CATEGORIES = "CLEAN_CATEGORIES";
 export const ID_PRODUCT = 'ID_PRODUCT';
 export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME';
+export const ADD_FAVORITE = 'ADD_FAVORITE';
 
 export function getProducts() {
     return async function (dispatch) {
@@ -17,15 +18,15 @@ export function getProducts() {
 };
 
 
-// export function getFavourite(){
-//     return async function (dispatch) {
-//         return dispatch({ type: 'USER_FAVOURITE', payload: data.Products })  
-//     }
-// }
+export function addFavorite(product){
+    return async function (dispatch) {
+        return dispatch({ type: ADD_FAVORITE, payload:product})  
+    }
+}
 
-// export function deleteFavourite(){
+// export function deleteFavourite(idProduct){
 //     return async function (dispatch) {
-//         return dispatch({type: 'DELETE_FAVOURITE', payload:data.products})
+//         return dispatch({type: 'DELETE_FAVOURITE', payload:idProduct})
 //     }
 // }
 export function getProductByName (name) {

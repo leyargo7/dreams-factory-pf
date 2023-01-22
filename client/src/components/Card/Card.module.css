@@ -51,7 +51,7 @@
 
 .footerPrice{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 10px;
   
@@ -61,7 +61,7 @@
   top: 5px;
   font-size: 1.5rem;
   font-weight: 400;
-  left: 170px;
+  /* left: 170px; */
 }
 
 .footerPrice button {

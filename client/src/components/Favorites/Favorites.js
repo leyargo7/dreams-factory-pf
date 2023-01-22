@@ -1,16 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import FavoriteCard from "./FavoriteCard";
+import Card from "../Card/Card";
 
 const Favorites = () => {
 
     const user = { email: 'dakshdlaksjd@jaskdj.com' }
 
-    // let products = useSelector(state => state.all);
     let favoritos = useSelector(state => state.Favorites)
 
-    // favoritos = favoritos?.map(ev => ev.idProduct)
 
     if (user) {
         return (
@@ -19,9 +17,10 @@ const Favorites = () => {
 
                 <div>
                     {favoritos?.length ? favoritos?.map(e => (
-                        <FavoriteCard key={e.idProduct} obj={e} />
+                        <Card key={e.idProduct} 
+                        title={e.title} img={e.img} rating={e.rating} price={e.price} id={e.id }/>
                     )) : (
-                        <div><h3>There is no product you are looking for</h3></div>
+                        <div><h3>There is not product you are looking for</h3></div>
                     )}
 
                 </div>

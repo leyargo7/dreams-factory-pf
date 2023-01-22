@@ -77,15 +77,6 @@ const Navbar = () => {
         <NavLink className={s.link} to='/cart'>
           <img className={s.cart} src={cart} alt='logo' />
           </NavLink>
-        {/* <NavLink className={s.link} to="/login">
-          <img className={s.login} src={login} alt="logo" />
-        </NavLink> */}
-        <div className={s.link} onClick={(e) => modalOpen(e)}>
-          <img className={s.login} src={login} alt="logo" />
-        </div>
-        <NavLink className={s.link} to="/cart">
-          <img className={s.cart} src={cart} alt="logo" />
-        </NavLink>
         
       </div>
 

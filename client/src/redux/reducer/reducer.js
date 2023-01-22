@@ -4,6 +4,7 @@ import {
   GET_CATEGORIES,
   CLEAN_CATEGORIES,
   ID_PRODUCT,
+  ADD_FAVORITE,
 } from "../actions/actions";
 
 const initialState = {
@@ -43,6 +44,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         idProduct: action.payload,
       };
+      case ADD_FAVORITE:
+        return{
+          ...state,
+          Favorites: [...state.Favorites, action.payload ]
+        }
     default:
       return { ...state };
   }
