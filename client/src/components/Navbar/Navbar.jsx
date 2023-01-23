@@ -68,6 +68,9 @@ const Navbar = () => {
         <NavLink className={s.link} to="/about">
           <h2>About</h2>
         </NavLink>
+        <NavLink className={s.link} to='/favorites'>
+          <h2>Favorites</h2>
+        </NavLink>
         {/* <NavLink className={s.link} to="/login">
           <img className={s.login} src={login} alt="logo" />
         </NavLink> */}
@@ -77,6 +80,7 @@ const Navbar = () => {
         <NavLink className={s.link} to="/cart">
           <img className={s.cart} src={cart} alt="logo" />
         </NavLink>
+
         
       </div>
 
