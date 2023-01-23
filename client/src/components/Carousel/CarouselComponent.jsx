@@ -9,15 +9,17 @@ const CarouselComponent = () => {
   return (
   <Carousel className={s.CarouselContainer} autoplay={true} wrapAround = {true}
   renderCenterLeftControls={({ previousSlide }) => (
-    <button style={{marginLeft:"100px"}} onClick={previousSlide}>
+    <button style={{marginLeft:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer" }} onClick={previousSlide}>
       <i className="fa-light fa-angle-left">&#60;</i>
     </button>
   )}
   renderCenterRightControls={({ nextSlide }) => (
-    <button style={{marginRight:"100px"}}  onClick={nextSlide}>
+    <button style={{marginRight:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer"   }}  onClick={nextSlide}>
       <i className="fa-light fa-angle-right">&#62;</i>
     </button>
   )}
+  renderBottomCenterControls={false}
+
   >
     <img className={s.bannerone} src={BannerOne} alt="banner" />
     <img className={s.bannertwo} src={BannerTwo} alt="banner" />
