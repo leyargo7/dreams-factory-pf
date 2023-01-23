@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch} from "react-redux";
+import {addFavorite} from "../../redux/actions/actions"
 import s from "./Card.module.css";
 
 export default function Card({ title, img, rating, price, id }) {
   /* propiedades que le paso en home */
+ 
 
-
+ const dispatch =useDispatch();
   const handleAddCart = (e) => {
     e.preventDefault();
 
    alert("add cart");
   };
+  const handleAddFavorite = (e) => {
+    e.preventDefault();
+
+    dispatch(addFavorite({ title, img, rating, price, id }))
+  }
 
   return (
     <div className={s.shell}>
@@ -35,6 +43,7 @@ export default function Card({ title, img, rating, price, id }) {
             {price}
           </h2>
           <button onClick={e=> handleAddCart(e)}>add Cart</button>
+          <button onClick={e => handleAddFavorite(e)}>add Favorite ❤</button>
 
         </div>
       </div>

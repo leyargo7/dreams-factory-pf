@@ -5,6 +5,7 @@ export const GET_CATEGORIES = "GET_CATEGORIES";
 export const CLEAN_CATEGORIES = "CLEAN_CATEGORIES";
 export const ID_PRODUCT = 'ID_PRODUCT';
 export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME';
+export const ADD_FAVORITE = 'ADD_FAVORITE';
 
 export function getProducts() {
     return async function (dispatch) {
@@ -16,6 +17,12 @@ export function getProducts() {
         });
     };
 };
+
+export function addFavorite(product){
+    return async function (dispatch) {
+        return dispatch({ type: ADD_FAVORITE, payload:product})
+    }
+}
 
 export function getProductByName (name) {
     return async function (dispatch) {
