@@ -6,6 +6,7 @@ import login from "../../images/login3.jpg";
 import cart from "../../images/carrito-compras3.jpg";
 import s from "./Navbar.module.css";
 
+
 const Navbar = () => {
 
 
@@ -59,9 +60,8 @@ const Navbar = () => {
 
   return (
     <div className={s.nav}>
-      <NavLink className={s.link} to="/">
+      <NavLink className={s.searchbar} to='/'>
         <img className={s.logonavbar} src={logo} alt="logo" />
-
       </NavLink>
       <Searchbar />
       <div className={s.right}>

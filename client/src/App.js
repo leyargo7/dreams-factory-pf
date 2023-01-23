@@ -6,6 +6,7 @@ import Detail from './components/Detail/Detail.jsx';
 import CategorySelector from "./components/CategorySelector/CategorySelector.jsx";
 import s from "./App.module.css";
 
+
 function App() {
   return (
     <div className={s.app} >
