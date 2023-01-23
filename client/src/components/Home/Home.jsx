@@ -27,7 +27,6 @@ export default function Home() {
   return (
     <div>
       <div>
-        <Cards currentProducts={currentProducts} />
         <CarouselComponent />
       </div>
       <div>
