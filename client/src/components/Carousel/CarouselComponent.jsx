@@ -10,12 +10,12 @@ const CarouselComponent = () => {
   <Carousel className={s.CarouselContainer} autoplay={true} wrapAround = {true}
   renderCenterLeftControls={({ previousSlide }) => (
     <button style={{marginLeft:"100px"}} onClick={previousSlide}>
-      <i class="fa-light fa-angle-left"></i>
+      <i className="fa-light fa-angle-left">&#60;</i>
     </button>
   )}
   renderCenterRightControls={({ nextSlide }) => (
     <button style={{marginRight:"100px"}}  onClick={nextSlide}>
-      <i class="fa-light fa-angle-right"></i>
+      <i className="fa-light fa-angle-right">&#62;</i>
     </button>
   )}
   >

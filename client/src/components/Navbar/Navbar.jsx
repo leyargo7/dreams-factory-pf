@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div className={s.nav}>
-      <NavLink className={s.searchbar} to='/home'>
+      <NavLink className={s.searchbar} to='/'>
         <img className={s.logonavbar} src={logo} alt="logo" />
       </NavLink>
       <Searchbar />

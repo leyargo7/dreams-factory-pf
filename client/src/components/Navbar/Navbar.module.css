@@ -19,7 +19,17 @@
   transition: all 0.1s ease-in-out;
 }
 .link:hover{
-  color: white;
+  color: white; 
+}
+.right{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+}
+.nav h2{
+  margin:0;
+  
 }
 .logonavbar{
   height:70px;
