@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getCategories } from "../../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 import s from "./CategorySelector.module.css";
@@ -7,16 +7,30 @@ import s from "./CategorySelector.module.css";
 const Categories = () => {
   const [current, setCurrent] = React.useState();
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.category);
   const history = useHistory();
+  const actualPath = history.location.pathname;
+
   const handleCategory = (e) => {
     setCurrent(e.target.name);
+    localStorage.setItem("storedCurrent", e.target.name);
     dispatch(getCategories(e.target.name));
     history.push("/categories");
   };
+
   React.useEffect(() => {
-    if (!category.length) setCurrent("");
-  }, [category]);
+    if (actualPath === "/") {
+      setCurrent("");
+    }
+  }, [actualPath]);
+
+  React.useEffect(() => {
+    const storedCurrent = localStorage.getItem("storedCurrent");
+    if (storedCurrent) {
+      setCurrent(storedCurrent);
+      dispatch(getCategories(storedCurrent));
+    }
+  }, []);
+
   return history.location.pathname === "/" ||
     history.location.pathname === "/categories" ? (
     <div className={s.categories}>
