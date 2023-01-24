@@ -5,6 +5,7 @@ import {
   CLEAN_CATEGORIES,
   ID_PRODUCT,
   ADD_FAVORITE,
+  CLEAR_DETAIL
 } from "../actions/actions";
 
 const initialState = {
@@ -46,6 +47,11 @@ function rootReducer(state = initialState, action) {
         return{
           ...state,
           Favorites: [...state.Favorites, action.payload ]
+        }
+        case CLEAR_DETAIL: 
+        return{
+            ...state,
+            idProduct:[]
         }
     default:
       return { ...state };

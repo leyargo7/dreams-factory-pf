@@ -6,6 +6,7 @@ export const CLEAN_CATEGORIES = "CLEAN_CATEGORIES";
 export const ID_PRODUCT = 'ID_PRODUCT';
 export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME';
 export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
 export function getProducts() {
     return async function (dispatch) {
@@ -66,3 +67,8 @@ export function idProduct(id){
     }
 }
 
+export function clearDetail(){
+    return{
+        type: CLEAR_DETAIL,
+    }
+}
