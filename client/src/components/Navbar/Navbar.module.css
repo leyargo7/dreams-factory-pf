@@ -1,6 +1,6 @@
 .nav{
   user-select: none;
-  z-index: 1;
+  z-index: 9;
   position: sticky;
   top: 0;
   display: flex;
@@ -41,6 +41,7 @@
 }
 
 .login{
+  border-radius: 50%;
   height:40px;
   width: auto;
   cursor: pointer;
