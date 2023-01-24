@@ -18,19 +18,22 @@
   text-decoration: none;
   transition: all 0.1s ease-in-out;
 }
+
 .link:hover{
   color: white; 
 }
+
 .right{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 40px;
 }
+
 .nav h2{
-  margin:0;
-  
+  margin:0;  
 }
+
 .logonavbar{
   height:70px;
   width: auto;
@@ -133,6 +136,7 @@
   cursor: pointer;
   margin-top: .5rem;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .modalBtnFacebook {
@@ -143,6 +147,7 @@
   height: 40px;
   border-radius: 0.5rem;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .modalSignIn {
