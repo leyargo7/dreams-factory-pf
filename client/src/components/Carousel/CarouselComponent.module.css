@@ -4,14 +4,6 @@
     margin-top: 20px;
 }
 
-button{
-  background: none;
-  border: none;
-  color: blueviolet;
-  font-size: 3rem;
-  cursor: pointer;  
-}
-
 .bannerone {
   display: flex;
   width: 80%;
