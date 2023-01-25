@@ -7,7 +7,7 @@ const Favorites = () => {
 
     const user = { email: 'dakshdlaksjd@jaskdj.com' }
 
-    let favoritos = useSelector(state => state.Favorites)
+    let favoritos = useSelector(state => state.favorites)
 
 
     if (user) {
@@ -17,8 +17,8 @@ const Favorites = () => {
 
                 <div>
                     {favoritos?.length ? favoritos?.map(e => (
-                        <Card key={e.idProduct} 
-                        title={e.title} img={e.img} rating={e.rating} price={e.price} id={e.id }/>
+                        <Card key={e.idProduct}
+                            title={e.title} img={e.img} rating={e.rating} price={e.price} id={e.id} isFavorite={true} />
                     )) : (
                         <div><h3>There is not product you are looking for</h3></div>
                     )}
