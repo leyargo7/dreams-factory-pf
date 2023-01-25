@@ -1,23 +1,37 @@
 .nav{
-  z-index: 1;
+  user-select: none;
+  z-index: 9;
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: black;  
-  font-size: 30px;
+  background-color: black;
+  padding: 0 60px;  
+  font-size: 20px;
   font-family: chiller;
   box-shadow: 0 3px 3px rgba(43, 0, 160,0.5);
 }
 
-.searchbar{
-  color: rgb(179, 0, 180);
+.link{
+  color: rgb(198, 18, 214);
   text-decoration: none;
+  transition: all 0.1s ease-in-out;
 }
 
-h2{
-  margin: 0;
+.link:hover{
+  color: white; 
+}
+
+.right{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.nav h2{
+  margin:0;  
 }
 
 .logonavbar{
@@ -27,11 +41,203 @@ h2{
 }
 
 .login{
-  height:35px;
+  border-radius: 50%;
+  height:40px;
   width: auto;
+  cursor: pointer;
 }
 
 .cart{
   height:39px;
   width: auto;
+}
+
+.modalContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  
+}
+
+.modalBody{
+  background-color: white;
+  width: 35%;
+  min-width: 400px;
+  height: 50%;
+  min-height: 400px;
+  border-radius: 1rem;
+  position: relative;
+  padding: 1rem;
+}
+
+.modalClose{
+  background-color: black;
+  color: beige;
+  position: absolute;
+  margin: 3px;
+  top: 6px;
+  right: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.modalUser{
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+}
+
+.modalPass{
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+}
+
+.modalButton {
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0 1rem;
+  /* margin: 0.6rem 0; */
+  margin-top: 3rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modalBtnGoogle{
+  background-color: papayawhip;
+  color: black;
+  border: 1px solid black;
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: .5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.modalBtnFacebook {
+  background-color: #3b5998;
+  color: white;
+  border: 1px solid black;
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modalSignIn {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.modalSignIn p {
+  font-size: 0.9rem;
+  
+}
+.modalSignIn button {
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* modal register */
+.modalRegister {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  
+}
+
+.modalBodyRegister {
+  background-color: white;
+  width: 35%;
+  min-width: 400px;
+  height: 50%;
+  min-height: 400px;
+  border-radius: 1rem;
+  position: relative;
+  padding: 1rem;  
+}
+
+.modalCloseRegister {
+  background-color: black;
+  color: beige;
+  position: absolute;
+  margin: 3px;
+  top: 6px;
+  right: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.modalFormRegister {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalFormRegister input {
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0 1rem;
+  margin: 0.3rem 0;
+}
+
+.modalBtnRegister {
+  width: 50%;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0 1rem;
+  /* margin: 0.6rem 0; */
+  margin-top: 1rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
 }

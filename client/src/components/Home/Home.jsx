@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions/actions";
 import Cards from "../Cards/Cards";
+import CarouselComponent from "../Carousel/CarouselComponent";
+
 import Pagination from "../Pagination/Pagination";
 
 export default function Home() {
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.all);
-
   // Para paginado
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setPoductPerPage] = useState(15);
@@ -26,16 +27,8 @@ export default function Home() {
   return (
     <div>
       <div>
-        <Pagination
-          currentPage={currentPage}
-          productPerPage={productPerPage}
-          allProduct={allProducts.length}
-          pagination={pagination}
-        />
-      </div>
-
-      <Cards currentProducts={currentProducts} />
-
+      <CarouselComponent />
+     </div>
       <div>
         <Pagination
           currentPage={currentPage}
@@ -44,6 +37,18 @@ export default function Home() {
           pagination={pagination}
         />
       </div>
+     
+      <Cards currentProducts={currentProducts} />
+      
+      <div>
+        <Pagination
+          currentPage={currentPage}
+          productPerPage={productPerPage}
+          allProduct={allProducts.length}
+          pagination={pagination}
+        />
+      </div>
+
     </div>
   );
 }

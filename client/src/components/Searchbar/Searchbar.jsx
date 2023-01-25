@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getProductByName } from "../../redux/actions/actions";
 import s from "./Searchbar.module.css";
 
 const Searchbar = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+    dispatch(getProductByName(name));
+    
+  };
+
   return (
     <div>
       <form>
-        <input className={s.search} type='text' placeholder='Search...' />
+        <input
+          className={s.search}
+          type="text"
+          placeholder="Search..."
+          value={name}
+          onChange={(e) => { handleSubmit(e); }}
+
+        />
         <button
           className={s.btn}
-          type='submit'
+          type="submit"
           onClick={(e) => {
-            e.preventDefault();
-            alert("submited");
+            handleSubmit(e);
           }}
-        >Search</button>
+        >
+          Search
+        </button>
       </form>
     </div>
   );
