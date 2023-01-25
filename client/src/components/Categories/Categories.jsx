@@ -3,24 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import Cards from "../Cards/Cards";
 import Filters from "../Filters/Filters";
 import { cleanCategories } from "../../redux/actions/actions";
-import { useHistory } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
 import s from "./Categories.module.css";
 
 const Categories = () => {
-  const history = useHistory();
-  const allProducts = useSelector((state) => state.all);
   const products = useSelector((state) => state.category);
   const [localProducts, setLocalProducts] = useState([]);
   const [filter, setFilter] = useState({ name: "", direction: "" });
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!allProducts.length) {
-      history.push("/");
-    }
-  }, []);
 
   useEffect(() => {
     setLocalProducts(products);
