@@ -88,3 +88,7 @@
 .btnFalse:focus {
   background-color: none;
 }
+
+.NavLink {
+  text-decoration: none;
+}

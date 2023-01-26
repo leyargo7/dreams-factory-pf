@@ -5,14 +5,20 @@ import {
   CLEAN_CATEGORIES,
   ID_PRODUCT,
   ADD_FAVORITE,
-  CLEAR_DETAIL
+  CLEAR_DETAIL,
+  OPEN_CART,
+  ADD_CART,
+  DELETE_CART,
+  DELETE_FAVORITE,
 } from "../actions/actions";
 
 const initialState = {
   all: [],
   category: [],
-  favorites:[],
+  favorites: [],
   idProduct: [],
+  clickOpenCart: false,
+  add_Cart: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -44,15 +50,39 @@ function rootReducer(state = initialState, action) {
         idProduct: action.payload,
       };
     case ADD_FAVORITE:
-        return{
-          ...state,
-          favorites: state.favorites.find(fav => fav.id === action.payload.id) ? state.favorites : [...state.favorites, action.payload],
-        }
-     case CLEAR_DETAIL: 
-        return{
-            ...state,
-            idProduct:[]
-        }
+      return {
+        ...state,
+        favorites: state.favorites.find((fav) => fav.id === action.payload.id)
+          ? state.favorites
+          : [...state.favorites, action.payload],
+      };
+    case CLEAR_DETAIL:
+      return {
+        ...state,
+        idProduct: [],
+      };
+
+    case OPEN_CART:
+      return {
+        ...state,
+        clickOpenCart: !state.clickOpenCart,
+      };
+    case ADD_CART:
+      return {
+        ...state,
+        add_Cart: [...state.add_Cart, action.payload],
+      };
+    case DELETE_CART:
+      return {
+        ...state,
+        add_Cart: [],
+      };
+    case DELETE_FAVORITE:
+      return{
+        ...state,
+        favorites: state.favorites.filter(el => el.id !== action.payload.id)
+      }
+
     default:
       return { ...state };
   }
