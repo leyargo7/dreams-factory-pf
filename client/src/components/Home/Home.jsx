@@ -20,7 +20,7 @@ export default function Home() {
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
- console.log(allProducts)
+ 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);

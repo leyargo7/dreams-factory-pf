@@ -56,7 +56,7 @@ export function idProduct(id) {
     return async (dispatch) => {
         try {
             const json = await axios.get(`${SERVER_URL}/api/products/${id}`)
-            console.log(json.data.product)
+            //console.log(json.data.product)
             return dispatch({
                 type: ID_PRODUCT,
                 payload: json.data.product
