@@ -12,7 +12,7 @@ import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
 import s from "./Detail.module.css";
 
-export default function Detail({ title, img, rating, price }) {
+export default function Detail({ title, img, rating, price}) {
   const dispatch = useDispatch();
   const productID = useSelector((state) => state.idProduct);
   const { id } = useParams();
@@ -29,7 +29,7 @@ export default function Detail({ title, img, rating, price }) {
 
   const handleAddFavorite = (e) => {
     e.preventDefault();
-    dispatch(addFavorite({ title, img, rating, price, id }));
+    dispatch(addFavorite({ title, img, rating, price }));
   };
 
   return (
@@ -199,7 +199,7 @@ export default function Detail({ title, img, rating, price }) {
               </button>
             </div>
           </div>
-        </div>
+        </div> 
       )}
     </div>
   );

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addFavorite } from "../../redux/actions/actions";
 import s from "./Card.module.css";
-
+ 
 export default function Card({ title, img, rating, price, id }) {
   /* propiedades que le paso en home */
+
+  const info = document.getElementById("1");
 
   const dispatch = useDispatch();
   const handleAddCart = (e) => {
@@ -44,8 +46,13 @@ export default function Card({ title, img, rating, price, id }) {
             {price}
           </h2>
           <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-          <button onClick={(e) => handleAddFavorite(e)}>add Favorite ❤</button>
+          <button
+          id="1"
+          onClick={(e) => handleAddFavorite(e)}>add Favorite ❤</button>
+          {console.log(info)}
         </div>
+        
+      
       </div>
     </div>
   );
