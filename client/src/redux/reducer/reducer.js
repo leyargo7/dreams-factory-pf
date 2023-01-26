@@ -13,6 +13,7 @@ const initialState = {
   category: [],
   favorites:[],
   idProduct: [],
+  copyProducts: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -21,13 +22,17 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         all: action.payload,
+        copyProducts: action.payload,
       };
 
-    case GET_PRODUCT_BY_NAME:
+    case GET_PRODUCT_BY_NAME:{
+      const all = state.all
+      const search = all.filter((f )=> f.title.toLowerCase().includes(action.payload.toLowerCase()))
       return {
-        ...state,
-        all: action.payload,
-      };
+     ...state,
+        copyProducts: search,
+       };
+    }
     case GET_CATEGORIES:
       return {
         ...state,
