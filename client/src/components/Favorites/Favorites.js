@@ -15,7 +15,7 @@ const Favorites = () => {
         return (
             
             <div >
-                <h2>FAVORITES</h2>
+                <h2>FAVORITES</h2> 
 
                 <div className={s.container}>
                     {favoritos?.length ? favoritos?.map(e => (
