@@ -47,9 +47,18 @@
   cursor: pointer;
 }
 
+.login:hover {
+  transform: scale(1.1);
+}
+
 .cart{
   height:39px;
   width: auto;
+  cursor: pointer;
+}
+
+.cart:hover{
+  transform: scale(1.1);
 }
 
 .modalContainer{
