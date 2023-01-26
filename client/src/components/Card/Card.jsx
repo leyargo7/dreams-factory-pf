@@ -2,17 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Toaster, toast } from 'react-hot-toast';
-import { addFavorite } from "../../redux/actions/actions";
+import { addFavorite, addCart } from "../../redux/actions/actions";
 
 import s from "./Card.module.css";
 
 export default function Card({ title, img, rating, price, id, isFavorite }) {
 
   const dispatch = useDispatch();
+  //const cart_add = useSelector((state) => state.add_Cart);
  
  const handleAddCart = (e) => {
     e.preventDefault();
-    alert("add cart");
+    dispatch(addCart({ title, img, rating, price, id }));
+    alert("added to cart");
   };
  
  const handleAddFavorite = (e) => {

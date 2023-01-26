@@ -8,6 +8,10 @@ export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME';
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
+export const OPEN_CART = "OPEN_CART";
+export const ADD_CART = "ADD_CART";
+export const DELETE_CART = "DELETE_CART";
+
 export function getProducts() {
     return async function (dispatch) {
         const getProducts = await axios.get(`${SERVER_URL}/api/products`);
@@ -66,5 +70,26 @@ export function idProduct(id) {
 export function clearDetail() {
     return {
         type: CLEAR_DETAIL,
+    }
+}
+
+export function clickOpenCart(payload){
+    return{
+        type: OPEN_CART,
+        payload
+    }
+}
+
+export function addCart(payload){
+    return{
+        type: ADD_CART,
+        payload
+    }
+}
+
+export function deleteCart(){
+    return{
+        type: DELETE_CART,
+        
     }
 }
