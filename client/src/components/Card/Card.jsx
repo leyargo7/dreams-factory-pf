@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Toaster, toast } from 'react-hot-toast';
 import { addFavorite } from "../../redux/actions/actions";
-import { Toaster, toast } from 'react-hot-toast';
+// import { Toaster, toast } from 'react-hot-toast';
 import s from "./Card.module.css";
 
 export default function Card({ title, img, rating, price, id, isFavorite }) {
 
   const dispatch = useDispatch();
+
+  const [favorite,setFavorite] = useState(false)
  
  const handleAddCart = (e) => {
     e.preventDefault();
@@ -17,8 +19,10 @@ export default function Card({ title, img, rating, price, id, isFavorite }) {
  
  const handleAddFavorite = (e) => {
     e.preventDefault();
-    toast.success("addedFavorite")
+    toast.success("added Favorite")
     dispatch(addFavorite({ title, img, rating, price, id }));
+    console.log(favorite)
+    return favorite === false ? setFavorite(true) : setFavorite(false)
   };
 
   return (
@@ -45,10 +49,9 @@ export default function Card({ title, img, rating, price, id, isFavorite }) {
             </span>
             {price}
           </h2>
-          <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-          {!isFavorite &&
-            <button onClick={(e) => handleAddFavorite(e)}>❤</button>
-          }
+          <button onClick={(e) => handleAddCart(e)}>add Cart</button>       
+          <button className={favorite === false? s.btnFalse : s.btnTrue} onClick={(e) => handleAddFavorite(e)}>❤</button>
+          
         </div>
       </div>
       <Toaster

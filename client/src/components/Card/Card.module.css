@@ -76,8 +76,15 @@
   cursor: pointer;
 }
 .footerPrice button:hover {
-
   background-color: #30E717;
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.btnTrue:focus {
+  background-color: #30E717;
+}
+
+.btnFalse:focus {
+  background-color: none;
 }
