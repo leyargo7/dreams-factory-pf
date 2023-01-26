@@ -43,17 +43,16 @@ function rootReducer(state = initialState, action) {
         ...state,
         idProduct: action.payload,
       };
-      case ADD_FAVORITE:
+    case ADD_FAVORITE:
         return{
           ...state,
           favorites: state.favorites.find(fav => fav.id === action.payload.id) ? state.favorites : [...state.favorites, action.payload],
         }
-        case CLEAR_DETAIL: 
+     case CLEAR_DETAIL: 
         return{
             ...state,
             idProduct:[]
         }
-
     default:
       return { ...state };
   }
