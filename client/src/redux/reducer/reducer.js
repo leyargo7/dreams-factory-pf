@@ -14,7 +14,7 @@ import {
 const initialState = {
   all: [],
   category: [],
-  Favorites: [],
+  favorites: [],
   idProduct: [],
   clickOpenCart: false,
   add_Cart: [],
