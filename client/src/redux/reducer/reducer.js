@@ -11,7 +11,7 @@ import {
 const initialState = {
   all: [],
   category: [],
-  Favorites:[],
+  favorites:[],
   idProduct: [],
 };
 
@@ -46,13 +46,14 @@ function rootReducer(state = initialState, action) {
       case ADD_FAVORITE:
         return{
           ...state,
-          Favorites: [...state.Favorites, action.payload ]
+          favorites: state.favorites.find(fav => fav.id === action.payload.id) ? state.favorites : [...state.favorites, action.payload],
         }
         case CLEAR_DETAIL: 
         return{
             ...state,
             idProduct:[]
         }
+
     default:
       return { ...state };
   }

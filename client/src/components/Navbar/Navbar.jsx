@@ -69,7 +69,7 @@ const Navbar = () => {
           <h2>About</h2>
         </NavLink>
         <NavLink className={s.link} to='/favorites'>
-          <h2>Favorites</h2>
+        <h2>❤</h2>
         </NavLink>
         {/* <NavLink className={s.link} to="/login">
           <img className={s.login} src={login} alt="logo" />
