@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Toaster, toast } from 'react-hot-toast';
 import { addFavorite } from "../../redux/actions/actions";
 import s from "./Card.module.css";
 
-export default function Card({ title, img, rating, price, id }) {
-  /* propiedades que le paso en home */
+export default function Card({ title, img, rating, price, id, isFavorite }) {
 
   const dispatch = useDispatch();
   const handleAddCart = (e) => {
@@ -15,6 +15,7 @@ export default function Card({ title, img, rating, price, id }) {
   };
   const handleAddFavorite = (e) => {
     e.preventDefault();
+    toast.success("addedFavorite")
 
     dispatch(addFavorite({ title, img, rating, price, id }));
   };
@@ -44,9 +45,24 @@ export default function Card({ title, img, rating, price, id }) {
             {price}
           </h2>
           <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-          <button onClick={(e) => handleAddFavorite(e)}>add Favorite ❤</button>
+          {!isFavorite &&
+            <button onClick={(e) => handleAddFavorite(e)}>❤</button>
+          }
         </div>
       </div>
+      <Toaster
+        position="bottom-right"
+        reverseOrder={true}
+        toastOptions={{
+          className: '',
+          duration: 3000,
+          style: {
+            background: '#363636',
+            color: "white",
+          },
+        }}
+
+      />
     </div>
   );
 }
