@@ -30,14 +30,10 @@ export function addFavorite(product) {
 }
 
 export function getProductByName(name) {
-    return async function (dispatch) {
-        const getProductByName = await axios.get(`${SERVER_URL}/api/products?title=${name}`);
-        return dispatch({
-            type: GET_PRODUCT_BY_NAME,
-            payload: getProductByName.data
-
-        });
-    };
+    return {
+    type: GET_PRODUCT_BY_NAME,
+    payload: name
+    }
 }
 
 export function getCategories(category) {
@@ -60,7 +56,7 @@ export function idProduct(id) {
     return async (dispatch) => {
         try {
             const json = await axios.get(`${SERVER_URL}/api/products/${id}`)
-            console.log(json.data.product)
+            //console.log(json.data.product)
             return dispatch({
                 type: ID_PRODUCT,
                 payload: json.data.product
