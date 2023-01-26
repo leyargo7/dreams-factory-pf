@@ -159,7 +159,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart } from "../../redux/actions/actions";
 import { NavLink } from "react-router-dom";
-import Searchbar from "../Searchbar/Searchbar";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login3.jpg";
 import cart from "../../images/carrito-compras3.jpg";
@@ -228,7 +227,6 @@ const Navbar = () => {
       <NavLink className={s.searchbar} to='/'>
         <img className={s.logonavbar} src={logo} alt="logo" />
       </NavLink>
-      <Searchbar />
       <div className={s.right}>
         <NavLink className={s.link} to="/about">
           <h2>About</h2>
