@@ -5,7 +5,11 @@ import Categories from './components/Categories/Categories.jsx';
 import Favorites  from "./components/Favorites/Favorites.js"
 import Detail from './components/Detail/Detail.jsx';
 import CategorySelector from "./components/CategorySelector/CategorySelector.jsx";
+import Footer from './components/Footer/Footer.jsx'
 import s from "./App.module.css";
+import Terms from './components/Terms/Terms.jsx';
+import Privacy from './components/Privacy/Privacy.jsx';
+
 
 
 function App() {
@@ -17,6 +21,9 @@ function App() {
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/product/:id" component={Detail} />
+      <Route exact path="/terms" component={Terms} />
+      <Route exact path="/privacy" component={Privacy}/>
+      <Footer />
     </div>
   );
 }

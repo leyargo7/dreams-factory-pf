@@ -65,19 +65,30 @@
 }
 
 .footerPrice button {
-  
-  
   border-radius: 10px;
-  border: none;
-  background-color: rgb(108, 34, 177);
+  border: none;  
   color: white;
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
 }
 .footerPrice button:hover {
-
   background-color: #30E717;
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.btnFalse {
+  background-color: #30E717;
+}
+
+.btnTrue {
+  background-color: rgb(108, 34, 177);
+}
+.cartBtn {
+  background-color: rgb(108, 34, 177);  
+}
+
+.NavLink {
+  text-decoration: none;
 }

@@ -8,9 +8,8 @@ const Searchbar = () => {
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setName(e.target.value);
     dispatch(getProductByName(name));
+    setName(e);
     
   };
 
@@ -22,14 +21,14 @@ const Searchbar = () => {
           type="text"
           placeholder="Search..."
           value={name}
-          onChange={(e) => { handleSubmit(e); }}
+          onChange={(e) => { handleSubmit(e.target.value); }}
 
         />
         <button
           className={s.btn}
           type="submit"
           onClick={(e) => {
-            handleSubmit(e);
+            handleSubmit(e.target.value);
           }}
         >
           Search

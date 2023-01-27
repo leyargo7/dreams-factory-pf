@@ -10,6 +10,7 @@ const Favorites = () => {
 
     let favoritos = useSelector(state => state.favorites)
 
+    
 
     if (user) {
         return (
@@ -19,9 +20,10 @@ const Favorites = () => {
 
                 <div className={s.container}>
                     {favoritos?.length ? favoritos?.map(e => (
-                        <Card key={e.idProduct}
-                        title={e.title} img={e.img} rating={e.rating} price={e.price} id={e.id} isFavorite={true} />
-                           
+                        
+                        <Card key={e.title}
+                        title={e.title} img={e.img} rating={e.rating} price={e.price} _id={e._id}/>
+                        
                     )) : (
                         <div><h3>There is not product you are looking for</h3></div>
                     )}
