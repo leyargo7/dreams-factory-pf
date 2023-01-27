@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
+  addCart,
   addFavorite,
   clearDetail,
   idProduct,
@@ -10,26 +11,35 @@ import {
 import Loading from "../Loading/Loading";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
+import { Toaster, toast } from "react-hot-toast";
 import s from "./Detail.module.css";
 
-export default function Detail({ title, img, rating, price}) {
+export default function Detail() {
   const dispatch = useDispatch();
   const productID = useSelector((state) => state.idProduct);
+
   const { id } = useParams();
-  //console.log(id)
+  console.log(productID);
   useEffect(() => {
     dispatch(idProduct(id));
-    dispatch(clearDetail());
   }, [dispatch, id]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(clearDetail());
+    };
+  }, []);
 
   const handleAddCart = (e) => {
     e.preventDefault();
+    dispatch(addCart(productID));
     alert("add cart");
   };
 
   const handleAddFavorite = (e) => {
     e.preventDefault();
-    dispatch(addFavorite({ title, img, rating, price }));
+    toast.success("addedFavorite");
+    dispatch(addFavorite({ ...productID, favorite: false }));
   };
 
   return (
@@ -174,7 +184,7 @@ export default function Detail({ title, img, rating, price}) {
                 </span>
               ) : null}
             </div>
-            <ul style={{textAlign: "start"}}>
+            <ul style={{ textAlign: "start" }}>
               {!productID.description
                 ? null
                 : productID.description.split(".,").map((d) => <li>{d}</li>)}
@@ -194,12 +204,22 @@ export default function Detail({ title, img, rating, price}) {
             </div>
             <div className={s.buttons}>
               <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-              <button onClick={(e) => handleAddFavorite(e)}>
-                add Favorite ❤
-              </button>
+              <button onClick={handleAddFavorite}>add Favorite ❤</button>
+              <Toaster
+                position='bottom-right'
+                reverseOrder={true}
+                toastOptions={{
+                  className: "",
+                  duration: 3000,
+                  style: {
+                    background: "#363636",
+                    color: "white",
+                  },
+                }}
+              />
             </div>
           </div>
-        </div> 
+        </div>
       )}
     </div>
   );
