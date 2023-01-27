@@ -22,7 +22,7 @@ const Favorites = () => {
                     {favoritos?.length ? favoritos?.map(e => (
                         
                         <Card key={e.title}
-                        title={e.title} img={e.img} rating={e.rating} price={e.price} id={e.id}/>
+                        title={e.title} img={e.img} rating={e.rating} price={e.price} _id={e._id}/>
                         
                     )) : (
                         <div><h3>There is not product you are looking for</h3></div>

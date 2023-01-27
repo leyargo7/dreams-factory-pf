@@ -57,7 +57,7 @@ function rootReducer(state = initialState, action) {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.find((fav) => fav.id === action.payload.id)
+        favorites: state.favorites.find((fav) => fav._id === action.payload._id)
           ? state.favorites
           : [...state.favorites, action.payload],
       };
@@ -85,7 +85,7 @@ function rootReducer(state = initialState, action) {
     case DELETE_FAVORITE:
       return{
         ...state,
-        favorites: state.favorites.filter(el => el.id !== action.payload.id)
+        favorites: state.favorites.filter(el => el._id !== action.payload)
       }
 
     default:
