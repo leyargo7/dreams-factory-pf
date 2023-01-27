@@ -11,15 +11,14 @@
   border-radius: 20px;
   transition: all 0.1s ease-in-out;
 }
-
 .shell:hover {
   position: relative;
   box-shadow: none;
   box-shadow:
-   -8px -8px 10px rgba(108, 34, 177, 0.7),
-   8px -8px 10px rgba(108, 34, 177, 0.7),
-   8px 8px 10px rgba(108, 34, 177, 0.7),
-   -8px 8px 10px rgba(108, 34, 177, 0.7);
+   -8px -8px 10px rgba(169, 3, 140,0.7),
+   8px -8px 10px rgba(169, 3, 140,0.7),
+   8px 8px 10px rgba(169, 3, 140,0.7),
+   -8px 8px 10px rgba(169, 3, 140,0.7);
   top: -7px;
 }
 
@@ -65,13 +64,14 @@
 }
 
 .footerPrice button {
-  
-  
+  margin-bottom: 15px;
+  height: 38px;
+  width: 100px;
   border-radius: 10px;
   border: none;
   background-color: rgb(108, 34, 177);
   color: white;
-  font-size: 1rem;
+  font-size: 23px;
   font-weight: 400;
   cursor: pointer;
 }
