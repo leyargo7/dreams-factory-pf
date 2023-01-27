@@ -27,22 +27,22 @@ export function getProducts() {
 export function addFavorite(product) {
     return async function (dispatch) {
 
-    dispatch({ type: ADD_FAVORITE, payload: product })                         
+        dispatch({ type: ADD_FAVORITE, payload: product })
     }
 }
 
-export function deleteFavorite(product) {
-    return async function (dispatch) {    
-        
-    dispatch ({type: DELETE_FAVORITE, payload: product})  
-                 
+export function deleteFavorite(id) {
+    return async function (dispatch) {
+
+        dispatch({ type: DELETE_FAVORITE, payload: id })
+
     }
 }
 
 export function getProductByName(name) {
     return {
-    type: GET_PRODUCT_BY_NAME,
-    payload: name
+        type: GET_PRODUCT_BY_NAME,
+        payload: name
     }
 }
 
@@ -83,23 +83,23 @@ export function clearDetail() {
     }
 }
 
-export function clickOpenCart(payload){
-    return{
+export function clickOpenCart(payload) {
+    return {
         type: OPEN_CART,
         payload
     }
 }
 
-export function addCart(payload){
-    return{
+export function addCart(payload) {
+    return {
         type: ADD_CART,
         payload
     }
 }
 
-export function deleteCart(){
-    return{
+export function deleteCart() {
+    return {
         type: DELETE_CART,
-        
+
     }
 }

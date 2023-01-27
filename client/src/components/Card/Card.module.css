@@ -68,8 +68,7 @@
   height: 38px;
   width: 100px;
   border-radius: 10px;
-  border: none;
-  background-color: rgb(108, 34, 177);
+  border: none;  
   color: white;
   font-size: 23px;
   font-weight: 400;
@@ -81,12 +80,15 @@
   font-weight: 700;
 }
 
-.btnTrue:focus {
+.btnFalse {
   background-color: #30E717;
 }
 
-.btnFalse:focus {
-  background-color: none;
+.btnTrue {
+  background-color: rgb(108, 34, 177);
+}
+.cartBtn {
+  background-color: rgb(108, 34, 177);  
 }
 
 .NavLink {

@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan')
 const app = express();
-
+const paymentRoutes = require("./routes/payment");
 const productRoutes = require('./routes/products.routes')
 const categoryRoutes = require('./routes/categories.routes')
 const api = require('./routes/api.routes')
@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 //routes
 app.use('/api', productRoutes)
 app.use('/api', categoryRoutes)
+app.use('/api', paymentRoutes)
 app.use(api)
 
 module.exports = app;
