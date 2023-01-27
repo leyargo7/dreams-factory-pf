@@ -9,6 +9,7 @@ import {
   OPEN_CART,
   ADD_CART,
   DELETE_CART,
+  DELETE_FAVORITE,
 } from "../actions/actions";
 
 const initialState = {
@@ -81,6 +82,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         add_Cart: [],
       };
+    case DELETE_FAVORITE:
+      return{
+        ...state,
+        favorites: state.favorites.filter(el => el.id !== action.payload.id)
+      }
 
     default:
       return { ...state };

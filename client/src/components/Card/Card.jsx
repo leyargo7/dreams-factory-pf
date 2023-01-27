@@ -1,37 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Toaster, toast } from 'react-hot-toast';
-import { addFavorite, addCart } from "../../redux/actions/actions";
-
+import { addFavorite, addCart, deleteFavorite } from "../../redux/actions/actions";
 import s from "./Card.module.css";
+import {ImCart} from "react-icons/im"
 
-export default function Card({ title, img, rating, price, id, isFavorite }) {
+
+export default function Card({ title, img, rating, price, id }) {
 
   const dispatch = useDispatch();
+
+
+  const [favorite,setFavorite] = useState(true)
+
   //const cart_add = useSelector((state) => state.add_Cart);
+
  
  const handleAddCart = (e) => {
     e.preventDefault();
     dispatch(addCart({ title, img, rating, price, id }));
     alert("added to cart");
   };
- 
+
+
  const handleAddFavorite = (e) => {
     e.preventDefault();
-    toast.success("addedFavorite")
-    dispatch(addFavorite({ title, img, rating, price, id }));
+    toast.success("added Favorite")
+    if(favorite === true){
+      setFavorite(false)
+      dispatch(addFavorite({ title, img, rating, price, id}));
+      console.log(favorite)
+    }else{
+      setFavorite(true)
+      dispatch(deleteFavorite({ title, img, rating, price, id}));
+      console.log(favorite)
+    }
+  
   };
 
+
   return (
+        <NavLink className={s.NavLink} to={`/product/${id}`}>
     <div className={s.shell}>
       <div className={s.header}>
         <h4>{title}</h4>
       </div>
       <div className={s.imgShell}>
-        <Link to={`/product/${id}`}>
           <img className={s.img} src={img} alt='img not found' />
-        </Link>
       </div>
       <div className={s.footer}>
         <h4 style={{ margin: "10px 0 0 0" }}>
@@ -47,10 +63,9 @@ export default function Card({ title, img, rating, price, id, isFavorite }) {
             </span>
             {price}
           </h2>
-          <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-          {!isFavorite &&
-            <button onClick={(e) => handleAddFavorite(e)}>❤</button>
-          }
+          <button onClick={(e) => handleAddCart(e)}><ImCart/></button>       
+          <button className={favorite === false? s.btnFalse : s.btnTrue} onClick={(e) => handleAddFavorite(e)}>❤</button>
+          
         </div>
       </div>
       <Toaster
@@ -67,5 +82,6 @@ export default function Card({ title, img, rating, price, id, isFavorite }) {
 
       />
     </div>
+        </NavLink>
   );
 }

@@ -232,7 +232,7 @@ const Navbar = () => {
           <h2>About</h2>
         </NavLink>
         <NavLink className={s.link} to='/favorites'>
-          <h2>Favorites</h2>
+          <h2>❤</h2>
         </NavLink>
 
         <div className={s.link} onClick={(e) => modalOpen(e)}>

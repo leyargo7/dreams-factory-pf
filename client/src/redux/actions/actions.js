@@ -11,6 +11,7 @@ export const CLEAR_DETAIL = "CLEAR_DETAIL";
 export const OPEN_CART = "OPEN_CART";
 export const ADD_CART = "ADD_CART";
 export const DELETE_CART = "DELETE_CART";
+export const DELETE_FAVORITE = "DELETE_FAVORITE"
 
 export function getProducts() {
     return async function (dispatch) {
@@ -25,7 +26,16 @@ export function getProducts() {
 
 export function addFavorite(product) {
     return async function (dispatch) {
-        return dispatch({ type: ADD_FAVORITE, payload: product })
+
+    dispatch({ type: ADD_FAVORITE, payload: product })                         
+    }
+}
+
+export function deleteFavorite(product) {
+    return async function (dispatch) {    
+        
+    dispatch ({type: DELETE_FAVORITE, payload: product})  
+                 
     }
 }
 
