@@ -1,29 +1,25 @@
 .CarouselContainer {
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.bannerone {
-  display: flex;
-  width: 80%;
-  height: 400px;
-  margin-left:10%
-}
-.bannertwo {
-  display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  height: 400px;
-  margin-left:10%
+  min-width: 90%;
+  /* margin-top: 20px; */
+  margin: 16px;
+  box-shadow: -3px -3px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
+  border-radius: 20px;
+  transition: all 0.1s ease-in-out;
 }
 
-.bannerthree {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
+.CarouselContainer:hover {
+  position: relative;
+  box-shadow:
+    -8px -8px 10px rgba(169, 3, 140, 0.7),
+    8px -8px 10px rgba(169, 3, 140, 0.7),
+    8px 8px 10px rgba(169, 3, 140, 0.7),
+    -8px 8px 10px rgba(169, 3, 140, 0.7);
+  top: -7px;
+}
+
+.CarouselContainer img {
+  min-width: 100%;
   height: 400px;
-  margin-left:10%
 }

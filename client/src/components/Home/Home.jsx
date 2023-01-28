@@ -20,18 +20,21 @@ export default function Home() {
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
- 
+
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
   return (
     <div>
+      <div style={{
+        width: "98%",
+        marginLeft: "8px"
+      }}>
+        <CarouselComponent />
+      </div>
       <div>
-      <CarouselComponent />
-     </div>
-      <div>
-        <Searchbar setCurrentPage={setCurrentPage}/>
+        <Searchbar setCurrentPage={setCurrentPage} />
         <Pagination
           currentPage={currentPage}
           productPerPage={productPerPage}
@@ -39,9 +42,9 @@ export default function Home() {
           pagination={pagination}
         />
       </div>
-     
+
       <Cards currentProducts={currentProducts} />
-      
+
       <div>
         <Pagination
           currentPage={currentPage}

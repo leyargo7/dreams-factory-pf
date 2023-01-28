@@ -7,24 +7,24 @@ import BannerThree from '../../images/Banner3.jpg'
 
 const CarouselComponent = () => {
   return (
-  <Carousel className={s.CarouselContainer} autoplay={true} wrapAround = {true}
-  renderCenterLeftControls={({ previousSlide }) => (
-    <button style={{marginLeft:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer" }} onClick={previousSlide}>
-      <i style={{color:"blueviolet", fontSize:"50px"}}  className="fa-light fa-angle-left">&#60;</i>
-    </button>
-  )}
-  renderCenterRightControls={({ nextSlide }) => (
-    <button style={{marginRight:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer"   }}  onClick={nextSlide}>
-      <i style={{color:"blueviolet", fontSize:"50px"}} className="fa-light fa-angle-right">&#62;</i>
-    </button>
-  )}
-  renderBottomCenterControls={false}
+    <Carousel className={s.CarouselContainer} autoplay={true} wrapAround={true}
+      renderCenterLeftControls={({ previousSlide }) => (
+        <button style={{ marginLeft: "24px", backgroundColor: "transparent", border: "none", cursor: "pointer" }} onClick={previousSlide}>
+          <i style={{ color: "blueviolet", fontSize: "50px" }} className="fa-light fa-angle-left">&#60;</i>
+        </button>
+      )}
+      renderCenterRightControls={({ nextSlide }) => (
+        <button style={{ marginRight: "4px", backgroundColor: "transparent", border: "none", cursor: "pointer" }} onClick={nextSlide}>
+          <i style={{ color: "blueviolet", fontSize: "50px" }} className="fa-light fa-angle-right">&#62;</i>
+        </button>
+      )}
+      renderBottomCenterControls={false}
 
-  >
-    <img className={s.bannerone} src={BannerOne} alt="banner" />
-    <img className={s.bannertwo} src={BannerTwo} alt="banner" />
-    <img className={s.bannerthree} src={BannerThree} alt="banner" />
-  </Carousel>
+    >
+      <img src={BannerOne} alt="banner" />
+      <img src={BannerTwo} alt="banner" />
+      <img src={BannerThree} alt="banner" />
+    </Carousel>
   )
 }
 
