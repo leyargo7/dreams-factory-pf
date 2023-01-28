@@ -31,7 +31,7 @@ export default function Home() {
       <CarouselComponent />
      </div>
       <div>
-        <Searchbar />
+        <Searchbar setCurrentPage={setCurrentPage}/>
         <Pagination
           currentPage={currentPage}
           productPerPage={productPerPage}

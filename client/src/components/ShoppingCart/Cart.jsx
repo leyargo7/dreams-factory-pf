@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
-
+import axios from "axios";
 import style from "./Cart.module.css";
 
 const Cart = () => {
@@ -26,6 +26,8 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
+    axios.get("http://localhost:3001/api/payment")
+    .then(r => console.log(r.data.init_point))
     alert("checkout");
   };
 
