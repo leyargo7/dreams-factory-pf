@@ -88,7 +88,8 @@
   background-color: rgb(108, 34, 177);
 }
 .cartBtn {
-  background-color: rgb(108, 34, 177);  
+  padding-top: 6px;
+  background-color: rgb(108, 34, 177);
 }
 
 .NavLink {
