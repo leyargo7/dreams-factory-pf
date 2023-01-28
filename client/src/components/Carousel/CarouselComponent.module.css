@@ -7,7 +7,7 @@
 .bannerone {
   display: flex;
   width: 80%;
-  height: 400px;
+  height: 650px;
   margin-left:10%
 }
 .bannertwo {
@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 400px;
+  height: 650px;
   margin-left:10%
 }
 
@@ -24,6 +24,6 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 400px;
+  height: 650px;
   margin-left:10%
 }
