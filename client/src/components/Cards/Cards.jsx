@@ -11,6 +11,7 @@ const Cards = ({ currentProducts }) => {
             <Card              
               title={ev.title}
               img={ev.img}
+              description={ev.description}
               rating={ev.rating}
               price={ev.price}
               _id={ev._id}

@@ -14,7 +14,7 @@ import { ImCart } from "react-icons/im";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
 
-export default function Card({ title, img, rating, price, _id }) {
+export default function Card({ title, img, description, rating, price, _id }) {
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
   const found = favorites.find((f) => f._id === _id);
@@ -23,7 +23,7 @@ export default function Card({ title, img, rating, price, _id }) {
 
   const handleAddCart = (e) => {
     e.preventDefault();
-    dispatch(addCart({ title, img, rating, price, _id }));
+    dispatch(addCart({ title, img, description, rating, price, _id }));
     alert("added to cart");
   };
 
@@ -64,7 +64,11 @@ export default function Card({ title, img, rating, price, _id }) {
           </div>
         </h4>
         <div className={s.footerPrice}>
+<<<<<<< HEAD
           <button onClick={(e) => handleAddCart(e)}><ImCart/></button>       
+=======
+          <button className={s.cartBtn} onClick={(e) => handleAddCart(e)}><ImCart/></button>       
+>>>>>>> bb157c42fc71024a49fe62851e45f92703152367
           <h2 style={{ margin: "0 0 10px 0" }}>
             <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
               $

@@ -10,7 +10,6 @@ const Cart = () => {
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
 
-
   useEffect(() => {
     if (openCart) {
       document.getElementById("myNav").style.width = "40%";
@@ -26,9 +25,37 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     axios.get("http://localhost:3001/api/payment")
     .then(r => console.log(r.data.init_point))
     alert("checkout");
+=======
+    const body = {
+      payer_email: "test_user_1295362019@testuser.com",
+      items: cart_add.map((p) => {
+        return {
+          title: p.title,
+          description: p.description,
+          picture_url: p.img,
+          quantity: 1,
+          unit_price: p.price,
+        };
+      }),
+      back_urls: {
+        success: "http://localhost:3000/",
+        failure: "http://localhost:3000/",
+        pending: "http://localhost:3000/",
+      },
+      // notification_url: "https://www.your-site.com/ipn",
+    };
+    axios
+      .post("http://localhost:3001/api/payment", body, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((r) => (window.location.href = r.data.init_point));
+>>>>>>> bb157c42fc71024a49fe62851e45f92703152367
   };
 
   const cleanCart = (e) => {
@@ -36,11 +63,10 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-
   console.log("cart_add", cart_add);
   return (
-    <div className={style.overlay} id="myNav">
-      <button className={style.closebtn} id="closeNav" onClick={closeNav}>
+    <div className={style.overlay} id='myNav'>
+      <button className={style.closebtn} id='closeNav' onClick={closeNav}>
         &times;
       </button>
 
@@ -54,11 +80,10 @@ const Cart = () => {
             return (
               <div className={style.data} key={i}>
                 <div>
-                  <img src={e.img} alt="img" className={style.imgCart} />
+                  <img src={e.img} alt='img' className={style.imgCart} />
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
-                
               </div>
             );
           })
@@ -72,8 +97,8 @@ const Cart = () => {
             {cart_add.reduce((acc, e) => {
               let total = acc + e.price;
               let totalFixed = parseFloat(total.toFixed(2));
-              
-              return totalFixed
+
+              return totalFixed;
             }, 0)}
           </div>
         </div>
@@ -86,6 +111,7 @@ const Cart = () => {
         <button className={style.btn} onClick={(e) => checkout(e)}>
           CHECKOUT
         </button>
+        <br />
       </div>
     </div>
   );
