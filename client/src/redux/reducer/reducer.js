@@ -9,15 +9,17 @@ import {
   OPEN_CART,
   ADD_CART,
   DELETE_CART,
+  DELETE_FAVORITE,
 } from "../actions/actions";
 
 const initialState = {
   all: [],
   category: [],
-  Favorites: [],
+  favorites: [],
   idProduct: [],
   clickOpenCart: false,
   add_Cart: [],
+  copyProducts: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -26,13 +28,17 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         all: action.payload,
+        copyProducts: action.payload,
       };
 
-    case GET_PRODUCT_BY_NAME:
+    case GET_PRODUCT_BY_NAME:{
+      const all = state.all
+      const search = all.filter((f )=> f.title.toLowerCase().includes(action.payload.toLowerCase()))
       return {
-        ...state,
-        all: action.payload,
-      };
+     ...state,
+        copyProducts: search,
+       };
+    }
     case GET_CATEGORIES:
       return {
         ...state,
@@ -51,7 +57,7 @@ function rootReducer(state = initialState, action) {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.find((fav) => fav.id === action.payload.id)
+        favorites: state.favorites.find((fav) => fav._id === action.payload._id)
           ? state.favorites
           : [...state.favorites, action.payload],
       };
@@ -76,6 +82,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         add_Cart: [],
       };
+    case DELETE_FAVORITE:
+      return{
+        ...state,
+        favorites: state.favorites.filter(el => el._id !== action.payload)
+      }
 
     default:
       return { ...state };

@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { getProductByName } from "../../redux/actions/actions";
 import s from "./Searchbar.module.css";
 
-const Searchbar = () => {
+const Searchbar = ({setCurrentPage}) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setName(e.target.value);
     dispatch(getProductByName(name));
+    setName(e);
+    setCurrentPage(1)
     
   };
 
@@ -20,20 +20,11 @@ const Searchbar = () => {
         <input
           className={s.search}
           type="text"
-          placeholder="Search..."
+          placeholder=""
           value={name}
-          onChange={(e) => { handleSubmit(e); }}
+          onChange={(e) => { handleSubmit(e.target.value); }}
 
         />
-        <button
-          className={s.btn}
-          type="submit"
-          onClick={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          Search
-        </button>
       </form>
     </div>
   );
