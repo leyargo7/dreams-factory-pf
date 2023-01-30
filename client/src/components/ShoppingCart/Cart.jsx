@@ -36,9 +36,9 @@ const Cart = () => {
         };
       }),
       back_urls: {
-        success: "http://localhost:3000/",
-        failure: "http://localhost:3000/",
-        pending: "http://localhost:3000/",
+        success: SERVER_URL,
+        failure: SERVER_URL,
+        pending: SERVER_URL,
       },
       // notification_url: "https://www.your-site.com/ipn",
     };
