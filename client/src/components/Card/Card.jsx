@@ -24,7 +24,7 @@ export default function Card({ title, img, description, rating, price, _id }) {
   const handleAddCart = (e) => {
     e.preventDefault();
     dispatch(addCart({ title, img, description, rating, price, _id }));
-    alert("added to cart");
+    toast.success("added to cart");
   };
 
   const handleAddFavorite = (e) => {

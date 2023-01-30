@@ -46,6 +46,7 @@
   background-color: rgb(30, 30, 30);
   color: white;
   border-radius: 0 0 17px 17px;
+
 }
 
 .footerPrice{
@@ -88,7 +89,6 @@
   background-color: rgb(108, 34, 177);
 }
 .cartBtn {
-  padding-top: 6px;
   background-color: rgb(108, 34, 177);
 }
 
