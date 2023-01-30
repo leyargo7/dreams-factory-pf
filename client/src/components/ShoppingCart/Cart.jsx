@@ -26,7 +26,6 @@ const Cart = () => {
   const checkout = (e) => {
     e.preventDefault();
     const body = {
-      payer_email: "test_user_1295362019@testuser.com",
       items: cart_add.map((p) => {
         return {
           title: p.title,
