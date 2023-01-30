@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import {SERVER_URL} from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
 import axios from "axios";
@@ -43,7 +43,7 @@ const Cart = () => {
       // notification_url: "https://www.your-site.com/ipn",
     };
     axios
-      .post("http://localhost:3001/api/payment", body, {
+      .post(`${SERVER_URL}/api/payment`, body, {
         headers: {
           "Content-Type": "application/json",
         },

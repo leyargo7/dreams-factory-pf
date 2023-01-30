@@ -41,11 +41,11 @@ app.use((req, res, next) => {
 });
 app.use(express.urlencoded({extended: true}));  
 app.use(express.json());
-app.use(cookieSession({
-    name: 'session',
-    keys: ["leyargo"],
-    maxAge:  900,
-}));
+// app.use(cookieSession({
+//     name: 'session',
+//     keys: ["leyargo"],
+//     maxAge:  900,
+// }));
 app.use(passport.initialize());
 
 //routes
