@@ -10,6 +10,12 @@ import {
   ADD_CART,
   DELETE_CART,
   DELETE_FAVORITE,
+  REGISTER_USER,
+  IS_REGISTER,
+  LOGIN_USER,
+  IS_LOGIN,
+  ERROR_LOGIN,
+  ERROR_FOR_HOME,
 } from "../actions/actions";
 
 const initialState = {
@@ -19,7 +25,13 @@ const initialState = {
   idProduct: [],
   clickOpenCart: false,
   add_Cart: [],
-  copyProducts: []
+  copyProducts: [],
+  user: [],
+  errorLogin: [],
+  isRegister: false,
+  dataLogin: [],
+  isLogin: false,
+  errorHome: false,
 };
 
 function rootReducer(state = initialState, action) {
@@ -86,6 +98,42 @@ function rootReducer(state = initialState, action) {
       return{
         ...state,
         favorites: state.favorites.filter(el => el._id !== action.payload)
+      }
+
+
+    case REGISTER_USER:
+      return {
+        ...state,
+        user: action.payload,
+
+      };
+
+    case IS_REGISTER:
+      return {
+        ...state,
+        isRegister: action.payload,
+      }
+    
+    case LOGIN_USER:
+      return {
+        ...state,
+        dataLogin: action.payload,
+      }
+    case IS_LOGIN:
+      return {
+        ...state,
+        isLogin: action.payload,
+      }
+    case ERROR_LOGIN:
+      return {
+        ...state,
+        errorLogin: action.payload,
+      }
+
+    case ERROR_FOR_HOME:
+      return {
+        ...state,
+        errorHome: action.payload,
       }
 
     default:
