@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.title2{
+    color: white;
+    text-decoration-line: overline;
+    letter-spacing: 6px;
+}
+
+.empty{
+    padding-bottom: 450px;
+ }
+
+ .empty {
+    display: flex;
+   padding-top: 150px;
+    color: white;
+    
+ }
