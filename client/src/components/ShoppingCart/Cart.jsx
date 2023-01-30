@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import {SERVER_URL} from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
 import axios from "axios";
@@ -26,7 +26,6 @@ const Cart = () => {
   const checkout = (e) => {
     e.preventDefault();
     const body = {
-      payer_email: "test_user_1295362019@testuser.com",
       items: cart_add.map((p) => {
         return {
           title: p.title,
@@ -37,14 +36,14 @@ const Cart = () => {
         };
       }),
       back_urls: {
-        success: "http://localhost:3000/",
-        failure: "http://localhost:3000/",
-        pending: "http://localhost:3000/",
+        success: SERVER_URL,
+        failure: SERVER_URL,
+        pending: SERVER_URL,
       },
       // notification_url: "https://www.your-site.com/ipn",
     };
     axios
-      .post("http://localhost:3001/api/payment", body, {
+      .post(`${SERVER_URL}/api/payment`, body, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -57,7 +56,7 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-  console.log("cart_add", cart_add);
+  
   return (
     <div className={style.overlay} id='myNav'>
       <button className={style.closebtn} id='closeNav' onClick={closeNav}>
