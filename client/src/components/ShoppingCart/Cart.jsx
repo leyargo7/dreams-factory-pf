@@ -56,7 +56,7 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-  console.log("cart_add", cart_add);
+  
   return (
     <div className={style.overlay} id='myNav'>
       <button className={style.closebtn} id='closeNav' onClick={closeNav}>
