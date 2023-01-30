@@ -13,6 +13,16 @@ export const ADD_CART = "ADD_CART";
 export const DELETE_CART = "DELETE_CART";
 export const DELETE_FAVORITE = "DELETE_FAVORITE"
 
+//auth
+export const REGISTER_USER = "REGISTER_USER";
+export const IS_REGISTER = "IS_REGISTER";
+export const LOGIN_USER = "LOGIN_USER";
+export const IS_LOGIN = "IS_LOGIN";
+export const ERROR_LOGIN = "ERROR_LOGIN";
+
+//erros
+export const ERROR_FOR_HOME = "ERROR_FOR_HOME";
+
 export function getProducts() {
     return async function (dispatch) {
         const getProducts = await axios.get(`${SERVER_URL}/api/products`);
@@ -101,5 +111,79 @@ export function deleteCart() {
     return {
         type: DELETE_CART,
 
+    }
+}
+
+
+//-----------------------------auth--------------------------------
+
+export function registerUser(payload) {
+    return async function (dispatch) {
+        try {
+            
+            const json = await axios.post(`${SERVER_URL}/api/registeruser`, payload);
+            //console.log(json.data)
+            return dispatch({
+                type: REGISTER_USER,
+                payload: json.data
+            })
+        } catch (error) {
+            
+            console.error(error)
+            return dispatch({
+                type: REGISTER_USER,
+                payload: error.response.data
+            })
+        }
+    };
+}
+
+export function isRegister(payload) {
+    return {
+        type: IS_REGISTER,
+        payload
+    }
+}
+
+export function loginUser(payload) {
+    return async function (dispatch) {
+        try {
+            const json = await axios.post(`${SERVER_URL}/api/loginuser`, payload);
+            
+            return dispatch({
+                type: LOGIN_USER,
+                payload: json.data
+            })
+        } catch (error) {
+            console.error(error)
+            return dispatch({
+                type: LOGIN_USER,
+                payload: error.response.data
+            })
+        }
+    };
+}
+
+export function isLogin (payload) {
+    return {
+        type: IS_LOGIN,
+        payload
+    }
+}
+
+export function errorLogin (payload) {
+    return {
+        type: ERROR_LOGIN,
+        payload
+    }
+}
+
+
+//-------------------------------erros--------------------------------
+
+export function errorForHome(payload) {
+    return {
+        type: ERROR_FOR_HOME,
+        payload
     }
 }
