@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {SERVER_URL} from "../../config";
+import { SERVER_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
 import axios from "axios";
@@ -36,9 +36,9 @@ const Cart = () => {
         };
       }),
       back_urls: {
-        success: SERVER_URL,
-        failure: SERVER_URL,
-        pending: SERVER_URL,
+        success: "http://localhost:3000",
+        failure: "http://localhost:3000",
+        pending: "http://localhost:3000",
       },
       // notification_url: "https://www.your-site.com/ipn",
     };
@@ -56,7 +56,6 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-  
   return (
     <div className={style.overlay} id='myNav'>
       <button className={style.closebtn} id='closeNav' onClick={closeNav}>

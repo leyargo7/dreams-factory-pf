@@ -1,8 +1,9 @@
 .loading {
+  z-index: 100;
   background-color: white;
   position: relative;
   top: 20vh;
-  right: 0vw;
+  left: 47vw;
   width: 100px;
   height: 100px;
   border-radius: 50%;
