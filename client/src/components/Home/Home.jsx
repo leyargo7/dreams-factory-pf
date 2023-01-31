@@ -29,12 +29,10 @@ export default function Home() {
     if(window.localStorage.errorOrder){
       toast.error('You must be logged in to access this page')
     }
-
+    <Toaster />
     if(isRegisterComp){
       toast.success('User created successfully')
     }
-    <Toaster />
-
     setTimeout(() => {
       window.localStorage.removeItem('errorOrder')
       dispatch(isRegister(false))
@@ -74,6 +72,7 @@ console.log();
           pagination={pagination}
         />
       </div>
+
 
       
 
