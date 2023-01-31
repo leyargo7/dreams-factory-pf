@@ -10,25 +10,25 @@
 }
 
 .detail {
-  background-color: rgba(107,73,139,0.44);
+  background-color: rgba(107, 73, 139, 0.44);
   display: flex;
   align-items: center;
   padding: 24px;
   border-radius: 20px;
-  box-shadow: 0 8px 8px 8px rgba(40,40,40,0.4);
+  box-shadow: 0 8px 8px 8px rgba(40, 40, 40, 0.4);
   /* box-shadow: -3px -3px 6px rgb(108 34 177), 3px 3px 6px rgb(108 34 177); */
   color: white;
 }
 
 .img {
-    margin-left: 40px;
-    display: flex;
-    height: 450px;
-    background-color: white;
-    border-radius: 30px;
-    align-items: center;
-    box-shadow: 0 8px 8px 8px rgba(40,40,40,0.4);
-    padding: 0 80px;
+  margin-left: 40px;
+  display: flex;
+  height: 450px;
+  background-color: white;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 8px 8px 8px rgba(40, 40, 40, 0.4);
+  padding: 0 80px;
 }
 
 .img img {
@@ -58,7 +58,6 @@
   color: rgb(220, 220, 0);
   position: relative;
   left: 240px;
-
 }
 .stars p {
   color: white;
@@ -82,7 +81,6 @@
   color: white;
   text-shadow: -3px -3px 5px blueviolet, 3px -3px 5px blueviolet,
     3px 3px 5px blueviolet, -3px 3px 5px blueviolet;
-    
 }
 
 .buttons {
@@ -90,6 +88,14 @@
   justify-self: center;
   padding: 20px;
   gap: 150px;
+}
+
+.buttons .btnFalse {
+  background-color: #30e717;
+}
+
+.buttons .btnTrue {
+  background-color: rgb(108, 34, 177);
 }
 
 .buttons button {

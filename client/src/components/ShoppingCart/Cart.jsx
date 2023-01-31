@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {SERVER_URL} from "../../config";
+import { SERVER_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
 import axios from "axios";
@@ -25,36 +25,9 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     axios.get("http://localhost:3001/api/payment")
     .then(r => console.log(r.data.init_point))
     alert("checkout");
-=======
-    const body = {
-      items: cart_add.map((p) => {
-        return {
-          title: p.title,
-          description: p.description,
-          picture_url: p.img,
-          quantity: 1,
-          unit_price: p.price,
-        };
-      }),
-      back_urls: {
-        success: SERVER_URL,
-        failure: SERVER_URL,
-        pending: SERVER_URL,
-      },
-      // notification_url: "https://www.your-site.com/ipn",
-    };
-    axios
-      .post(`${SERVER_URL}/api/payment`, body, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((r) => (window.location.href = r.data.init_point));
->>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
   };
 
   const cleanCart = (e) => {
@@ -62,11 +35,11 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-<<<<<<< HEAD
+
   console.log("cart_add", cart_add);
-=======
+
   
->>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
+
   return (
     <div className={style.overlay} id='myNav'>
       <button className={style.closebtn} id='closeNav' onClick={closeNav}>
