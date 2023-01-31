@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer.jsx'
 import s from "./App.module.css";
 import Terms from './components/Terms/Terms.jsx';
 import Privacy from './components/Privacy/Privacy.jsx';
+import About from './components/About/About.jsx';
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Route exact path="/product/:id" component={Detail} />
       <Route exact path="/terms" component={Terms} />
       <Route exact path="/privacy" component={Privacy}/>
+      <Route exact path="/about" component={About}/>
       <Footer />
     </div>
   );
