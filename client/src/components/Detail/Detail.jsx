@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -7,6 +6,7 @@ import {
   addFavorite,
   clearDetail,
   idProduct,
+  deleteFavorite,
 } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
 import Rating from "react-rating";
@@ -17,6 +17,9 @@ import s from "./Detail.module.css";
 export default function Detail() {
   const dispatch = useDispatch();
   const productID = useSelector((state) => state.idProduct);
+  const favorites = useSelector((state) => state.favorites);
+  const found = favorites.find((f) => f._id === productID._id);
+  const [favorite, setFavorite] = useState(found ? found.favorite : true);
 
   const { id } = useParams();
   console.log(productID);
@@ -38,15 +41,24 @@ export default function Detail() {
 
   const handleAddFavorite = (e) => {
     e.preventDefault();
-    toast.success("addedFavorite");
-    dispatch(addFavorite({ ...productID, favorite: false }));
+    if (favorite === true) {
+      setFavorite(() => false);
+      dispatch(addFavorite({ ...productID, favorite: false }));
+      console.log(favorite);
+      toast.success("added to favorite");
+    } else {
+      setFavorite(() => true);
+      dispatch(deleteFavorite(productID._id));
+      console.log(favorite);
+      toast.error("removed from favorites");
+    }
   };
 
-  return (
-    <div className={s.container}>
-      {!productID._id ? (
-        <Loading />
-      ) : (
+  if (!productID._id) {
+    return <Loading />;
+  } else
+    return (
+      <div className={s.container}>
         <div className={s.detail}>
           <div className={s.img}>
             <img src={productID.img} alt='' />
@@ -55,7 +67,6 @@ export default function Detail() {
             <div className={s.content2}>
               <h2>{productID.title}</h2>
             </div>
-
             <div className={s.content3}>
               <span>
                 <span className={s.tags}>Brand:</span> {productID.brand}
@@ -204,7 +215,12 @@ export default function Detail() {
             </div>
             <div className={s.buttons}>
               <button onClick={(e) => handleAddCart(e)}>add Cart</button>
-              <button onClick={handleAddFavorite}>add Favorite ❤</button>
+              <button
+                className={favorite === false ? s.btnFalse : s.btnTrue}
+                onClick={handleAddFavorite}
+              >
+                ❤
+              </button>
               <Toaster
                 position='bottom-right'
                 reverseOrder={true}
@@ -220,7 +236,6 @@ export default function Detail() {
             </div>
           </div>
         </div>
-      )}
-    </div>
-  );
+      </div>
+    );
 }
