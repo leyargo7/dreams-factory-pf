@@ -15,8 +15,16 @@
     padding-bottom: 450px;
  }
 
+<<<<<<< HEAD
  .empty h3{
     padding-left: 700px;
     color: white
 
+=======
+ .empty {
+    display: flex;
+   padding-top: 150px;
+    color: white;
+    
+>>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
  }

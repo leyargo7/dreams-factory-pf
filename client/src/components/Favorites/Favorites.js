@@ -15,9 +15,14 @@ const Favorites = () => {
     if (user) {
         return (
             
+<<<<<<< HEAD
             <div >
                 <h2>FAVORITES</h2> 
 
+=======
+            <div>
+                <h2 className={s.title2}>FAVORITES</h2>
+>>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
                 <div className={s.container}>
 
                     {favoritos?.length ? favoritos?.map(e => (

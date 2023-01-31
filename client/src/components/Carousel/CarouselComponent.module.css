@@ -6,24 +6,42 @@
 
 .bannerone {
   display: flex;
+<<<<<<< HEAD
   width: 80%;
   height: 650px;
   margin-left:10%
+=======
+  width: 90%;
+  height: 500px;
+  margin-left:5%
+>>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
 }
 .bannertwo {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   width: 80%;
   height: 650px;
   margin-left:10%
+=======
+  width: 90%;
+  height: 500px;
+  margin-left:5%
+>>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
 }
 
 .bannerthree {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   width: 80%;
   height: 650px;
   margin-left:10%
+=======
+  width: 90%;
+  height: 500px;
+  margin-left:5%
+>>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
 }
