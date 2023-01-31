@@ -6,7 +6,7 @@ import { cleanCategories } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
 
 import s from "./Categories.module.css";
- 
+
 const Categories = () => {
   const products = useSelector((state) => state.category);
   const [localProducts, setLocalProducts] = useState([]);

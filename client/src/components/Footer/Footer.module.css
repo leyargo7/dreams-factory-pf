@@ -2,6 +2,13 @@
   background-color: black;
   height: 300px;
 }
+.containerLoad {
+  background-color: black;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .logonavbar {
   padding-top: 20px;
   height: 70px;
