@@ -33,7 +33,7 @@ export default function Detail() {
   const handleAddCart = (e) => {
     e.preventDefault();
     dispatch(addCart(productID));
-    alert("add cart");
+    toast.success("added to cart");
   };
 
   const handleAddFavorite = (e) => {
