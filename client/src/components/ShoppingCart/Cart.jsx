@@ -25,20 +25,36 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    axios.get("http://localhost:3001/api/payment")
-    .then(r => console.log(r.data.init_point))
-    alert("checkout");
+    const body = {
+      items: cart_add.map((p) => {
+        return {
+          title: p.title,
+          description: p.description,
+          picture_url: p.img,
+          quantity: 1,
+          unit_price: p.price,
+        };
+      }),
+      back_urls: {
+        success: "http://localhost:3000",
+        failure: "http://localhost:3000",
+        pending: "http://localhost:3000",
+      },
+      // notification_url: "https://www.your-site.com/ipn",
+    };
+    axios
+      .post(`${SERVER_URL}/api/payment`, body, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((r) => (window.location.href = r.data.init_point));
   };
 
   const cleanCart = (e) => {
     e.preventDefault();
     dispatch(deleteCart());
   };
-
-
-  console.log("cart_add", cart_add);
-
-  
 
   return (
     <div className={style.overlay} id='myNav'>

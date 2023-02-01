@@ -24,11 +24,7 @@ export default function Card({ title, img, description, rating, price, _id }) {
   const handleAddCart = (e) => {
     e.preventDefault();
     dispatch(addCart({ title, img, description, rating, price, _id }));
-<<<<<<< HEAD
-    alert("added to cart");
-=======
     toast.success("added to cart");
->>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
   };
 
   const handleAddFavorite = (e) => {
@@ -68,11 +64,7 @@ export default function Card({ title, img, description, rating, price, _id }) {
           </div>
         </h4>
         <div className={s.footerPrice}>
-<<<<<<< HEAD
-          <button onClick={(e) => handleAddCart(e)}><ImCart/></button>       
-=======
           <button className={s.cartBtn} onClick={(e) => handleAddCart(e)}><ImCart/></button>       
->>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
           <h2 style={{ margin: "0 0 10px 0" }}>
             <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
               $

@@ -53,10 +53,7 @@ app.use('/api', register)
 app.use('/api', login)
 app.use('/api', productRoutes)
 app.use('/api', categoryRoutes)
-<<<<<<< HEAD
-=======
 app.use('/api', ordersRoutes)
->>>>>>> 8a98451f5ea2f40cf943955d39addfda3d74d623
 app.use('/api', paymentRoutes)
 app.use(api)
 
