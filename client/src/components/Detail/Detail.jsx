@@ -20,6 +20,7 @@ export default function Detail() {
   const favorites = useSelector((state) => state.favorites);
   const found = favorites.find((f) => f._id === productID._id);
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
+  const [buttonOn,setButtonOn] = useState(true,);
 
   const { id } = useParams();
   console.log(productID);
@@ -35,8 +36,21 @@ export default function Detail() {
 
   const handleAddCart = (e) => {
     e.preventDefault();
-    dispatch(addCart(productID));
-    toast.success("added to cart");
+    
+    if(productID.inStock>0){
+      dispatch(addCart(productID));
+      productID.inStock=productID.inStock-1;
+      console.log(productID.inStock);
+      toast.success("added to cart");
+      console.log(buttonOn);
+      setButtonOn(true)
+
+    }else{
+      productID.inStock=0;
+      setButtonOn(false);
+      toast.error("product not avaible");
+      console.log(buttonOn);
+    }
   };
 
   const handleAddFavorite = (e) => {
@@ -214,7 +228,10 @@ export default function Detail() {
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
-              <button onClick={(e) => handleAddCart(e)}>add Cart</button>
+              <button 
+                disabled={!buttonOn}
+                onClick={(e) => handleAddCart(e)}>add Cart
+              </button>
               <button
                 className={favorite === false ? s.btnFalse : s.btnTrue}
                 onClick={handleAddFavorite}
