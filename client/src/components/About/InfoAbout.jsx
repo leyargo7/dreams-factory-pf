@@ -28,8 +28,8 @@ export const info = [
     {
         name: "Juan Ignacio Camus" ,
         image: image,
-        linkedIn:"", 
-        gitHub: ""
+        linkedIn:"https://www.linkedin.com/in/juani-camus-703102251/", 
+        gitHub: "https://github.com/Juanicamuss21"
     },
     {
         name: "Ayelén Montenegro" ,

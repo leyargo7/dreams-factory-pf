@@ -12,6 +12,7 @@ export const DELETE_ONE = "DELETE_ONE"
 
 export const OPEN_CART = "OPEN_CART";
 export const ADD_CART = "ADD_CART";
+export const REMOVE_CART = "REMOVE_CART";
 export const DELETE_CART = "DELETE_CART";
 export const DELETE_FAVORITE = "DELETE_FAVORITE"
 
@@ -105,6 +106,13 @@ export function clickOpenCart(payload) {
 export function addCart(payload) {
     return {
         type: ADD_CART,
+        payload
+    }
+}
+
+export function removeCart(payload) {
+    return {
+        type: REMOVE_CART,
         payload
     }
 }
