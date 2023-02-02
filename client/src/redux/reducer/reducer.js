@@ -88,13 +88,11 @@ function rootReducer(state = initialState, action) {
     case ADD_CART:
       const found = state.add_Cart.find((p) => action.payload._id === p._id);
       if (!found) {
-        console.log(found)
         return {
           ...state,
           add_Cart: [...state.add_Cart, { ...action.payload, cant: 1 }],
         };
       } else {
-        console.log(found)
         return {
           ...state,
           add_Cart: [...state.add_Cart.filter((p) => p._id !== found._id), { ...found, cant: found.cant + 1 }],

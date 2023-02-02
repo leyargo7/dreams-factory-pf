@@ -65,79 +65,63 @@ export default function Card({
       toast.error("removed from favorites");
     }
   };
-  //
 
-  // if (inStock > 0) {
-  //   dispatch(addCart(productID));
-  //   inStock = inStock - 1;
-  //   //console.log(productID.inStock);
-  //   toast.success("added to cart");
-  //   // console.log(buttonOn);
-  //   setButtonOn(true);
-  // } else {
-  //   productID.inStock = 0;
-  //   setButtonOn(false);
-  //   toast.error("product not avaible");
-  //   //console.log(buttonOn);
-  // }
-
-  //
   return (
-    <NavLink className={s.NavLink} to={`/product/${_id}`}>
-      <div className={s.shell}>
-        <div className={s.header}>
-          <h4>{title}</h4>
-        </div>
+    <div className={s.shell}>
+      <div className={s.header}>
+        <h4>{title}</h4>
+      </div>
+      <NavLink className={s.NavLink} to={`/product/${_id}`}>
         <div className={s.imgShell}>
           <img className={s.img} src={img} alt='img not found' />
         </div>
-        <div className={s.footer}>
-          <h4 style={{ margin: "10px 0 0 0" }}>
-            <div style={{ userSelect: "none", color: "#ffff74" }}>
-              <Rating
-                initialRating={rating}
-                emptySymbol={<BsStar />}
-                fullSymbol={<BsStarFill />}
-                halfSymbol={<BsStarHalf />}
-                readonly={true}
-              />
-            </div>
-          </h4>
-          <div className={s.footerPrice}>
-            <button
-              disabled={!buttonOn}
-              className={s.cartBtn}
-              onClick={(e) => handleAddCart(e)}
-            >
-              <ImCart />
-            </button>
-            <h2 style={{ margin: "0 0 10px 0" }}>
-              <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
-                $
-              </span>
-              {price}
-            </h2>
-            <button
-              className={favorite === false ? s.btnFalse : s.btnTrue}
-              onClick={(e) => handleAddFavorite(e)}
-            >
-              ❤
-            </button>
+      </NavLink>
+      <div className={s.footer}>
+        <h4 style={{ margin: "10px 0 0 0" }}>
+          <div style={{ userSelect: "none", color: "#ffff74" }}>
+            <Rating
+              initialRating={rating}
+              emptySymbol={<BsStar />}
+              fullSymbol={<BsStarFill />}
+              halfSymbol={<BsStarHalf />}
+              readonly={true}
+            />
           </div>
+        </h4>
+        <div className={s.footerPrice}>
+          <button
+            disabled={!buttonOn}
+            className={s.cartBtn}
+            onClick={(e) => handleAddCart(e)}
+          >
+            <ImCart />
+          </button>
+          <h2 style={{ margin: "0 0 10px 0" }}>
+            <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
+              $
+            </span>
+            {price}
+          </h2>
+          <button
+            className={favorite === false ? s.btnFalse : s.btnTrue}
+            onClick={(e) => handleAddFavorite(e)}
+          >
+            ❤
+          </button>
         </div>
-        <Toaster
-          position='bottom-right'
-          reverseOrder={true}
-          toastOptions={{
-            className: "",
-            duration: 3000,
-            style: {
-              background: "#363636",
-              color: "white",
-            },
-          }}
-        />
       </div>
-    </NavLink>
+      <Toaster
+        position='bottom-right'
+        reverseOrder={true}
+        toastOptions={{
+          className: "",
+          duration: 3000,
+          style: {
+            background: "#363636",
+            color: "white",
+          },
+        }}
+      />
+    </div>
   );
 }
