@@ -40,7 +40,7 @@ const Cart = () => {
         failure: "http://localhost:3000",
         pending: "http://localhost:3000",
       },
-      // notification_url: "https://www.your-site.com/ipn",
+      // notification_url: `http://localhost:3001/api/notifications`,
     };
     axios
       .post(`${SERVER_URL}/api/payment`, body, {

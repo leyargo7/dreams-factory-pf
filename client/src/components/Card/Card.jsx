@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Toaster, toast } from "react-hot-toast";
@@ -14,24 +14,49 @@ import { ImCart } from "react-icons/im";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
 
-export default function Card({ title, img, description, rating, price, _id }) {
+export default function Card({
+  title,
+  img,
+  description,
+  rating,
+  price,
+  _id,
+  inStock,
+}) {
   const favorites = useSelector((state) => state.favorites);
+  const add_Cart = useSelector((state) => state.add_Cart);
   const dispatch = useDispatch();
   const found = favorites.find((f) => f._id === _id);
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
   //const cart_add = useSelector((state) => state.add_Cart);
+  const [buttonOn, setButtonOn] = useState(true);
+
+  useEffect(() => {
+    if (!add_Cart.find((p) => p._id === _id)) {
+      setButtonOn(true);
+    }
+  }, [add_Cart]);
 
   const handleAddCart = (e) => {
     e.preventDefault();
-    dispatch(addCart({ title, img, description, rating, price, _id }));
-    toast.success("added to cart");
+    if (inStock > 0) {
+      dispatch(
+        addCart({ title, img, description, rating, price, _id, inStock })
+      );
+      toast.success("added to cart");
+      setButtonOn(false);
+    } else {
+      toast.error("Not available");
+    }
   };
 
   const handleAddFavorite = (e) => {
     e.preventDefault();
     if (favorite === true) {
       setFavorite(() => false);
-      dispatch(addFavorite({ title, img, rating, price, _id, favorite: false }));
+      dispatch(
+        addFavorite({ title, img, rating, price, _id, favorite: false })
+      );
       toast.success("added to favorite");
     } else {
       setFavorite(() => true);
@@ -40,38 +65,64 @@ export default function Card({ title, img, description, rating, price, _id }) {
       toast.error("removed from favorites");
     }
   };
+  //
 
+  // if (inStock > 0) {
+  //   dispatch(addCart(productID));
+  //   inStock = inStock - 1;
+  //   //console.log(productID.inStock);
+  //   toast.success("added to cart");
+  //   // console.log(buttonOn);
+  //   setButtonOn(true);
+  // } else {
+  //   productID.inStock = 0;
+  //   setButtonOn(false);
+  //   toast.error("product not avaible");
+  //   //console.log(buttonOn);
+  // }
+
+  //
   return (
-  
     <NavLink className={s.NavLink} to={`/product/${_id}`}>
-    <div className={s.shell}>
+      <div className={s.shell}>
         <div className={s.header}>
           <h4>{title}</h4>
         </div>
         <div className={s.imgShell}>
           <img className={s.img} src={img} alt='img not found' />
-      </div>
-      <div className={s.footer}>
-        <h4 style={{ margin: "10px 0 0 0" }}>          
-          <div style={{ userSelect: "none", color: "#ffff74" }} >
-          <Rating
+        </div>
+        <div className={s.footer}>
+          <h4 style={{ margin: "10px 0 0 0" }}>
+            <div style={{ userSelect: "none", color: "#ffff74" }}>
+              <Rating
                 initialRating={rating}
                 emptySymbol={<BsStar />}
                 fullSymbol={<BsStarFill />}
                 halfSymbol={<BsStarHalf />}
                 readonly={true}
               />
-          </div>
-        </h4>
-        <div className={s.footerPrice}>
-          <button className={s.cartBtn} onClick={(e) => handleAddCart(e)}><ImCart/></button>       
-          <h2 style={{ margin: "0 0 10px 0" }}>
-            <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
-              $
-            </span>
-            {price}
-          </h2>
-          <button className={favorite === false? s.btnFalse : s.btnTrue} onClick={(e) => handleAddFavorite(e)}>❤</button>
+            </div>
+          </h4>
+          <div className={s.footerPrice}>
+            <button
+              disabled={!buttonOn}
+              className={s.cartBtn}
+              onClick={(e) => handleAddCart(e)}
+            >
+              <ImCart />
+            </button>
+            <h2 style={{ margin: "0 0 10px 0" }}>
+              <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
+                $
+              </span>
+              {price}
+            </h2>
+            <button
+              className={favorite === false ? s.btnFalse : s.btnTrue}
+              onClick={(e) => handleAddFavorite(e)}
+            >
+              ❤
+            </button>
           </div>
         </div>
         <Toaster
@@ -86,9 +137,7 @@ export default function Card({ title, img, description, rating, price, _id }) {
             },
           }}
         />
-        
-        
       </div>
-      </NavLink>
+    </NavLink>
   );
 }

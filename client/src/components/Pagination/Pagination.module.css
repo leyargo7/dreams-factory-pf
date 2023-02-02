@@ -9,6 +9,7 @@
   margin: 15px 5px;
   padding: 5px 10px;
   cursor:pointer;
+  font-family: poor Richard;
 }
 
 .btn:active {
@@ -22,7 +23,6 @@
   border: 2px solid rgba(228, 18, 193, 0.4);
   text-align: center;
   color: white;
-  font-family: chiller;
   font-size: 20px;
   font-weight: 900;
   margin: 15px 5px;
@@ -32,5 +32,6 @@
   background-color: rgba(241 23 203 / 73%);
   box-shadow: 0 0 10px rgba(1241 23 203 / 73%),
   0 0 40px rgba(1241 23 203 / 73%),
-  0 0 80px rgba(1241 23 203 / 73%);;  
+  0 0 80px rgba(1241 23 203 / 73%);
+  font-family: poor Richard;
 }

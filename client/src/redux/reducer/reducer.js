@@ -34,6 +34,7 @@ const initialState = {
   errorHome: false,
 };
 
+
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case GET_PRODUCTS:
@@ -43,13 +44,13 @@ function rootReducer(state = initialState, action) {
         copyProducts: action.payload,
       };
 
-    case GET_PRODUCT_BY_NAME:{
+    case GET_PRODUCT_BY_NAME: {
       const all = state.all
-      const search = all.filter((f )=> f.title.toLowerCase().includes(action.payload.toLowerCase()))
+      const search = all.filter((f) => f.title.toLowerCase().includes(action.payload.toLowerCase()))
       return {
-     ...state,
+        ...state,
         copyProducts: search,
-       };
+      };
     }
     case GET_CATEGORIES:
       return {
@@ -85,17 +86,27 @@ function rootReducer(state = initialState, action) {
         clickOpenCart: !state.clickOpenCart,
       };
     case ADD_CART:
-      return {
-        ...state,
-        add_Cart: [...state.add_Cart, action.payload],
-      };
+      const found = state.add_Cart.find((p) => action.payload._id === p._id);
+      if (!found) {
+        console.log(found)
+        return {
+          ...state,
+          add_Cart: [...state.add_Cart, { ...action.payload, cant: 1 }],
+        };
+      } else {
+        console.log(found)
+        return {
+          ...state,
+          add_Cart: [...state.add_Cart.filter((p) => p._id !== found._id), { ...found, cant: found.cant + 1 }],
+        };
+      }
     case DELETE_CART:
       return {
         ...state,
         add_Cart: [],
       };
     case DELETE_FAVORITE:
-      return{
+      return {
         ...state,
         favorites: state.favorites.filter(el => el._id !== action.payload)
       }
@@ -113,7 +124,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         isRegister: action.payload,
       }
-    
+
     case LOGIN_USER:
       return {
         ...state,

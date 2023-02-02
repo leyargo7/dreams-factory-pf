@@ -14,6 +14,7 @@ const Cards = ({ currentProducts }) => {
               description={ev.description}
               rating={ev.rating}
               price={ev.price}
+              inStock={ev.inStock}
               _id={ev._id}
             />
           </div>
