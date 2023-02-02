@@ -49,8 +49,7 @@ export default function Home() {
 console.log();
   return (
     <div>
-      
-      
+      <CarouselComponent /> 
       <div>
         <Searchbar setCurrentPage={setCurrentPage} />
         <Pagination
