@@ -16,6 +16,7 @@ import {
   IS_LOGIN,
   ERROR_LOGIN,
   ERROR_FOR_HOME,
+  DELETE_ONE
 } from "../actions/actions";
 
 const initialState = {
@@ -98,8 +99,7 @@ function rootReducer(state = initialState, action) {
       return{
         ...state,
         favorites: state.favorites.filter(el => el._id !== action.payload)
-      }
-
+      };
 
     case REGISTER_USER:
       return {

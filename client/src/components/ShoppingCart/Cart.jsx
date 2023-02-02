@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { SERVER_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
-import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
+import { clickOpenCart, deleteCart} from "../../redux/actions/actions";
 import axios from "axios";
 import style from "./Cart.module.css";
 
@@ -71,6 +71,7 @@ const Cart = () => {
           cart_add.map((e, i) => {
             return (
               <div className={style.data} key={i}>
+                <button onClick={() => handleDeleteOne(e)}>x</button>
                 <div>
                   <img src={e.img} alt='img' className={style.imgCart} />
                 </div>
