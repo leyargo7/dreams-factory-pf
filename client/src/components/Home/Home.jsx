@@ -49,31 +49,37 @@ export default function Home() {
   console.log();
   return (
     <div>
-      <CarouselComponent />
+
 
       <div>
-        <Searchbar setCurrentPage={setCurrentPage} />
-        <Pagination
-          currentPage={currentPage}
-          productPerPage={productPerPage}
-          allProduct={allProducts.length}
-          pagination={pagination}
-        />
+        <CarouselComponent />
+
+        <div>
+          <Searchbar setCurrentPage={setCurrentPage} />
+          <Pagination
+            currentPage={currentPage}
+            productPerPage={productPerPage}
+            allProduct={allProducts.length}
+            pagination={pagination}
+          />
+        </div>
+
+        <Cards currentProducts={currentProducts} />
+
+        <div>
+          <Pagination
+            currentPage={currentPage}
+            productPerPage={productPerPage}
+            allProduct={allProducts.length}
+            pagination={pagination}
+          />
+        </div>
+
+
+
+
       </div>
-
-      <Cards currentProducts={currentProducts} />
-
-      <div>
-        <Pagination
-          currentPage={currentPage}
-          productPerPage={productPerPage}
-          allProduct={allProducts.length}
-          pagination={pagination}
-        />
-      </div>
-
-
-
     </div>
+
   );
 }

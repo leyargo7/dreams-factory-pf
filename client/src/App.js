@@ -10,10 +10,9 @@ import s from "./App.module.css";
 import FAQs from './components/FAQs/FAQs.jsx';
 import Terms from './components/Terms/Terms.jsx';
 import Privacy from './components/Privacy/Privacy.jsx';
+import About from './components/About/About.jsx';
 import MyOrders from './components/MyOrders/MyOrders.jsx';
 import Login from './components/Login/Login.jsx';
-
-
 
 function App() {
   return (
@@ -29,10 +28,10 @@ function App() {
       <Route exact path="/terms" component={Terms} />
       <Route exact path="/privacy" component={Privacy}/>
       <Route exact path="/faqs" component={FAQs}/>
+      <Route exact path="/about" component={About}/>
       <Footer />
     </div>
   );
 }
 
 export default App;
-
