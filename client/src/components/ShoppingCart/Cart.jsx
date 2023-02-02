@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { SERVER_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
-import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
+import {
+  clickOpenCart,
+  deleteCart,
+  addCart,
+  removeCart,
+} from "../../redux/actions/actions";
 import axios from "axios";
 import style from "./Cart.module.css";
 
@@ -25,35 +30,49 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    const body = {
-      items: cart_add.map((p) => {
-        return {
-          title: p.title,
-          description: p.description,
-          picture_url: p.img,
-          quantity: 1,
-          unit_price: p.price,
-        };
-      }),
-      back_urls: {
-        success: "http://localhost:3000",
-        failure: "http://localhost:3000",
-        pending: "http://localhost:3000",
-      },
-      // notification_url: `http://localhost:3001/api/notifications`,
-    };
-    axios
-      .post(`${SERVER_URL}/api/payment`, body, {
-        headers: {
-          "Content-Type": "application/json",
+    if (window.localStorage.token) {
+      const body = {
+        items: cart_add.map((p) => {
+          return {
+            title: p.title,
+            description: p.description,
+            picture_url: p.img,
+            quantity: p.cant,
+            unit_price: p.price,
+          };
+        }),
+        back_urls: {
+          success: "http://localhost:3000",
+          failure: "http://localhost:3000",
+          pending: "http://localhost:3000",
         },
-      })
-      .then((r) => (window.location.href = r.data.init_point));
+        // notification_url: `http://localhost:3001/api/notifications`,
+      };
+      axios
+        .post(`${SERVER_URL}/api/payment`, body, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((r) => (window.location.href = r.data.init_point));
+    }
   };
 
   const cleanCart = (e) => {
     e.preventDefault();
     dispatch(deleteCart());
+  };
+
+  const handleIncrease = (e) => {
+    const addProduct = cart_add.find((p) => p._id === e.target.name);
+    if (addProduct.cant < addProduct.inStock) {
+      dispatch(addCart(addProduct));
+    }
+  };
+
+  const handleDecrease = (e) => {
+    const removeProduct = cart_add.find((p) => p._id === e.target.name);
+    dispatch(removeCart(removeProduct));
   };
 
   return (
@@ -75,7 +94,16 @@ const Cart = () => {
                   <img src={e.img} alt='img' className={style.imgCart} />
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
+                {/*  */}
+                <button name={e._id} onClick={(e) => handleDecrease(e)}>
+                  -
+                </button>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
+                <p>x{e.cant}</p>
+                <button name={e._id} onClick={(e) => handleIncrease(e)}>
+                  +
+                </button>
+                {/*  */}
               </div>
             );
           })
@@ -87,7 +115,7 @@ const Cart = () => {
           <div className={style.totalPrice}>
             $
             {cart_add.reduce((acc, e) => {
-              let total = acc + e.price;
+              let total = (acc + e.price) * e.cant;
               let totalFixed = parseFloat(total.toFixed(2));
 
               return totalFixed;

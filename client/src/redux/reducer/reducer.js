@@ -8,6 +8,7 @@ import {
   CLEAR_DETAIL,
   OPEN_CART,
   ADD_CART,
+  REMOVE_CART,
   DELETE_CART,
   DELETE_FAVORITE,
   REGISTER_USER,
@@ -97,6 +98,19 @@ function rootReducer(state = initialState, action) {
           ...state,
           add_Cart: [...state.add_Cart.filter((p) => p._id !== found._id), { ...found, cant: found.cant + 1 }],
         };
+      }
+    case REMOVE_CART:
+      const scan = state.add_Cart.find((p) => action.payload._id === p._id);
+      if (scan && scan.cant > 1) {
+        return {
+          ...state,
+          add_Cart: [...state.add_Cart.filter((p) => p._id !== scan._id), { ...scan, cant: scan.cant - 1 }],
+        };
+      } else {
+        return {
+          ...state,
+          add_Cart: [...state.add_Cart.filter((p) => p._id !== scan._id)]
+        }
       }
     case DELETE_CART:
       return {
