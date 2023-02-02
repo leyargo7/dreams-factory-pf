@@ -11,7 +11,7 @@ export default function Faqs() {
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Way to pay
+                               <strong>Way to pay</strong> 
                             </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -24,7 +24,7 @@ export default function Faqs() {
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingTwo">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                Delivery time
+                                <strong>Delivery time</strong>
                             </button>
                         </h2>
                         <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -37,7 +37,7 @@ export default function Faqs() {
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingThree">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                Change
+                                <strong>Change</strong>
                             </button>
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -50,7 +50,7 @@ export default function Faqs() {
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingFour">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                I made a purchase and I did not receive the new order confirmation email, what do I do?
+                               <strong> I made a purchase and I did not receive the new order confirmation email, what do I do?</strong>
                             </button>
                         </h2>
                         <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -63,7 +63,7 @@ export default function Faqs() {
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingFive">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                How do I cancel my purchase?
+                                <strong>How do I cancel my purchase?</strong>
                             </button>
                         </h2>
                         <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
