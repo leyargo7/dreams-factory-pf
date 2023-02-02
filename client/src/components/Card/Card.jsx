@@ -29,7 +29,7 @@ export default function Card({
   const found = favorites.find((f) => f._id === _id);
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
   //const cart_add = useSelector((state) => state.add_Cart);
-  const [buttonOn, setButtonOn] = useState(true);
+  const [buttonOn, setButtonOn] = useState(add_Cart ? false : true);
 
   useEffect(() => {
     if (!add_Cart.find((p) => p._id === _id)) {

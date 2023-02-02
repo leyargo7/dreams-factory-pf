@@ -35,11 +35,16 @@ export default function Detail() {
     };
   }, []);
 
+  
   useEffect(() => {
-    if (!add_Cart.find((p) => p._id === productID._id)) {
-      setButtonOn(true);
-    }
-  }, [add_Cart]);
+    favorites.find((f) => f._id === productID._id) && setFavorite(false) 
+  }, [productID]);
+ 
+
+  useEffect(() => {
+    add_Cart.find((p) => p._id === productID._id) && setButtonOn(false);
+    
+  }, [add_Cart, productID]);
 
   const handleAddCart = (e) => {
     if (productID.inStock > 0) {
@@ -208,7 +213,7 @@ export default function Detail() {
             <ul style={{ textAlign: "start" }}>
               {!productID.description
                 ? null
-                : productID.description.split(".,").map((d) => <li>{d}</li>)}
+                : productID.description.split(".,").map((d) => <li key={productID.title}>{d}</li>)}
             </ul>
             <div className={s.stars}>
               <p className={s.price}>
