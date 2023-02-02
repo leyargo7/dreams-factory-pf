@@ -26,11 +26,11 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getProducts());
-    if(window.localStorage.errorOrder){
+    if (window.localStorage.errorOrder) {
       toast.error('You must be logged in to access this page')
     }
 
-    if(isRegisterComp){
+    if (isRegisterComp) {
       toast.success('User created successfully')
     }
     <Toaster />
@@ -41,15 +41,16 @@ export default function Home() {
     }, 2000);
 
 
-    
-    
-  }, [dispatch]); 
 
 
-console.log();
+  }, [dispatch]);
+
+
+  console.log();
   return (
     <div>
-      <CarouselComponent /> 
+      <CarouselComponent />
+
       <div>
         <Searchbar setCurrentPage={setCurrentPage} />
         <Pagination
@@ -71,7 +72,7 @@ console.log();
         />
       </div>
 
-      
+
 
     </div>
   );
