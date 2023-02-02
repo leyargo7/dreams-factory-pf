@@ -113,6 +113,15 @@
   width: 210px;
 }
 
+.buttons button:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+
+.buttons button:disabled:hover{
+  background-color: gray;
+}
+
 .buttons button:hover {
   background-color: #30e717;
   font-size: 1.1rem;

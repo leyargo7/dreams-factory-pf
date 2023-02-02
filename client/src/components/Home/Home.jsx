@@ -45,12 +45,8 @@ export default function Home() {
 
   }, [dispatch]);
 
-
-  console.log();
   return (
     <div>
-
-
       <div>
         <CarouselComponent />
 
@@ -74,10 +70,6 @@ export default function Home() {
             pagination={pagination}
           />
         </div>
-
-
-
-
       </div>
     </div>
 
