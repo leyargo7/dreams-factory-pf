@@ -15,7 +15,7 @@ const Favorites = () => {
     if (user) {
         return (
 
-            <div>
+            <div className={s.all}>
                 <h2 className={s.title2}>FAVORITES</h2>
                 <div className={s.container}>
 
@@ -25,7 +25,7 @@ const Favorites = () => {
                             title={e.title} img={e.img} rating={e.rating} price={e.price} _id={e._id} />
 
                     )) : (
-                        <div className={s.empty}><h3>There is not product you are looking for</h3></div>
+                        <div className={s.empty}><h3>Here will be your favorite products...</h3></div>
                     )}
 
                 </div>
