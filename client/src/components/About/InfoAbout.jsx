@@ -4,8 +4,8 @@ export const info = [
     {
         name: "John Alexander Noreña" ,
         image: image,
-        linkedIn:"", 
-        gitHub: ""
+        linkedIn:"https://www.linkedin.com/in/john-alexander-nore%C3%B1a-angel-323427173/", 
+        gitHub: "https://github.com/john11256"
     },
     {
         name: "Arley Gonzales Guamanda " ,
@@ -16,8 +16,8 @@ export const info = [
     {
         name: "Juan José Rodríguez" ,
         image: image,
-        linkedIn:"", 
-        gitHub: ""
+        linkedIn:"https://www.linkedin.com/in/juan-jos%C3%A9-rodriguez-valcke/", 
+        gitHub: "https://github.com/Zoranspiegel"
     },
     {
         name: "Mirta Graciela Sampallo" ,
@@ -34,13 +34,13 @@ export const info = [
     {
         name: "Ayelén Montenegro" ,
         image: image,
-        linkedIn:"", 
-        gitHub: ""
+        linkedIn:"https://www.linkedin.com/in/ayelén-montenegro", 
+        gitHub: "https://github.com/ayee22"
     },
     {
         name: "Fatima Rocio Pablete" ,
         image: image,
-        linkedIn:"", 
-        gitHub: ""
+        linkedIn:"https://www.linkedin.com/in/fatima-pablete", 
+        gitHub: "https://github.com/pabletefatimarocio"
     },
 ]

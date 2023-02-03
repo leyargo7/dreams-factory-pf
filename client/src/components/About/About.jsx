@@ -1,38 +1,41 @@
 import React from "react";
 import { info } from "./InfoAbout.jsx";
-import s from "./About.module.css";
+import "./About.css"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export default function About () {
-    return (
-    <div className={s.about}>
-    <h1>TEAM</h1>   
-    <div className={s.container}>
-            
-    {
-   info.map((ev) => {
-       return(
-        <div className={s.shell}>
-            <div className={s.decoration}></div>
-
-            <div className={s.imgShell}>
-                <img src={ev.image} alt='img not found' />
-            </div> 
-
-           <div className={s.header}>
-                <h3>{ev.name}</h3>
-            <a href={ev.linkedIn}> <button ><AiFillLinkedin/></button> </a>
-            <a href={ev.gitHub} > <button ><AiFillGithub/></button> </a>
+    return(
+        <div className="abaut">
+            <div className="header">
+                <h1 className="title">ABOUT US</h1>               
+                <p>
+                Hello! We are the creators of Dreams Factory, a website where you can build your pc gamer, and meet their properties. We studied at "SoyHenry" to become Full Stack Developers, learning various technologies and tools to perform successfully in the workplace. In this section you will find the information of each one of us, and our respective links to Linkedin and GitHub. Thank you for visiting our website!
+                </p>
             </div>
- 
-            </div>           
-        )
-    })
-    }
+            <div className="cardsAbout">
+                {info.map((user) => {
+                    return(
+                        <div>
+                        
+                        <div className="cardsInfo">
+                            <div className="logos">
+                                <a href={user.linkedIn} target="_blanck" id='icono' className="logo-container">
+                                    <AiFillLinkedin id="contenedor"/>
+                                </a>
+                                <a href={user.gitHub} target="_blanck" id="icono" className="logo-container">
+                                    <AiFillGithub id="contenedor"/>
+                                </a>
+                            </div>
+                            <h3>Full Stack Developer</h3>
+                            <h2 className="letraName">{user.name}</h2>
+                            <img src={user.image} width="195" alt="profile" />
+                        </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
-    </div>
-
-      );
+    )
 
 }
 
