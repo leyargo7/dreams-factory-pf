@@ -14,11 +14,9 @@
 .shell:hover {
   position: relative;
   box-shadow: none;
-  box-shadow:
-   -8px -8px 10px rgba(169, 3, 140,0.7),
-   8px -8px 10px rgba(169, 3, 140,0.7),
-   8px 8px 10px rgba(169, 3, 140,0.7),
-   -8px 8px 10px rgba(169, 3, 140,0.7);
+  box-shadow: -8px -8px 10px rgba(169, 3, 140, 0.7),
+    8px -8px 10px rgba(169, 3, 140, 0.7), 8px 8px 10px rgba(169, 3, 140, 0.7),
+    -8px 8px 10px rgba(169, 3, 140, 0.7);
   top: -7px;
 }
 
@@ -46,22 +44,19 @@
   background-color: rgb(30, 30, 30);
   color: white;
   border-radius: 0 0 17px 17px;
-
 }
 
-.footerPrice{
+.footerPrice {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  
 }
 .footerPrice h2 {
   position: relative;
   top: 5px;
   font-size: 1.5rem;
   font-weight: 400;
- 
 }
 
 .footerPrice button {
@@ -69,20 +64,20 @@
   height: 38px;
   width: 100px;
   border-radius: 10px;
-  border: none;  
+  border: none;
   color: white;
   font-size: 23px;
   font-weight: 400;
   cursor: pointer;
 }
 .footerPrice button:hover {
-  background-color: #30E717;
+  background-color: #30e717;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
 .btnFalse {
-  background-color: #30E717;
+  background-color: #30e717;
 }
 
 .btnTrue {
@@ -91,6 +86,15 @@
 .cartBtn {
   padding-top: 6px;
   background-color: rgb(108, 34, 177);
+}
+
+.cartBtn:disabled {
+  background-color: gray;
+  cursor: auto;
+}
+
+.cartBtn:disabled:hover {
+  background-color: gray;
 }
 
 .NavLink {

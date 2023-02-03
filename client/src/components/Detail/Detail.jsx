@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { ImCart } from "react-icons/im";
 import {
   addCart,
   addFavorite,
@@ -18,11 +19,12 @@ export default function Detail() {
   const dispatch = useDispatch();
   const productID = useSelector((state) => state.idProduct);
   const favorites = useSelector((state) => state.favorites);
+  const add_Cart = useSelector((state) => state.add_Cart);
   const found = favorites.find((f) => f._id === productID._id);
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
+  const [buttonOn, setButtonOn] = useState(true);
 
   const { id } = useParams();
-  console.log(productID);
   useEffect(() => {
     dispatch(idProduct(id));
   }, [dispatch, id]);
@@ -33,10 +35,25 @@ export default function Detail() {
     };
   }, []);
 
+  
+  useEffect(() => {
+    favorites.find((f) => f._id === productID._id) && setFavorite(false) 
+  }, [productID]);
+ 
+
+  useEffect(() => {
+    add_Cart.find((p) => p._id === productID._id) && setButtonOn(false);
+    
+  }, [add_Cart, productID]);
+
   const handleAddCart = (e) => {
-    e.preventDefault();
-    dispatch(addCart(productID));
-    toast.success("added to cart");
+    if (productID.inStock > 0) {
+      dispatch(addCart(productID));
+      toast.success("added to cart");
+      setButtonOn(false);
+    } else {
+      toast.error("product not avaible");
+    }
   };
 
   const handleAddFavorite = (e) => {
@@ -44,12 +61,10 @@ export default function Detail() {
     if (favorite === true) {
       setFavorite(() => false);
       dispatch(addFavorite({ ...productID, favorite: false }));
-      console.log(favorite);
       toast.success("added to favorite");
     } else {
       setFavorite(() => true);
       dispatch(deleteFavorite(productID._id));
-      console.log(favorite);
       toast.error("removed from favorites");
     }
   };
@@ -198,7 +213,7 @@ export default function Detail() {
             <ul style={{ textAlign: "start" }}>
               {!productID.description
                 ? null
-                : productID.description.split(".,").map((d) => <li>{d}</li>)}
+                : productID.description.split(".,").map((d) => <li key={productID.title}>{d}</li>)}
             </ul>
             <div className={s.stars}>
               <p className={s.price}>
@@ -214,7 +229,9 @@ export default function Detail() {
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
-              <button onClick={(e) => handleAddCart(e)}>add Cart</button>
+              <button disabled={!buttonOn} onClick={(e) => handleAddCart(e)}>
+                <ImCart />
+              </button>
               <button
                 className={favorite === false ? s.btnFalse : s.btnTrue}
                 onClick={handleAddFavorite}

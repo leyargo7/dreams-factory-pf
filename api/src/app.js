@@ -5,8 +5,10 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const app = express();
 const paymentRoutes = require("./routes/payment");
+const notificationRoutes = require("./routes/notifications");
 const productRoutes = require('./routes/products.routes')
 const categoryRoutes = require('./routes/categories.routes')
+const mailBody = require('./routes/mailBody');
 const api = require('./routes/api.routes')
 
 require('./config/mongoose');
@@ -23,23 +25,23 @@ app.set('port', process.env.PORT || 3001);
 
 app.use(morgan('dev'));
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-  
+
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Credentials", "true");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    res.header(
-      "Access-Control-Allow-Methods",
-      "GET, POST, OPTIONS, PUT, DELETE"
-    );
-    next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, DELETE"
+  );
+  next();
 });
-app.use(express.urlencoded({extended: true}));  
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use(cookieSession({
 //     name: 'session',
@@ -55,6 +57,8 @@ app.use('/api', productRoutes)
 app.use('/api', categoryRoutes)
 app.use('/api', ordersRoutes)
 app.use('/api', paymentRoutes)
+app.use('/api', notificationRoutes)
+app.use('/api', mailBody)
 app.use(api)
 
 module.exports = app;
