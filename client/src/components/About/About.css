@@ -13,6 +13,10 @@
   .scroll{
     margin-right: 4%;
   }
+
+  .header h1{
+    color: rgb(198, 18, 214);
+  }
   
   .header{
     display: flex;
