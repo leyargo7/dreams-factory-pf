@@ -1,3 +1,4 @@
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -6,18 +7,29 @@
 }
 
 .title2{
-    color: white;
+    color: rgb(198, 18, 214);
     text-decoration-line: overline;
     letter-spacing: 6px;
+    
 }
 
-.empty{
-    padding-bottom: 450px;
- }
 
  .empty {
-    display: flex;
-   padding-top: 150px;
+    padding-top: 150px;
     color: white;
+    padding-bottom: 450px;
+    letter-spacing: 2px;
+ }
+
+ .empty h3{
+    display: flex;
+    width: 700px;
+    height: 350px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid beige;
+    box-shadow: -9px -9px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
     
  }
