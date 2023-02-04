@@ -3,13 +3,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
   margin: 10px;
   background-color: white;
-  box-shadow: -3px -3px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
+  box-shadow: -9px -9px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
   border-radius: 20px;
   transition: all 0.1s ease-in-out;
+  
 }
 .shell:hover {
   position: relative;
@@ -72,21 +73,21 @@
   cursor: pointer;
 }
 .footerPrice button:hover {
-  background-color: #81B214;
+  background-color: #367E18;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
 .btnFalse {
-  background-color: #81B214;
+  background-color: #367E18;
 }
 
 .btnTrue {
-  background-color: rgb(108, 34, 177);
+  background-color: #6C00FF;
 }
 .cartBtn {
-  background-color: rgb(108, 34, 177);
-}
+  /* background-color: #2D033B; */
+  background-color: #6C00FF;}
 
 .cartBtn:disabled {
   background-color: gray;

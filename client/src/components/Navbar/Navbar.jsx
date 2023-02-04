@@ -168,6 +168,8 @@ import cart from "../../images/carrito-compras3.jpg";
 import s from "./Navbar.module.css";
 import Cart from "../ShoppingCart/Cart";
 import MyOrders from "../MyOrders/MyOrders";
+import {FaUsers} from "react-icons/fa"
+import {RiHeartsFill} from "react-icons/ri"
 
 const Navbar = () => {
   const [user, setUser] = useState({
@@ -330,10 +332,10 @@ const Navbar = () => {
       </NavLink>
       <div className={s.right}>
         <NavLink className={s.link} to="/about">
-          <h2>About</h2>
+          <h2><FaUsers/></h2>
         </NavLink>
         <NavLink className={s.link} to="/favorites">
-          <h2>❤</h2>
+          <h2><RiHeartsFill/></h2>
         </NavLink>
 
         {window.localStorage.token ? (
