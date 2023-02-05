@@ -27,12 +27,12 @@ passport.use(
             cb(err, null);
         });
         if(user){
-            console.log("User already exists", user)
+            // console.log("User already exists", user)
             cb(null, user)
         }else{
             const newUser = new User(defaultUser);
             newUser.save().then((user) => {
-                console.log("User created", user)
+                // console.log("User created", user)
                 cb(null, user)
             });
         }

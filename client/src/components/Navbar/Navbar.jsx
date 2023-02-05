@@ -43,7 +43,7 @@ const Navbar = () => {
   const googleUser = useSelector((state) => state.authGoogle);
 
   useEffect(() => {
-    if (googleUser._id || window.localStorage.token) {
+    if (localStorage.U || window.localStorage.token) {
       document.getElementById("logoSession").style = "display: none";
     }
     if(dbUser.message === "user created"){
@@ -195,7 +195,7 @@ const Navbar = () => {
           <h2><RiHeartsFill/></h2>
         </NavLink>
 
-        {window.localStorage.token || googleUser._id ? (
+        {window.localStorage.token || localStorage.U ? (
           <div>
             <NavLink className={s.link} to="/myorders">
               <button className={s.btnOrder}>My Orders</button>

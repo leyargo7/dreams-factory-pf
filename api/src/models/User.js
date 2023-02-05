@@ -29,6 +29,10 @@ const UserSchema = new Schema({
         type: String,
         default: 'client',
     },
+    purchases: {
+        type: Array,
+        default: [],
+    }
 }, {
     timestamps: true,
     versionKey: false,

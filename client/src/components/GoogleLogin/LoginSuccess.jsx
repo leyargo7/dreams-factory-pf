@@ -32,6 +32,7 @@ const LoginSuccess = () => {
 
     if (response && response.data) {
       setDataUser(response.data);
+      localStorage.setItem("U",JSON.stringify(response.data._id));
       dispatch(googleAuth(response.data));
       if(response.data.address !== "empty"){
         history.push("/");

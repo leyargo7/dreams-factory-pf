@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { getUser } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const MyOrders = () => {
+  const [userGoogle, setUserGoogle] = useState("");
+  const [purchases, setPurchases] = useState([]);
   const history = useHistory();
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.idUser);
-  const userGoogle = useSelector((state) => state.authGoogle);
+  // const userGoogle = useSelector((state) => state.authGoogle);
 
   useEffect(() => {
     if (!window.localStorage.token) {
@@ -23,7 +26,8 @@ const MyOrders = () => {
 
       dispatch(getUser(decoded.id));
     }
-    if (userGoogle._id) {
+    if (localStorage.U) {
+      axios.get(`http://localhost:3001/api/v1/user/${JSON.parse(localStorage.U)}`).then(r => setUserGoogle(r.data))
       history.push("/myorders");
     }
   }, [history, dispatch, userGoogle._id]);
