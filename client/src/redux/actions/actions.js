@@ -21,8 +21,14 @@ export const LOGIN_USER = "LOGIN_USER";
 export const IS_LOGIN = "IS_LOGIN";
 export const ERROR_LOGIN = "ERROR_LOGIN";
 
+export const GOOGLE_USER = "GOOGLE_USER";
+
 //erros
 export const ERROR_FOR_HOME = "ERROR_FOR_HOME";
+
+//db users
+export const GET_USER = "GET_USER";
+export const PUT_USER = "PUT_USER";
 
 export function getProducts() {
     return async function (dispatch) {
@@ -186,12 +192,60 @@ export function errorLogin (payload) {
     }
 }
 
+//------auth google --------------------
 
-//-------------------------------erros--------------------------------
+export function googleAuth(payload){
+    return{
+        type: GOOGLE_USER,
+        payload
+    }
+ }
+
+
+//-------------------------------errors--------------------------------
 
 export function errorForHome(payload) {
     return {
         type: ERROR_FOR_HOME,
         payload
+    }
+}
+
+//-------------------------------db users--------------------------------
+
+export function getUser(id) {
+    return async function (dispatch) {
+        try {
+            const json = await axios.get(`${SERVER_URL}/api/v1/user/${id}`);
+            return dispatch({
+                type: GET_USER,
+                payload: json.data
+            })
+        } catch (error) {
+            console.error(error)
+            return dispatch({
+                type: GET_USER,
+                payload: error.response.data
+            })  
+        }
+    }
+}
+
+//put user
+export function putUser(id, payload) {
+    return async function (dispatch) {
+        try {
+            const json = await axios.put(`${SERVER_URL}/api/v1/user/${id}`, payload);
+            return dispatch({
+                type: PUT_USER,
+                payload: json.data
+            })
+        } catch (error) {
+            console.error(error)
+            return dispatch({
+                type: PUT_USER,
+                payload: error.response.data
+            })  
+        }
     }
 }

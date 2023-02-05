@@ -12,6 +12,12 @@ import Privacy from './components/Privacy/Privacy.jsx';
 import About from './components/About/About.jsx';
 import MyOrders from './components/MyOrders/MyOrders.jsx';
 import Login from './components/Login/Login.jsx';
+import ErrorLogin from './components/ErrorLogin/ErrorLogin.jsx';
+import LoginSuccess from './components/GoogleLogin/LoginSuccess.jsx';
+import MyPerfil from './components/MyPerfil/MyPerfil.jsx';
+
+
+
 
 function App() {
   return (
@@ -19,10 +25,13 @@ function App() {
       <Route path="/" component={Navbar} />
       <Route path="/" component={CategorySelector} />
       <Route exact path="/" component={Home} />
+      <Route exact path="/myperfil" component={MyPerfil} /> 
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/myorders" component={MyOrders} />
       <Route exact path="/loginuser" component={Login} />
+      <Route exact path="/login/success" component={LoginSuccess}/>
+      <Route exact path="/login/error" component={ErrorLogin}/>
       <Route exact path="/product/:id" component={Detail} />
       <Route exact path="/terms" component={Terms} />
       <Route exact path="/privacy" component={Privacy}/>
