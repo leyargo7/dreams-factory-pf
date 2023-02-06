@@ -23,7 +23,7 @@ export default function Home() {
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+ 
   useEffect(() => {
     dispatch(getProducts());
     if(window.localStorage.errorOrder){
@@ -52,7 +52,10 @@ console.log();
       
       
       <div>
-        <Searchbar setCurrentPage={setCurrentPage} />
+      <CarouselComponent />
+     </div>
+      <div>
+        <Searchbar setCurrentPage={setCurrentPage}/>
         <Pagination
           currentPage={currentPage}
           productPerPage={productPerPage}
@@ -60,9 +63,9 @@ console.log();
           pagination={pagination}
         />
       </div>
-
+     
       <Cards currentProducts={currentProducts} />
-
+      
       <div>
         <Pagination
           currentPage={currentPage}

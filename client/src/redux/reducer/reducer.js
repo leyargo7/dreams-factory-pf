@@ -17,6 +17,9 @@ import {
   IS_LOGIN,
   ERROR_LOGIN,
   ERROR_FOR_HOME,
+  GOOGLE_USER,
+  GET_USER,
+  PUT_USER,
 } from "../actions/actions";
 
 const initialState = {
@@ -33,8 +36,10 @@ const initialState = {
   dataLogin: [],
   isLogin: false,
   errorHome: false,
+  authGoogle: [],
+  idUser: [],
+  putUser: [],
 };
-
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
@@ -46,8 +51,10 @@ function rootReducer(state = initialState, action) {
       };
 
     case GET_PRODUCT_BY_NAME: {
-      const all = state.all
-      const search = all.filter((f) => f.title.toLowerCase().includes(action.payload.toLowerCase()))
+      const all = state.all;
+      const search = all.filter((f) =>
+        f.title.toLowerCase().includes(action.payload.toLowerCase())
+      );
       return {
         ...state,
         copyProducts: search,
@@ -96,7 +103,10 @@ function rootReducer(state = initialState, action) {
       } else {
         return {
           ...state,
-          add_Cart: [...state.add_Cart.filter((p) => p._id !== found._id), { ...found, cant: found.cant + 1 }],
+          add_Cart: [
+            ...state.add_Cart.filter((p) => p._id !== found._id),
+            { ...found, cant: found.cant + 1 },
+          ],
         };
       }
     case REMOVE_CART:
@@ -104,13 +114,16 @@ function rootReducer(state = initialState, action) {
       if (scan && scan.cant > 1) {
         return {
           ...state,
-          add_Cart: [...state.add_Cart.filter((p) => p._id !== scan._id), { ...scan, cant: scan.cant - 1 }],
+          add_Cart: [
+            ...state.add_Cart.filter((p) => p._id !== scan._id),
+            { ...scan, cant: scan.cant - 1 },
+          ],
         };
       } else {
         return {
           ...state,
-          add_Cart: [...state.add_Cart.filter((p) => p._id !== scan._id)]
-        }
+          add_Cart: [...state.add_Cart.filter((p) => p._id !== scan._id)],
+        };
       }
     case DELETE_CART:
       return {
@@ -120,44 +133,60 @@ function rootReducer(state = initialState, action) {
     case DELETE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter(el => el._id !== action.payload)
-      }
-
+        favorites: state.favorites.filter((el) => el._id !== action.payload),
+      };
 
     case REGISTER_USER:
       return {
         ...state,
         user: action.payload,
-
       };
 
     case IS_REGISTER:
       return {
         ...state,
         isRegister: action.payload,
-      }
+      };
 
     case LOGIN_USER:
       return {
         ...state,
         dataLogin: action.payload,
-      }
+      };
     case IS_LOGIN:
       return {
         ...state,
         isLogin: action.payload,
-      }
+      };
     case ERROR_LOGIN:
       return {
         ...state,
         errorLogin: action.payload,
-      }
+      };
 
     case ERROR_FOR_HOME:
       return {
         ...state,
         errorHome: action.payload,
-      }
+      };
+
+    case GOOGLE_USER:
+      return {
+        ...state,
+        authGoogle: action.payload,
+      };
+
+    case GET_USER:
+      return {
+        ...state,
+        idUser: action.payload,
+      };
+
+    case PUT_USER:
+      return {
+        ...state,
+        putUser: action.payload,
+      };
 
     default:
       return { ...state };

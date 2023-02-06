@@ -1,0 +1,59 @@
+.shell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 800px;
+    margin: 10px auto;
+    background-color: white;
+    box-shadow: -3px -3px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
+    border-radius: 20px;
+    transition: all 0.1s ease-in-out;
+  }
+  .shell:hover {
+    position: relative;
+    box-shadow: none;
+    box-shadow:
+     -8px -8px 10px rgba(169, 3, 140,0.7),
+     8px -8px 10px rgba(169, 3, 140,0.7),
+     8px 8px 10px rgba(169, 3, 140,0.7),
+     -8px 8px 10px rgba(169, 3, 140,0.7);
+    top: -7px;
+  }
+
+  .header {
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 17px 17px 0 0;
+    background-color: black;
+    width: 75%;
+    /* max-height: 480px; */
+    /* max-width: 75%; */
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  /* .accordion{
+    box-shadow: 0 0 15px -1px gray;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  s.accordion.item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:gray;
+    padding: 20px;
+    transition: 4s;
+}
+
+.accordion-body{
+    position: relative;
+    padding: 0px, 20px;
+    overflow: hidden;
+    height: 0;
+    transition: 4s;
+} */
