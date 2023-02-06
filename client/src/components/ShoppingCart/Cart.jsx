@@ -9,11 +9,24 @@ import {
 } from "../../redux/actions/actions";
 import axios from "axios";
 import style from "./Cart.module.css";
+import { useState } from "react";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
+  const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    cart_add.length && setTotal(
+      cart_add.reduce((acc, e) => {
+        let total = (acc + e.price) * e.cant;
+        let totalFixed = parseFloat(total.toFixed(2));
+
+        return totalFixed;
+      }, 0)
+    )
+  })
 
   useEffect(() => {
     if (openCart) {
@@ -81,59 +94,81 @@ const Cart = () => {
         &times;
       </button>
 
-      <div className={style.overlayContent}>
+      
         <div className={style.titleCart}>
           <h3>PRODUCT</h3>
-          <h3>SUBTOTAL</h3>
         </div>
-        {cart_add.length > 0 ? (
-          cart_add.map((e, i) => {
-            return (
-              <div className={style.data} key={i}>
-                <div>
-                  <img src={e.img} alt='img' className={style.imgCart} />
-                </div>
-                <h3 className={style.dataTitle}>{e.title}</h3>
-                {/*  */}
-                <button name={e._id} onClick={(e) => handleDecrease(e)}>
-                  -
-                </button>
-                <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
-                <p>x{e.cant}</p>
-                <button name={e._id} onClick={(e) => handleIncrease(e)}>
-                  +
-                </button>
-                {/*  */}
-              </div>
-            );
-          })
-        ) : (
-          <p style={{ color: "white" }}>empty cart</p>
-        )}
-        <div className={style.total}>
-          <h3>Total</h3>
-          <div className={style.totalPrice}>
-            $
-            {cart_add.reduce((acc, e) => {
-              let total = (acc + e.price) * e.cant;
-              let totalFixed = parseFloat(total.toFixed(2));
+        <div>
+          <div>
 
-              return totalFixed;
-            }, 0)}
+            {cart_add.length > 0 ? (
+              cart_add.map((e, i) => {
+                return (
+                 <div className={style.containerData}> 
+                  <div className={style.data} key={i}>
+                    <div>
+                      <img src={e.img} alt='img' className={style.imgCart} />
+                    </div>
+                    <div> 
+                      <h3 className={style.dataTitle}>{e.title}</h3>
+                    </div>
+                    <div className={style.containerBoton}>
+                      <div className={style.containerPrice}>
+                        <button className={style.buton} name={e._id} onClick={(e) => handleDecrease(e)}>
+                          -
+                        </button>
+                        <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
+                        <p>x{e.cant}</p>
+                        <button className={style.buton} name={e._id} onClick={(e) => handleIncrease(e)}>
+                          +
+                        </button>
+                      </div>
+                      <div className={style.vacioCart}>
+                        <button onClick={(e) => cleanCart(e)}>
+                          <p>&#128465;</p> Clean Cart
+                        </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>)
+              })
+
+
+            ) : (
+              <p style={{ color: "white" }}>empty cart</p>
+            )}
+            </div>
+
+          <div className={style.barra}>
+            <h4>Te faltan $ <span>{parseInt(String(`${500 - total}`), 10)}</span> ENVIO GRATIS</h4>
+            <div className={style.containerBarra}>
+
+              <div className={style.barrita} style={{
+                width: `${total / 500 * 100}%`
+              }}></div>
+            </div>
+          </div>
+            <div className={style.total}>
+              <h3>Total</h3>
+              <div className={style.totalPrice}>
+                $
+                {total}
+              </div>
+            </div>
+          <div className={style.containerBtn}>
+            <div>
+              <button className={style.btn} onClick={closeNav}>Seguir Comprando</button>
+            </div>
+            <div>
+              <button className={style.btn} onClick={(e) => checkout(e)}>
+                CHECKOUT
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className={style.vacioCart}>
-          <button onClick={(e) => cleanCart(e)}>
-            <p>&#128465;</p> Clean Cart
-          </button>
-        </div>
-        <button className={style.btn} onClick={(e) => checkout(e)}>
-          CHECKOUT
-        </button>
-        <br />
       </div>
-    </div>
+
   );
 };
 
