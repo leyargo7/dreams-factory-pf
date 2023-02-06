@@ -17,10 +17,18 @@ router.post("/notifications", async (req, res) => {
         const foundID = JSON.parse(paymentNotification.data.items[0].category_id);
         const userPurchase = await User.findOne({ _id: foundID });
         if (userPurchase._id) {
+          ////
           const formated = paymentNotification.data.items.map(p => {
-            return { ...p, date: paymentNotification.data.date_created }
-          })
-          const userUpdated = await User.updateOne({ _id: foundID }, { $push: { purchases: { $each: [formated] } } });
+            const classDate = new Date(paymentNotification.data.date_created)
+            const date = (classDate.getMonth() + 1) + "/" + classDate.getDate() + "/" + classDate.getFullYear();
+            const hour = classDate.getHours() + ":" + classDate.getMinutes() + ":" + classDate.getSeconds();
+            return { ...p, date: date, hour: hour }
+          });
+          await User.updateOne({ _id: foundID }, { $push: { purchases: { $each: [formated] } } });
+          ////
+          console.log("🧞 SUCCESSFUL PAYMENT!")
+          ///REESTABLECER COMPRAS
+          // await User.updateOne({ _id: foundID }, { purchases: [] });
         }
       }
     }

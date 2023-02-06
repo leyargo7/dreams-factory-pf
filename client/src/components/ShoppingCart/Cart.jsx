@@ -33,9 +33,9 @@ const Cart = () => {
   const checkout = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    const decoded = jwt_decode(token);
+    const decoded = token ? jwt_decode(token) : null;
     const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
-    console.log("ID",ID)
+    console.log("ID: ", ID);
     if (ID) {
       const body = {
         items: cart_add.map((p) => {
@@ -53,7 +53,7 @@ const Cart = () => {
           failure: "http://localhost:3000",
           pending: "http://localhost:3000",
         },
-        notification_url: `https://4390-186-81-100-12.ngrok.io/api/notifications`,
+        notification_url: `https://f908-186-81-100-12.ngrok.io/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {

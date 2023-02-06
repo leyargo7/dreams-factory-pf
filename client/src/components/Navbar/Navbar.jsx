@@ -171,7 +171,7 @@ const Navbar = () => {
     dispatch(googleAuth([]));
     document.getElementById("logoSession").style = "display: flex";
     toast.success("Log Out Successfull");
-    await axios.get("http://localhost:3001/api/v1/logout", { withCredentials: true })
+    await axios.get("http://localhost:3001/api/v1/logout")
     .then((res) => {
       console.log("Log Out Successfull");
     })
