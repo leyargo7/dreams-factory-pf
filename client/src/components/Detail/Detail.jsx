@@ -10,8 +10,13 @@ import {
   deleteFavorite,
 } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
+import Rating2 from "../Rating/Rating2";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
+
+import {FaStar} from "react-icons/fa"
+
+
 import { Toaster, toast } from "react-hot-toast";
 import s from "./Detail.module.css";
 
@@ -23,6 +28,23 @@ export default function Detail() {
   const found = favorites.find((f) => f._id === productID._id);
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
   const [buttonOn, setButtonOn] = useState(true);
+
+  const [rating,setRating] = useState({
+    stars:[0]
+  })
+      function handleProm (e){
+        setRating({
+            ...rating,
+            stars:[...rating.stars,e.target.value]
+            
+        }    
+        )        
+
+    }
+  const convert = rating.stars?.map(el => parseInt(el))
+  const rating2 =convert?.reduce((a,b)=> a+b)/rating.stars.length
+   console.log(rating2);
+
 
   const { id } = useParams();
   useEffect(() => {
@@ -220,13 +242,14 @@ export default function Detail() {
               <p className={s.price}>
                 <label>$</label> {productID.price}
               </p>
-              <Rating
+              {/* <Rating
                 initialRating={productID.rating}
                 emptySymbol={<BsStar />}
                 fullSymbol={<BsStarFill />}
                 halfSymbol={<BsStarHalf />}
                 readonly={true}
-              />
+              /> */}
+              <Rating2/>
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
