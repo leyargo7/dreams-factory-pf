@@ -7,3 +7,7 @@ input[type="radio"] {
     transition: 200ms;
     left: 240px;
 }
+
+.textarea{
+    border: "1px solid black";
+}

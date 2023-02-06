@@ -7,26 +7,39 @@ import s from "./Rating.module.css";
 
 export default function Rating2 () {
 
-    const [rating,setRating] = useState({})
     const productID = useSelector((state) => state.idProduct);
+    const [rating,setRating] = useState({})
     const [ratingProm,setRatingProm] = useState({
-        stars:[productID.rating]
+        stars:[productID.rating],
+        reviews:0
     });
-    console.log(rating);
 
     function handleProm (e){
         setRatingProm({
             ...ratingProm,
-            stars:[...ratingProm.stars,e.target.value]
+            stars:[...ratingProm.stars,e.target.value],
+            reviews:ratingProm.reviews+1
         });     
     };
 
     const convert = ratingProm.stars?.map(el => parseInt(el))
     const rating2 =convert?.reduce((acc,arc)=> acc+arc)/ratingProm.stars.length
     console.log(rating2);
+    console.log(ratingProm.reviews);
 
     return(
         <div>
+            <Rating
+                initialRating={rating2}
+                emptySymbol={<BsStar />}
+                fullSymbol={<BsStarFill />}
+                halfSymbol={<BsStarHalf />}
+                readonly={true}
+            />
+            <div>
+               Reviews {ratingProm.reviews}
+            </div>
+            <div>
             {[...Array(5)].map((star,i) => {
                 const ratingValue = i+1;
                return (
@@ -49,16 +62,9 @@ export default function Rating2 () {
                     </label>
                )
             })}
-            <div>
-            <Rating
-                onClick={(e) => handleProm(e)}
-                initialRating={rating2}
-                emptySymbol={<BsStar />}
-                fullSymbol={<BsStarFill />}
-                halfSymbol={<BsStarHalf />}
-                readonly={true}
-            />
             </div>
+            {/* <textarea placeholder= "write your comment" />
+            <button>submit</button> */}
         </div>
         
     )

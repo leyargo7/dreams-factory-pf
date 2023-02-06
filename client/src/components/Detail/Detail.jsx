@@ -249,7 +249,6 @@ export default function Detail() {
                 halfSymbol={<BsStarHalf />}
                 readonly={true}
               /> */}
-              <Rating2/>
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
@@ -262,6 +261,7 @@ export default function Detail() {
               >
                 ❤
               </button>
+              <Rating2/>
               <Toaster
                 position='bottom-right'
                 reverseOrder={true}
