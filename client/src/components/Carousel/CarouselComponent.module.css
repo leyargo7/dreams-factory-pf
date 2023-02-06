@@ -6,24 +6,24 @@
 
 .bannerone {
   display: flex;
-  width: 90%;
-  height: 500px;
-  margin-left:5%
+  width: 80%;
+  height: 400px;
+  margin-left:10%
 }
 .bannertwo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
-  height: 500px;
-  margin-left:5%
+  width: 80%;
+  height: 400px;
+  margin-left:10%
 }
 
 .bannerthree {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
-  height: 500px;
-  margin-left:5%
+  width: 80%;
+  height: 400px;
+  margin-left:10%
 }

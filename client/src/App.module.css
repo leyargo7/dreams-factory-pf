@@ -1,5 +1,6 @@
 .app {
   text-align: center;
-  background: rgb(104,45,253);
-    background: linear-gradient(0deg, rgba(104,45,253,1) 18%, rgba(0,0,0,1) 93%, rgb(0, 0, 0) 95%);
+  background: radial-gradient(100% 479.06% at 100% 100%, #6F3AF5 0%, #28145B 100%);
+  /* background: rgb(104,45,253);
+  background: linear-gradient(0deg, rgba(104,45,253,1) 18%, rgba(0,0,0,1) 93%, rgb(0, 0, 0) 95%); */
 }

@@ -8,23 +8,23 @@
   user-select: none;
   border: none;
   border-radius: 10px;
-  background-color: rgba(169, 3, 40,0.7);
+  background-color: #2D033B;
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: "Poor Richard";
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
-  box-shadow: 0px 3px 0 rgba(59, 0, 40,0.7);
+  box-shadow: 0px 3px 0 #452399;
   cursor:pointer;
 }
 .btn:hover{
-  background-color: rgba(139, 0, 40,0.7);
+  background-color: #452399;
 }
 .btn:active {
   transform: translateY(2px);
   background-color: rgba(139, 0, 40,0.4);
   box-shadow: 0px 1px 0 rgba(23, 0, 40,0.7);
-  font-family: "Poor Richard";
+  font-family: 'Montserrat', sans-serif;
 }
 
 .active{
@@ -34,7 +34,7 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: "Poor Richard";
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
   cursor:pointer;
   transform: translateY(2px);

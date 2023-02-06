@@ -164,12 +164,12 @@ import { NavLink, useHistory } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login3.jpg";
-import cart from "../../images/carrito-compras3.jpg";
 import s from "./Navbar.module.css";
 import Cart from "../ShoppingCart/Cart";
 import MyOrders from "../MyOrders/MyOrders";
 import {FaUsers} from "react-icons/fa"
 import {RiHeartsFill} from "react-icons/ri"
+import {RiShoppingCartFill} from "react-icons/ri"
 
 const Navbar = () => {
   const [user, setUser] = useState({
@@ -352,7 +352,7 @@ const Navbar = () => {
         </div>
 
         <div className={s.link} onClick={(e) => openToCart(e)}>
-          <img className={s.cart} src={cart} alt="logo" />
+          <h2><RiShoppingCartFill/></h2>
         </div>
       </div>
       <div className={s.modalContainer} id="modalcontainer">

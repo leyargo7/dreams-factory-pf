@@ -1,35 +1,30 @@
-
 .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .title2{
-    color: rgb(198, 18, 214);
+    display: inline-block;
+    color: #000;
+    margin: auto;
+    margin-top: 25px;
     text-decoration-line: overline;
-    letter-spacing: 6px;
+    height: 30px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
     
 }
-
 
  .empty {
     padding-top: 150px;
     color: white;
-    padding-bottom: 450px;
-    letter-spacing: 2px;
+    padding-bottom: 170px;
+    letter-spacing: 2px;  
  }
 
- .empty h3{
-    display: flex;
-    width: 700px;
-    height: 350px;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.7);
-    border: 1px solid beige;
-    box-shadow: -9px -9px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
-    
- }
+ 
