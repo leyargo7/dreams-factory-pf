@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { getUser } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
+import s from "./MyOrders.module.css";
 import axios from "axios";
 
 const MyOrders = () => {
@@ -33,11 +34,11 @@ const MyOrders = () => {
   }, [history, dispatch, userGoogle._id]);
 
   return (
-    <div>
+    <div className={s.orders}>
       <h1>My Orders</h1>
-      {userId && userId.name && <p>Hola {userId.name}</p>}
+      {userId && userId.name && <p>Hi {userId.name}!</p>}
       {userId && userId.email && <p>Email: {userId.email}</p>}
-      {userGoogle && userGoogle.name && <p>Hola {userGoogle.name}</p>}
+      {userGoogle && userGoogle.name && <p>Hi {userGoogle.name}!</p>}
       {userGoogle && userGoogle.email && <p>Email: {userGoogle.email}</p>}
     </div>
   );
