@@ -12,6 +12,10 @@ export default function Footer() {
         <NavLink to='/'>
           <p>Home</p>
         </NavLink>
+        <NavLink to='/faqs'>
+          <p>Faqs</p>
+        </NavLink>
+
         <NavLink to='/about'>
           <p>About</p>
         </NavLink>

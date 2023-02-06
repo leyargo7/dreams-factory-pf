@@ -53,6 +53,11 @@
     border: solid 2px transparent;
     backdrop-filter: blur(10px);
   }
+
+  .cardsInfo h3 {
+    font-size: 1.2rem;
+  }
+
   .title{
     font-size:25px;
     margin-bottom: 0.5em;

@@ -40,6 +40,10 @@
   font-size: 85%;
 }
 
+.header h4{
+  font-size: 1rem;
+}
+
 .imgShell {
   width: 100%;
   background-color: white;

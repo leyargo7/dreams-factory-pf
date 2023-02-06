@@ -8,7 +8,7 @@ export const info = [
         gitHub: "https://github.com/john11256"
     },
     {
-        name: "Arley Gonzales Guamanda " ,
+        name: "Arley Gonzalez Guamanga " ,
         image: image,
         linkedIn:"https://www.linkedin.com/in/arley-gonzalez-g", 
         gitHub: "https://github.com/leyargo7"
