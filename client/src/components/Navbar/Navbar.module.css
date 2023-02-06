@@ -13,19 +13,20 @@
 }
 
 .link{
-  color: rgb(198, 18, 214);
+  color: white;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
+  cursor: pointer;
 }
 
 .link h2{
   position: relative;
-  top: 5px;
+  bottom: 2px;
 }
 
 
 .link:hover{
-  color: white; 
+  color: #5D3891; 
 }
 
 .right{

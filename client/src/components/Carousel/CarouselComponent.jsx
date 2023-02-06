@@ -9,13 +9,13 @@ const CarouselComponent = () => {
   return (
   <Carousel className={s.CarouselContainer} autoplay={true} wrapAround = {true}
   renderCenterLeftControls={({ previousSlide }) => (
-    <button style={{marginLeft:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer" }} onClick={previousSlide}>
-      <i style={{color:"blueviolet", fontSize:"50px"}}  className="fa-light fa-angle-left">&#60;</i>
+    <button style={{marginLeft:"78px", backgroundColor:"transparent", border:"none", cursor:"pointer" }} onClick={previousSlide}>
+      <i style={{color:"#3F0071", fontSize:"50px"}}  className="fa-light fa-angle-left">&#60;</i>
     </button>
   )}
   renderCenterRightControls={({ nextSlide }) => (
-    <button style={{marginRight:"100px", backgroundColor:"transparent", border:"none", cursor:"pointer"   }}  onClick={nextSlide}>
-      <i style={{color:"blueviolet", fontSize:"50px"}} className="fa-light fa-angle-right">&#62;</i>
+    <button style={{marginRight:"78px", backgroundColor:"transparent", border:"none", cursor:"pointer"   }}  onClick={nextSlide}>
+      <i style={{color:"#3F0071", fontSize:"50px"}} className="fa-light fa-angle-right">&#62;</i>
     </button>
   )}
   renderBottomCenterControls={false}

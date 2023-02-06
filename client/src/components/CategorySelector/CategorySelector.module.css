@@ -9,12 +9,12 @@
 .btn {
   user-select: none;
   border: none;
-  border: 2px solid rgba(169, 3, 140,0.7);
+  border: 2px solid #452399;
   background-color: black;
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: poor Richard;
+  font-family: 'Montserrat', sans-serif;;
   padding: 5px 10px;
   cursor:pointer;
   text-transform: uppercase;
@@ -22,12 +22,9 @@
   
 }
 .btn:hover{
-  background-color: rgba(169, 3, 140,0.7);
+  background-color: #452399;
   color: white;
-  box-shadow: 0 0 10px rgba(169, 3, 140,0.7),
-  0 0 40px rgba(169, 3, 140,0.7),
-  0 0 80px rgba(169, 3, 140,0.7);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   
 }
 .btn:active {
@@ -38,7 +35,6 @@
 
 .active{
   user-select: none;
-  border: 2px solid rgba(228, 18, 193, 0.4);
   /* border-radius: 0px 0px 10px 10px; */
   color: white;
   font-size: 0.8rem;
@@ -47,9 +43,6 @@
   padding: 5px 10px;
   cursor:pointer;
   transform: translateY(2px);
-  background-color:rgba(241 23 203 / 73%);
-  box-shadow: 0 0 10px rgba(1241 23 203 / 73%),
-  0 0 40px rgba(1241 23 203 / 73%),
-  0 0 80px rgba(1241 23 203 / 73%);
+  background-color:#452399;
   text-transform: uppercase;
 }

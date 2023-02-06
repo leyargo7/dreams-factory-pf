@@ -10,9 +10,11 @@ import {
 } from "../../redux/actions/actions";
 
 import s from "./Card.module.css";
-import { ImCart } from "react-icons/im";
+import {RiShoppingCartLine} from "react-icons/ri";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
+import {FaRegHeart} from "react-icons/fa"
+import { IconContext } from "react-icons";
 
 export default function Card({
   title,
@@ -94,19 +96,23 @@ export default function Card({
             className={s.cartBtn}
             onClick={(e) => handleAddCart(e)}
           >
-            <ImCart />
+            <RiShoppingCartLine />
           </button>
           <h2 style={{ margin: "0 0 10px 0" }}>
-            <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
+            <span style={{marginRight: "3px", userSelect: "none", color: "rgb(255, 255, 255)" }}>
               $
             </span>
             {price}
           </h2>
-          <button
+          <button           
             className={favorite === false ? s.btnFalse : s.btnTrue}
             onClick={(e) => handleAddFavorite(e)}
           >
-            ❤
+            <IconContext.Provider value={{className: s.heart}}>
+              <div>
+            <FaRegHeart/>  
+            </div>
+            </IconContext.Provider>
           </button>
         </div>
       </div>

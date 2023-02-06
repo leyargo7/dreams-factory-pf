@@ -1,5 +1,12 @@
 .container{
     color: white;
-    padding: 80px;
+    padding: 30px;
+    font-size: 18px;
     text-align:left ;
+    margin-bottom: 70px;
+    
+}
+
+.container h3{   
+    font-size: 25px;
 }

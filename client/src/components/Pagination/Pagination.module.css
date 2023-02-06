@@ -1,6 +1,7 @@
 .btn {
   user-select: none;
-  border: 3px solid rgba(169, 3, 140,0.7);
+  /* border: 3px solid rgba(169, 3, 140,0.7); */
+  /* border: 3px solid black; */
   gap: 10px;
   background-color: transparent;
   color: white;
@@ -10,17 +11,19 @@
   padding: 5px 10px;
   cursor:pointer;
   font-family: poor Richard;
+  border: 3px solid black;
+  border-radius: 6px;
 }
 
 .btn:active {
   transform: translateY(2px);
-  background-color: rgba(139, 0, 140,0.7);
+  /* background-color: rgba(139, 0, 140,0.7); */
 }
 
 .active{
   transition: all 0.1s ease-in-out;
   user-select: none;
-  border: 2px solid rgba(228, 18, 193, 0.4);
+  /* border: 1px solid black; */
   text-align: center;
   color: white;
   font-size: 20px;
@@ -29,9 +32,10 @@
   padding: 4px 9px;
   cursor:pointer;
   transform: translateY(2px);
-  background-color: rgba(241 23 203 / 73%);
-  box-shadow: 0 0 10px rgba(1241 23 203 / 73%),
+  background-color: black; 
+  border-radius: 4px;
+  /* box-shadow: 0 0 10px rgba(1241 23 203 / 73%),
   0 0 40px rgba(1241 23 203 / 73%),
-  0 0 80px rgba(1241 23 203 / 73%);
+  0 0 80px rgba(1241 23 203 / 73%); */
   font-family: poor Richard;
 }

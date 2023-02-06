@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { ImCart } from "react-icons/im";
+import {RiShoppingCartLine} from "react-icons/ri";
+import {FaRegHeart} from "react-icons/fa"
 import {
   addCart,
   addFavorite,
@@ -252,14 +253,15 @@ export default function Detail() {
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
-              <button disabled={!buttonOn} onClick={(e) => handleAddCart(e)}>
-                <ImCart />
+              <button className={s.btnCart} disabled={!buttonOn} onClick={(e) => handleAddCart(e)}>
+                <RiShoppingCartLine/>
               </button>
               <button
                 className={favorite === false ? s.btnFalse : s.btnTrue}
                 onClick={handleAddFavorite}
               >
-                ❤
+                <FaRegHeart />
+                
               </button>
               <Rating2/>
               <Toaster

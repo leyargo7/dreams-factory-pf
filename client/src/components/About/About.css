@@ -4,6 +4,7 @@
     /* background: rgb(34,175,195);
     background: linear-gradient(0deg, rgba(34,175,195,1) 0%, rgba(104,45,253,1) 100%); */   
     /* height: 180vh; */  
+    font-family: 'Montserrat', sans-serif;
   }
   
   .scroll{
@@ -12,7 +13,9 @@
 
   .header h1{
     text-decoration-line: overline;
-    color: rgb(198, 18, 214);
+    letter-spacing: 5px;
+    color: #fff;
+    font-size: 22px;
   }
   
   .header{
@@ -22,11 +25,14 @@
     /* background-color: rgba(255, 255, 255, 0.859); */
     /* background: rgb(46,46,46);
     background: linear-gradient(0deg, rgba(46,46,46,1) 0%, rgba(0,0,0,1) 100%, rgba(104,45,253,1) 100%); */
-    background: #000;
+    background: rgba(0, 0, 0, 0.4);
     /* margin: 25px; */
     /* border-radius: 15px; */
     justify-content: center;
-    color: #ECEBEB;;
+    color: #ECEBEB;
+    font-size: 16px;
+    border-bottom: 2px solid black;
+    
   }
   
   .cardsInfo {
@@ -88,9 +94,9 @@
    
   }
   .cardsInfo h2{
-    font-size: 20px;
-    font-family: "Goudy Old Style";
-    color: #E9D5CA;
+    font-size: 18px;
+
+    color: #000;
   }
   
   .cardsInfo img{
@@ -109,9 +115,10 @@
 .logo-container {
     text-decoration: none;
     color: #2A0944;
+    font-size: 28px;
   }
 
 .logo-container:hover{
-    color: #E9D5CA;
+
     transform: translateY(-1%);
 }

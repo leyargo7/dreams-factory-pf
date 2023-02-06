@@ -25,10 +25,11 @@ const Favorites = () => {
                             title={e.title} img={e.img} rating={e.rating} price={e.price} _id={e._id} />
 
                     )) : (
-                        <div className={s.empty}><h3>Here will be your favorite products...</h3></div>
+                        <div className={s.empty}><h3>You don't have favorites yet </h3></div>
                     )}
 
                 </div>
+                
             </div>
         )
     } else {
