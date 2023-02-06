@@ -27,3 +27,8 @@
   height: 500px;
   margin-left:5%
 }
+
+.CarouselContainer img {
+  min-width: 100%;
+  height: 400px;
+}

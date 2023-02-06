@@ -161,7 +161,7 @@ import {
   loginUser,
 } from "../../redux/actions/actions";
 import { NavLink, useHistory } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login3.jpg";
 import cart from "../../images/carrito-compras3.jpg";
@@ -327,6 +327,7 @@ const Navbar = () => {
 
   return (
     <div className={s.nav}>
+      <Toaster />
       <NavLink className={s.searchbar} to="/">
         <img className={s.logonavbar} src={logo} alt="logo" />
       </NavLink>
