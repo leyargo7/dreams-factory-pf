@@ -3,7 +3,6 @@
   background-color: white;
   position: relative;
   top: 20vh;
-  right: 0vw;
   left: 47vw;
   width: 100px;
   height: 100px;
@@ -12,19 +11,16 @@
   animation: animate 1s linear infinite;
   margin-bottom: 450px;
 }
-
 @keyframes animate {
   0% {
     transform: rotate(0deg);
     filter: hue-rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
     filter: hue-rotate(360deg);
   }
 }
-
 .loading:before {
   content: "";
   position: absolute;
@@ -32,11 +28,10 @@
   left: 10px;
   right: 10px;
   bottom: 10px;
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(50,50,50);
   border-radius: 50%;
   z-index: 100;
 }
-
 .loading:after {
   content: "";
   position: absolute;

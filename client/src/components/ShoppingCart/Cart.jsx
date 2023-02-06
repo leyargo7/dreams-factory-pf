@@ -9,11 +9,13 @@ import {
 } from "../../redux/actions/actions";
 import axios from "axios";
 import style from "./Cart.module.css";
+import jwt_decode from "jwt-decode";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
+  const authGoogle = useSelector((state) => state.authGoogle);
 
   useEffect(() => {
     if (openCart) {
@@ -30,10 +32,15 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    if (window.localStorage.token) {
+    const token = localStorage.getItem("token");
+    const decoded = token ? jwt_decode(token) : null;
+    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
+    console.log("ID: ", ID);
+    if (ID) {
       const body = {
         items: cart_add.map((p) => {
           return {
+            category_id: ID,
             title: p.title,
             description: p.description,
             picture_url: p.img,
@@ -42,11 +49,11 @@ const Cart = () => {
           };
         }),
         back_urls: {
-          success: "http://localhost:3000",
+          success: "http://localhost:3000/myorders",
           failure: "http://localhost:3000",
           pending: "http://localhost:3000",
         },
-        // notification_url: `http://localhost:3001/api/notifications`,
+        notification_url: `https://dfca-186-81-100-12.ngrok.io/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {
@@ -54,7 +61,7 @@ const Cart = () => {
             "Content-Type": "application/json",
           },
         })
-        .then((r) => (window.location.href = r.data.init_point));
+        .then((r) => window.open(r.data.init_point, "_self"));
     }
   };
 

@@ -1,9 +1,7 @@
 .container {
   background-color: black;
   height: 300px;
-  margin-top: auto;
 }
-
 .containerLoad {
   background-color: black;
   height: 300px;
@@ -11,7 +9,6 @@
   bottom: 0;
   width: 100%;
 }
-
 .logonavbar {
   padding-top: 20px;
   height: 70px;
@@ -25,7 +22,6 @@
   gap: 50px;
   padding-bottom: 50px;
 }
-
 .linkscontainer a {
   text-decoration: none;
   color: white;
