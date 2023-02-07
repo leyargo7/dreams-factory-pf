@@ -43,5 +43,19 @@
   gap: 50px;
   padding-bottom: 10px;
   align-items: center;
+  font-size: 20px;
+}
+
+.socialcont .facebook:hover{
+  color: #3b5998;
+}
+
+.socialcont .twitter:hover{
+  color: #55acee;
+}
+
+.socialcont .instagram:hover{
+  color: #452399;
   
 }
+

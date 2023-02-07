@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .detail {
@@ -98,10 +99,6 @@
 }
 
 .buttons .btnTrue {
-  color: #fff;
-}
-
-.buttons .btnTrue:hover {
   color: #FF0032;
 }
 
@@ -109,30 +106,19 @@
   border-radius: 10px;
   border: none;
   /* background-color: #452399; */
-  color: white;
   font-size: 26px;
-  cursor: pointer;
   width: 0px;
   margin-right: 15px;
   background-color: transparent;
 }
 
-.buttons button:disabled {
+.cartBtnTrue{
+  color: darkgrey;
+}
+
+.cartBtnFalse{
   color: gray;
   cursor: auto;
-}
-
-.buttons button:disabled:hover{
-  color: darkgray;
-}
-
-.buttons button:hover {
-  background-color: transparent;
-  font-weight: 700;
-}
-
-.buttons .btnCart:hover{
-  color: gray;
 }
 
 .tags {
