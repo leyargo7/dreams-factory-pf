@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+.toast {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .shell {
   display: flex;
   flex-direction: column;
@@ -11,19 +15,17 @@
   background-color: white;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.53);
   border-radius: 20px;
-  transition: all 0.1s ease-in-out;
   border: 2px solid #000;
-  font-family: 'Montserrat', sans-serif; 
-  
 }
+
 .shell:hover {
-  position: relative;
   /* box-shadow: -8px -8px 10px rgba(169, 3, 140, 0.7),
     8px -8px 10px rgba(169, 3, 140, 0.7), 8px 8px 10px rgba(169, 3, 140, 0.7),
     -8px 8px 10px rgba(169, 3, 140, 0.7); */
-  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.53);  
-  transform: scale(1.02);
-  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.53);
+  transition: all 0.6s ease-in-out;
+  transform: scale(1.03);
+
 }
 
 .header {
@@ -37,11 +39,10 @@
   width: 100%;
   height: 100px;
   color: white;
-  font-size: 85%;
 }
 
 .header h4{
-  font-size: 1rem;
+  font-size: 85%;
 }
 
 .imgShell {
@@ -51,7 +52,7 @@
 
 .img {
   user-select: none;
-  width: 30%;
+  width: 40%;
 }
 
 .footer {
@@ -61,74 +62,66 @@
   border-radius: 0 0 17px 17px;
 }
 
+.footerPrice h2 {
+  position: relative;
+  top: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .footerPrice {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.footerPrice h2 {
-  position: relative;
-  top: 5px;
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-.footerPrice {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 10px;
-}
-
-.footerPrice h2 {
-  position: relative;
-  top: 5px;
-  font-size: 1.5rem;
-  font-weight: 400;
 }
 
 .footerPrice button {
   margin-bottom: 15px;
-  border-radius: 50px;
   width: 0;
   height: 0;
   cursor: pointer;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-.footerPrice .btnTrue {
+ .footerPrice .btnTrue {
   position: relative;
-  bottom: 15px;
-  right: 40px;
-  color: #FF0032; 
-  font-size: 25px;
-}
-
-.footerPrice .heart:hover{
-  color: #FF0032;
-}
-
-.footerPrice .btnFalse {
-  position: relative;
-  bottom: 15px;
-  right: 43px;
+  bottom: 24px;
+  right: 10px;
   color: #FF0032;
   font-size: 25px;
 }
 
-.footerPrice .btnTrue :hover {
+ .footerPrice .btnFalse {
+  position: relative;
+  bottom: 24px;
+  right: 10px;
   color: #FF0032;
-}
+  font-size: 25px;
+ }
 
-.footerPrice .cartBtn:hover {
-  /* background-color: #2D033B; */
+.footerPrice .cartBtnTrue{
+  position: relative;
+  bottom: 28px;
+  right:  15px;
+  font-size: 27px;
   color: darkgray;
 }
 
-.footerPrice .cartBtn {
+.footerPrice .cartBtnFalse{
   position: relative;
-  bottom: 18px;
-  left: 20px;
+  bottom: 28px;
+  right: 15px;
+  font-size: 27px;
+  color: gray;
+  cursor: auto;
+}
+
+
+/* .footerPrice .cartBtn {
+  position: relative;
+  bottom: 28px;
+  right: 10px;
   font-size: 27px;
   color: gray;
 }
@@ -137,12 +130,11 @@
 .cartBtn:disabled {
   color: gray;
   cursor: auto;
-  
 }
 
 .cartBtn:disabled:hover {
   color: gray;
-}
+} */
 
 .NavLink {
   text-decoration: none;

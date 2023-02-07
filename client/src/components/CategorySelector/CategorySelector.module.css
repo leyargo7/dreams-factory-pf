@@ -14,7 +14,7 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;;
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
   cursor:pointer;
   text-transform: uppercase;
@@ -30,7 +30,6 @@
 .btn:active {
   transform: translateY(2px);
   background-color: rgba(139, 0, 140,0.4);
-  font-family: poor Richard;
 }
 
 .active{
@@ -39,10 +38,10 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: poor Richard;
   padding: 5px 10px;
   cursor:pointer;
   transform: translateY(2px);
   background-color:#452399;
   text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
