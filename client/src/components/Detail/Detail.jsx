@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {RiShoppingCartLine} from "react-icons/ri";
-import {FaRegHeart} from "react-icons/fa"
+import {RiShoppingCartLine, RiShoppingCartFill} from "react-icons/ri";
+import {FaRegHeart, FaHeart} from "react-icons/fa"
 import {
   addCart,
   addFavorite,
@@ -230,16 +230,43 @@ export default function Detail() {
               <p>{productID.inStock} in Stock</p>
             </div>
             <div className={s.buttons}>
-              <button className={s.btnCart} disabled={!buttonOn} onClick={(e) => handleAddCart(e)}>
-                <RiShoppingCartLine/>
-              </button>
-              <button
-                className={favorite === false ? s.btnFalse : s.btnTrue}
-                onClick={handleAddFavorite}
-              >
-                <FaRegHeart />
-                
-              </button>
+            {
+            buttonOn === false ? 
+          <button
+            disabled={!buttonOn}
+            className={s.cartBtnFalse}
+            onClick={(e) => handleAddCart(e)}
+          >
+            <RiShoppingCartFill />
+            
+          </button>
+          :
+          <button
+            className={s.cartBtnTrue}
+            onClick={(e) => handleAddCart(e)}
+          >
+            <RiShoppingCartLine />
+          </button>
+
+          }
+          {
+            favorite === false ? 
+          <button        
+            className={s.btnFalse}
+            onClick={(e) => handleAddFavorite(e)}
+          >
+                    
+            <FaHeart/>            
+          </button>
+          :
+          <button           
+            className={ s.btnTrue }
+            onClick={(e) => handleAddFavorite(e)}
+          >
+            <FaRegHeart/>
+                                 
+          </button>
+          }
               <Toaster
                 position='bottom-right'
                 reverseOrder={true}

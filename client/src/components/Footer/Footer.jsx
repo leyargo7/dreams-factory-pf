@@ -27,13 +27,13 @@ export default function Footer() {
         </NavLink>
       </div>
       <div className={s.socialcont}>
-        <div>
+        <div className={s.facebook}>
           <ImFacebook2 />
         </div>
-        <div>
+        <div className={s.twitter}>
           <ImTwitter />
         </div>
-        <div>
+        <div className={s.instagram}>
           <ImInstagram />
         </div>
       </div>

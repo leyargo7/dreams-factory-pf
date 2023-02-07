@@ -12,7 +12,7 @@
   width: 350px;
   height: 450px;
   margin: 10px;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.53);
   border-radius: 20px;
   border: 2px solid #000;
@@ -47,7 +47,7 @@
 
 .imgShell {
   width: 100%;
-  background-color: white;
+  height: auto;
 }
 
 .img {
@@ -106,6 +106,7 @@
   right:  15px;
   font-size: 27px;
   color: darkgray;
+
 }
 
 .footerPrice .cartBtnFalse{
@@ -113,8 +114,8 @@
   bottom: 28px;
   right: 15px;
   font-size: 27px;
-  color: gray;
   cursor: auto;
+  color: gray;
 }
 
 
