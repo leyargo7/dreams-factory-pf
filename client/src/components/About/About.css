@@ -46,12 +46,13 @@
     align-items: center;
     padding-top: 5px;
     overflow: hidden;
-    background-color: rgba(100, 121, 126, 0.859);
+    background-color: #5D3891;
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 40%);
     transition: all 200ms ease;
     border: solid 2px transparent;
     backdrop-filter: blur(10px);
+    color: white
   }
 
   .cardsInfo h3 {
@@ -89,14 +90,14 @@
     display: flex;
     justify-content: space-around;
     list-style: none;
-    font-size: 20px;
+    font-size: 30px;
     gap: 100%;
    
   }
   .cardsInfo h2{
     font-size: 18px;
 
-    color: #000;
+    color: white;
   }
   
   .cardsInfo img{
@@ -114,11 +115,15 @@
 
 .logo-container {
     text-decoration: none;
-    color: #2A0944;
-    font-size: 28px;
+    color: #d6aaf8;
+    font-size: 40px;
   }
 
 .logo-container:hover{
 
     transform: translateY(-1%);
+}
+
+.cardsInfo img{
+  margin-bottom: 35px;
 }

@@ -1,6 +1,6 @@
 .container {
   background-color: black;
-  height: 300px;
+  height: 350px;
 }
 .containerLoad {
   background-color: black;
@@ -8,12 +8,14 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  
 }
 .logonavbar {
   padding-top: 20px;
-  height: 70px;
+  height: 90px;
   width: auto;
   margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .linkscontainer {
@@ -25,12 +27,12 @@
 .linkscontainer a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 22px;
 }
 
 .rights {
   color: white;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .socialcont {
@@ -41,4 +43,5 @@
   gap: 50px;
   padding-bottom: 10px;
   align-items: center;
+  
 }

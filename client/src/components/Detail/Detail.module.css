@@ -59,7 +59,7 @@
 
 .stars {
   color: #ffff74;
-  position: relative;
+  justify-self: center;
   left: 240px;
 }
 

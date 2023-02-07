@@ -4,6 +4,7 @@ import s from "./Filters.module.css";
 const Filters = ({ filter, handleSortDesc }) => {
   return (
     <div className={s.filters}>
+      <h5>ORDER BY:</h5>
       <button
         className={
           filter.name === "title" && filter.direction === "des"

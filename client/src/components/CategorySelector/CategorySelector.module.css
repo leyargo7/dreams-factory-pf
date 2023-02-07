@@ -25,11 +25,14 @@
   background-color: #452399;
   color: white;
   letter-spacing: 0.1em;
+  box-shadow: 0 0 10px #452399,
+  0 0 40px #452399,
+  0 0 80px #452399;
   
 }
 .btn:active {
   transform: translateY(2px);
-  background-color: rgba(139, 0, 140,0.4);
+  background-color: #452399;
   font-family: poor Richard;
 }
 
@@ -45,4 +48,8 @@
   transform: translateY(2px);
   background-color:#452399;
   text-transform: uppercase;
+  box-shadow: 0 0 10px #452399,
+  0 0 40px #452399,
+  0 0 80px #452399;
 }
+
