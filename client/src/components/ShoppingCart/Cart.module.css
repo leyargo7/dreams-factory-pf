@@ -34,21 +34,19 @@
   margin-bottom: 4px;
 }
 
-
 .data div {
   border-radius: 8px;
-  width: 160px;
+  width: 180px;
   height: 200px;
   margin: auto;
-  padding:4px;
+  padding:8px;
 }
 
 .imgCart {
   width: 160px;
-  height: 200px;
+  height: 180px;
   border-radius: 8px;
 }
-
 
 .dataTitle {
   margin: auto;
@@ -56,80 +54,58 @@
   height: 180px;
   text-align: justify;
   font-size: .9rem;
-  background-color: #2D302D;
+  /* background-color: #2D302D; */
+  background-color: #5743B6;
   border-radius: 8px;
   padding: 8px;
 
-
 }
 
-
-.containerBoton {
+.containerBoton{
   display: flex;
-  justify-content: right;
-  margin: auto;
-  padding: 12px;
+  justify-content:right;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-
-
-
+.buton{
+  display: flex;
+  flex-direction:center;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  width: 20px;
+  height: 160px;
+  padding: 4px;
+}
 
 .titleCart {
   color: white;
   display: flex;
   justify-content: space-between;
-  /* margin-top: 100px; */
-  /* padding: 10px; */
-
 }
 
 
-
-.buton {
-  display: flex;
-  justify-content: space-between;
-  margin:8px;
-  width: 16px;
-  height: 16px;
-  padding: 4px;
-}
 
 .containerDataTitle{
   display: flex;
-  justify-content: space-around;
+  margin: 12px;
+  justify-content: space-between;
   width: 100px;
   height: 600px;
   padding: 4px;
 }
-.containerBoton{
-  display: flex;
-  justify-content:space-around;
-  margin: 0px,12px;
-  align-items: center;
-  flex-direction: column;
-  padding-left: 8px;
-  padding-right: 8px;
-}
 
- .containerPrice{
+.containerPrice{
   display: flex;
-  margin: aut; 
+  margin: auto; 
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* padding-left: 4px ;
-  padding-right: 4px ; */
   padding: auto;
 } 
-
-.buton{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: auto;
-}
 
 .dataPrice {
   background-color: #5743B6;
@@ -145,7 +121,6 @@
   color: white;
   font-size: 3rem;
   font-weight: 700;
-  /* text-align: end; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -158,13 +133,10 @@
   border: none;
   border-radius: 8px;
   color: white;
-  /* padding: 16px 32px; */
   text-align: center;
   text-decoration: none;
-  /* grid-column: 1 / 3; */
   font-size: 12px;
   font-weight: 700;
-
   transition-duration: 0.4s;
   cursor: pointer;
   ;
@@ -174,7 +146,6 @@
 .vacioCart p {
   font-size: 1.3rem;
   font-weight: 700;
-
   text-align: center;
   display: inline;
 }
@@ -208,7 +179,8 @@
   background: #3dced9;
   height: 8px;
   transition: width .4s ease-out;
-  background: #2fb069 !important;
+  /* background: #2fb069 !important; */
+  background: #5743B6 !important ;
 }
 
 .containerBarra {
@@ -251,21 +223,21 @@
   display: flex;
   justify-content: space-around;
   margin: 12px;
-
 }
 
 .btn {
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
+  background-color: #5743B6;
   border: none;
   border-radius: 8px;
-  color: black;
+  /* color: black; */
+  color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   grid-column: 1 / 3;
   font-size: 24px;
-  font-weight: 600;
-
+  font-weight: 500;
   transition-duration: 0.4s;
   cursor: pointer;
 }

@@ -164,7 +164,7 @@ const Cart = () => {
             </div>
           <div className={style.containerBtn}>
             <div>
-              <button className={style.btn} onClick={closeNav}>Seguir Comprando</button>
+              <button className={style.btn} onClick={closeNav}>CONTINUE BUYING</button>
             </div>
             <div>
               <button className={style.btn} onClick={(e) => checkout(e)}>

@@ -4,17 +4,16 @@ import s from "./FAQs.module.css";
 export default function Faqs() {
     return (
         <div className={s.shell}>
-
             <div className={s.header}>
                 <h2>FREQUENT QUESTIONS</h2>
-                <div className="accordion"  id="accordionExample">
+                <div className="accordion" id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                               <strong>Way to pay</strong> 
+                                <strong>Way to pay</strong>
                             </button>
                         </h2>
-                        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div className="accordion-body">
                                 <p>3 installments throughout the site without interest!</p>
                                 <p>You can pay with debit card, credit or cash</p>
@@ -46,11 +45,10 @@ export default function Faqs() {
                             </div>
                         </div>
                     </div>
-
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingFour">
-                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                               <strong> I made a purchase and I did not receive the new order confirmation email, what do I do?</strong>
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <strong> I made a purchase and I did not receive the new order confirmation email, what do I do?</strong>
                             </button>
                         </h2>
                         <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -59,10 +57,9 @@ export default function Faqs() {
                             </div>
                         </div>
                     </div>
-
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="headingFive">
-                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
                                 <strong>How do I cancel my purchase?</strong>
                             </button>
                         </h2>
@@ -73,9 +70,6 @@ export default function Faqs() {
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
