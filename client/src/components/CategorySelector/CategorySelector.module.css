@@ -14,7 +14,7 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;;
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
   cursor:pointer;
   text-transform: uppercase;
@@ -42,14 +42,10 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
-  font-family: poor Richard;
   padding: 5px 10px;
   cursor:pointer;
   transform: translateY(2px);
   background-color:#452399;
   text-transform: uppercase;
-  box-shadow: 0 0 10px #452399,
-  0 0 40px #452399,
-  0 0 80px #452399;
 }
 
