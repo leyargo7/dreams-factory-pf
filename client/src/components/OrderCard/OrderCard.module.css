@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    background-color: black;
+    border: 4px solid black;
+    border-radius: 15px;
+    color: rgb(236, 236, 216);
+  }
+  
+  .header{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 120px;
+    border-radius: 8px 8px 0 0;
+    padding: 15px;
+  }
+
+.title{
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.image {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+.img{
+  width:100%;
+  max-width:200px;
+  height:300px;
+}
