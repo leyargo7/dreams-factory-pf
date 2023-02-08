@@ -75,8 +75,8 @@ bottom: 0;
 left: 0;
 right: 0;
 z-index: 1;
-border-radius: calc(40 * 1px);
-background-color: #000;
+border-radius: 25px;
+background-color: rgb(32, 17, 61);
 transform: translateY(100%);
 transition: .2s ease-in-out;
 
@@ -92,7 +92,7 @@ flex-direction: column;
 align-items: center;
 height: 90px;
 /* border-radius: calc(40 * 1px) 0 0 0; */
-background-color:#5D3891;
+background: rgb(32, 17, 61);
 transform: translateY(-100%);
 transition: .2s ease-in-out;
 
@@ -121,18 +121,25 @@ transition: .2s ease-in-out;
 .card_header_text{
   font-size: 1em;
 margin: 0 0 .3em;
-color: #6A515E;
+color: rgb(223, 202, 159);
 
 }
 
 .card_description{
   padding: 0 2em 2em;
 margin: 0;
-color: #D7BDCA;
+color: rgb(223, 202, 159);
 font-family: "MockFlowFont";
 display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 3;
 overflow: hidden;
+
+}
+
+.container_link{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 
 }

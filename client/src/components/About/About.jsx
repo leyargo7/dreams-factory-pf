@@ -20,7 +20,7 @@ export default function About () {
                                 <img src="https://blog.soyhenry.com/content/images/2022/01/Currcula-Henry.png" className={s.card_image}alt=""/>
                                 <div className={s.card_overlay}>
                                     <div className={s.card_header}>
-                                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+                                        
                                         <img src={user.image} alt="profile" className={s.card_thumb}/>
                                         <div className={s.card_header_text}>
                                             {user.name}
@@ -28,12 +28,15 @@ export default function About () {
                                     </div>
                                     <div className={s.card_description}>
                                         Full Stack Developer
+                                        <div className={s.container_link}>
                                         <a href={user.linkedIn} target="_blanck" id='icono' className="logo-container">
                                             <AiFillLinkedin id="contenedor"/>
                                         </a>
                                         <a href={user.gitHub} target="_blanck" id="icono" className="logo-container">
                                             <AiFillGithub id="contenedor"/>
                                         </a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>

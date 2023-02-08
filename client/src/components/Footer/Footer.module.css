@@ -27,12 +27,12 @@
 .linkscontainer a {
   text-decoration: none;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .rights {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .socialcont {
@@ -55,7 +55,7 @@
 }
 
 .socialcont .instagram:hover{
-  color: #452399;
+ color: rgb(223, 140, 115)
   
 }
 
