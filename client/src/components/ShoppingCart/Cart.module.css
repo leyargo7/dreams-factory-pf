@@ -9,6 +9,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
+    color: blueviolet
   }
   
   /* .overlayContent {

@@ -15,7 +15,7 @@ sendMail = async (userEmail, mailBody, purchaseID) =>{
     from: 'dreamsFactory2113@gmail.com',
    
     to: userEmail,
-    subject: `Purchase register from Dreams Factory No. ${purchaseID}`,
+    subject: `Purchase order from Dreams Factory No. ${purchaseID}`,
 
     html: mailBody,
  }
