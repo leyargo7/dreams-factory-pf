@@ -232,10 +232,8 @@ export default function Detail() {
             <div className={s.buttons}>
             {
             buttonOn === false ? 
-          <button
-            disabled={!buttonOn}
-            className={s.cartBtnFalse}
-            onClick={(e) => handleAddCart(e)}
+          <button           
+            className={s.cartBtnFalse}         
           >
             <RiShoppingCartFill />
             

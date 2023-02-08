@@ -95,12 +95,11 @@ export default function Card({
           {
             buttonOn === false ? 
           <button
-            disabled={!buttonOn}
-            className={s.cartBtnFalse}
-            onClick={(e) => handleAddCart(e)}
+            className={s.cartBtnFalse}          
           >
-            <RiShoppingCartFill />
             
+            <RiShoppingCartFill />  
+
           </button>
           :
           <button

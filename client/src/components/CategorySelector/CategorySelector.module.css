@@ -25,15 +25,15 @@
   background-color: #452399;
   color: white;
   letter-spacing: 0.1em;
-  box-shadow: 0 0 10px #452399,
-  0 0 40px #452399,
-  0 0 80px #452399;
+  box-shadow: 0 0 5px #452399,
+  0 0 15px #452399,
+  0 0 15px #452399;
   
 }
 .btn:active {
   transform: translateY(2px);
   background-color: #452399;
-  font-family: poor Richard;
+  
 }
 
 .active{
@@ -47,8 +47,10 @@
   transform: translateY(2px);
   background-color:#452399;
   text-transform: uppercase;
-  box-shadow: 0 0 10px #452399,
-  0 0 40px #452399,
-  0 0 80px #452399;
+  box-shadow: 0 0 5px #452399,
+  0 0 15px #452399,
+  0 0 15px #452399;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
 }
 

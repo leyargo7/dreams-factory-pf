@@ -1,13 +1,13 @@
-.abaut{
+/* .abaut{
   /* display: block;
   justify-content: space-between; */
   /* background: rgb(34,175,195);
   background: linear-gradient(0deg, rgba(34,175,195,1) 0%, rgba(104,45,253,1) 100%); */
   /* height: 180vh; */
-  font-family: 'Montserrat', sans-serif;
+  
   /* display:grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1rf)); */
-}
+
 
 /* .scroll{
   margin-right: 4%;
@@ -17,7 +17,7 @@
   text-decoration-line: overline;
   letter-spacing: 5px;
   color: #fff;
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .title{
@@ -26,29 +26,33 @@
 
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.309);
 }
+
 .header p{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50%;
   width: 50%;
+  font-size: 18px;
 }
 
 .header{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   justify-content: center;
   color: #ECEBEB;
+  padding-top: 15px;
   font-size: 16px;
+  border-radius: 15px;
   border-bottom: 2px solid black;
-
 }
 
 .cards{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   list-style-type: none;
   gap: 25px;
@@ -76,7 +80,7 @@ left: 0;
 right: 0;
 z-index: 1;
 border-radius: 25px;
-background-color: rgb(32, 17, 61);
+background-color: rgb(16, 15, 17);
 transform: translateY(100%);
 transition: .2s ease-in-out;
 
@@ -90,9 +94,10 @@ transition: .2s ease-in-out;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: space-between;
 height: 90px;
 /* border-radius: calc(40 * 1px) 0 0 0; */
-background: rgb(32, 17, 61);
+background: #301E67;
 transform: translateY(-100%);
 transition: .2s ease-in-out;
 
@@ -112,6 +117,7 @@ transition: .2s ease-in-out;
   transform: translateY(0);
 }
 .card_thumb{
+  margin-top: 5px;
   flex-shrink: 0;
   width: 50px;
   height: 50px;
@@ -119,14 +125,14 @@ transition: .2s ease-in-out;
 }
 
 .card_header_text{
-  font-size: 1em;
+  font-size: 18px;
 margin: 0 0 .3em;
 color: rgb(223, 202, 159);
-
+font-family: "MockFlowFont";
 }
 
 .card_description{
-  padding: 0 2em 2em;
+  padding-top: 5px;
 margin: 0;
 color: rgb(223, 202, 159);
 font-family: "MockFlowFont";
@@ -141,5 +147,5 @@ overflow: hidden;
   display: flex;
   justify-content: center;
   gap: 50px;
-
+  font-size: 25px;
 }

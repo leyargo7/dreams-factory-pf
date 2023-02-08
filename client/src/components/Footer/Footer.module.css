@@ -21,9 +21,12 @@
 .linkscontainer {
   display: flex;
   justify-content: center;
+  
   gap: 50px;
   padding-bottom: 50px;
+  
 }
+
 .linkscontainer a {
   text-decoration: none;
   color: white;

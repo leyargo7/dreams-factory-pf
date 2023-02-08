@@ -96,10 +96,12 @@
 
 .buttons .btnFalse {
   color: #FF0032;
+  
 }
 
 .buttons .btnTrue {
   color: #FF0032;
+  
 }
 
 .buttons button {
@@ -110,13 +112,20 @@
   width: 0px;
   margin-right: 15px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .cartBtnTrue{
   color: darkgrey;
+ 
 }
 
 .cartBtnFalse{
+  color: gray;
+  
+}
+
+.cartBtnFalse:hover{
   color: gray;
   cursor: auto;
 }

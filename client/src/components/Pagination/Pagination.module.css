@@ -7,7 +7,7 @@
   font-size: 23px;
   font-weight: 900;
   margin: 15px 5px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   cursor:pointer;
   font-family: poor Richard;
   border: 3px solid #8f88fa;
@@ -19,20 +19,21 @@
 }
 
 .active{
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   user-select: none;
   text-align: center;
   color: white;
   font-size: 23px;
   font-weight: 900;
   margin: 15px 5px;
-  padding: 4px 9px;
+  padding: 0px 10px;
   cursor:pointer;
-  transform: translateY(2px);
+  transform: translateY(2px); 
   background-color: #8f88fa;
-  box-shadow: 0 0 10px #8f88fa,
-  0 0 20px #8f88fa,
-  0 0 30px #8f88fa;
+  box-shadow: 0 0 5px #8f88fa,
+  0 0 10px #8f88fa,
+  0 0 10px #8f88fa;
   font-family: poor Richard;
   border-radius: 3px;
+  border: none;
 }

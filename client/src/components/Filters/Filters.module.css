@@ -5,12 +5,6 @@
   gap: 18px;
 }
 
-.filters h5{
-  margin: 10px;
-  font-size: 20px;
-  font-family: 'Archivo Black', sans-serif;
-  letter-spacing: 3px;
-}
 .btn {
   user-select: none;
   border: none;
@@ -20,17 +14,19 @@
   font-size: 16px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px 10px;
+  padding: 3px 10px;
   cursor:pointer;
   transition: 250ms ease-out;
 }
+
 .btn:hover{
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   background-color: #8a5cbe;
   box-shadow: 0 0 10px #8a5cbe,
   0 0 30px #8a5cbe,
   0 0 10px #8a5cbe
 }
+
 .btn:active {
   transform: translateY(2px);
   background-color: #8a5cbe;
@@ -41,10 +37,10 @@
   user-select: none;
   border: none;
   color: black;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px 10px;
+  padding: 3px 10px;
   cursor:pointer;
   transform: translateY(2px);
   background-color: #8a5cbe;
