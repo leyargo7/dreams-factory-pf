@@ -1,0 +1,59 @@
+.titleUser{
+    
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.dataUser{
+    color: white;
+
+}
+
+
+.dataP {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.btnShopping {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 1rem;
+}
+.btnShopping:hover {
+    background-color: #4CAF50;
+    color: white;
+    letter-spacing: 1px;
+
+}
+
+.btnDelete {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 1rem;
+}
+.btnDelete:hover {
+    background-color: black;
+    color: white;
+    letter-spacing: 10px;
+
+}

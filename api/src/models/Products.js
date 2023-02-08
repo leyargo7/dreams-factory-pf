@@ -7,7 +7,7 @@ const ProductSchema = new Schema({
     },
     img: {
         type: String,
-        
+        trim: true,
     },
     rating: {
         type: Number,
@@ -130,9 +130,7 @@ const ProductSchema = new Schema({
         type: String,
         trim: true,
     },
-    cosito: {
-        type: String,
-    },
+
 }, {
     timestamps: true,
     versionKey: false
