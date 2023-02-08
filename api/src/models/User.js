@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     address: {
         type: String,
         trim: true,
-        //required: true,
+        default: 'empty',
     },
     email: {
         type: String,
@@ -29,6 +29,14 @@ const UserSchema = new Schema({
         type: String,
         default: 'client',
     },
+    purchases: {
+        type: Array,
+        default: [],
+    },
+    erased: {
+        type: Boolean,
+        default: false,
+    }
 }, {
     timestamps: true,
     versionKey: false,

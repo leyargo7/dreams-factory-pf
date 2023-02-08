@@ -1,14 +1,21 @@
 import React, { useEffect } from "react";
-import {SERVER_URL} from "../../config";
+import { SERVER_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
-import { clickOpenCart, deleteCart } from "../../redux/actions/actions";
+import {
+  clickOpenCart,
+  deleteCart,
+  addCart,
+  removeCart,
+} from "../../redux/actions/actions";
 import axios from "axios";
 import style from "./Cart.module.css";
+import jwt_decode from "jwt-decode";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
+  const authGoogle = useSelector((state) => state.authGoogle);
 
   useEffect(() => {
     if (openCart) {
@@ -25,30 +32,37 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    const body = {
-      items: cart_add.map((p) => {
-        return {
-          title: p.title,
-          description: p.description,
-          picture_url: p.img,
-          quantity: 1,
-          unit_price: p.price,
-        };
-      }),
-      back_urls: {
-        success: SERVER_URL,
-        failure: SERVER_URL,
-        pending: SERVER_URL,
-      },
-      // notification_url: "https://www.your-site.com/ipn",
-    };
-    axios
-      .post(`${SERVER_URL}/api/payment`, body, {
-        headers: {
-          "Content-Type": "application/json",
+    const token = localStorage.getItem("token");
+    const decoded = token ? jwt_decode(token) : null;
+    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
+    console.log("ID: ", ID);
+    if (ID) {
+      const body = {
+        items: cart_add.map((p) => {
+          return {
+            category_id: ID,
+            title: p.title,
+            description: p.description,
+            picture_url: p.img,
+            quantity: p.cant,
+            unit_price: p.price,
+          };
+        }),
+        back_urls: {
+          success: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app//myorders",
+          failure: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
+          pending: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
         },
-      })
-      .then((r) => (window.location.href = r.data.init_point));
+        notification_url: `https://dreams-factory-pf-production.up.railway.app/api/notifications`,
+      };
+      axios
+        .post(`${SERVER_URL}/api/payment`, body, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((r) => window.open(r.data.init_point, "_self"));
+    }
   };
 
   const cleanCart = (e) => {
@@ -56,7 +70,18 @@ const Cart = () => {
     dispatch(deleteCart());
   };
 
-  
+  const handleIncrease = (e) => {
+    const addProduct = cart_add.find((p) => p._id === e.target.name);
+    if (addProduct.cant < addProduct.inStock) {
+      dispatch(addCart(addProduct));
+    }
+  };
+
+  const handleDecrease = (e) => {
+    const removeProduct = cart_add.find((p) => p._id === e.target.name);
+    dispatch(removeCart(removeProduct));
+  };
+
   return (
     <div className={style.overlay} id='myNav'>
       <button className={style.closebtn} id='closeNav' onClick={closeNav}>
@@ -76,7 +101,16 @@ const Cart = () => {
                   <img src={e.img} alt='img' className={style.imgCart} />
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
+                {/*  */}
+                <button name={e._id} onClick={(e) => handleDecrease(e)}>
+                  -
+                </button>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
+                <p>x{e.cant}</p>
+                <button name={e._id} onClick={(e) => handleIncrease(e)}>
+                  +
+                </button>
+                {/*  */}
               </div>
             );
           })
@@ -88,7 +122,7 @@ const Cart = () => {
           <div className={style.totalPrice}>
             $
             {cart_add.reduce((acc, e) => {
-              let total = acc + e.price;
+              let total = (acc + e.price) * e.cant;
               let totalFixed = parseFloat(total.toFixed(2));
 
               return totalFixed;

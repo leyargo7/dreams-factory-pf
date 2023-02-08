@@ -9,7 +9,6 @@
   background-color: black;
   padding: 0 60px;  
   font-size: 20px;
-  font-family: chiller;
   box-shadow: 0 3px 3px rgba(43, 0, 160,0.5);
 }
 
@@ -18,6 +17,12 @@
   text-decoration: none;
   transition: all 0.1s ease-in-out;
 }
+
+.link h2{
+  position: relative;
+  top: 5px;
+}
+
 
 .link:hover{
   color: white; 
@@ -38,6 +43,18 @@
   height:70px;
   width: auto;
   margin-top: 8px;
+}
+
+.btnAdminOpen{
+  background-color: black;
+  color: rgb(198, 18, 214);
+  border: 1px solid black;
+  width: 100px;
+  height: 40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .login{
