@@ -49,11 +49,11 @@ const Cart = () => {
           };
         }),
         back_urls: {
-          success: "http://localhost:3000/myorders",
-          failure: "http://localhost:3000",
-          pending: "http://localhost:3000",
+          success: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app//myorders",
+          failure: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
+          pending: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
         },
-        notification_url: `https://f6e5-2803-9800-9445-bb98-553c-b0cd-e968-7939.sa.ngrok.io/api/notifications`,
+        notification_url: `https://dreams-factory-pf-production.up.railway.app/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {
