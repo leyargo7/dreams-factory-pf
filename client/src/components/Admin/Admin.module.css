@@ -1,0 +1,53 @@
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: aliceblue;
+}
+
+.users {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+}
+
+.btnAddProduct {
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btnAddProduct:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btnViewUsers {
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btnViewUsers:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+}
+

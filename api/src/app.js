@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 const app = express();
+const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const paymentRoutes = require("./routes/payment");
 const notificationRoutes = require("./routes/notifications");
@@ -55,6 +56,11 @@ app.use(cookieSession({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: './uploads'
+}));
 
 //routes
 app.use('/api', register)

@@ -9,7 +9,7 @@ import axios from "axios";
 
 const MyOrders = () => {
   const [userGoogle, setUserGoogle] = useState("");
-  const [purchases, setPurchases] = useState([]);
+  const [purchases, setPurchases] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.idUser);
@@ -34,11 +34,21 @@ const MyOrders = () => {
     }
   }, [history, dispatch, userGoogle._id]);
 
-  useEffect(()=>{
-    if(userGoogle){
-      console.log(userGoogle.purchases);
+  useEffect(() => {
+    if (userGoogle.purchases) {
+      if (!userGoogle.purchases.length) {
+        setPurchases(<h3>You don't have any purchases yet...</h3>);
+      } else {
+        setPurchases("");
+      }
+    } else if (userId.purchases) {
+      if (!userId.purchases.length) {
+        setPurchases(<h3>You don't have any purchases yet...</h3>);
+      } else {
+        setPurchases("");
+      }
     }
-  },[userGoogle])
+  }, [userGoogle, userId]);
 
   return (
     <div className={s.orders}>
@@ -47,9 +57,10 @@ const MyOrders = () => {
       {userId && userId.email && <p>Email: {userId.email}</p>}
       {userGoogle && userGoogle.name && <h2>Hi {userGoogle.name}!</h2>}
       {userGoogle && userGoogle.email && <p>Email: {userGoogle.email}</p>}
-      <h3>Your last purchase...</h3>
-      {userId.purchases && <OrderCards purchases={userId.purchases}/>}
-      {userGoogle.purchases && <OrderCards purchases={userGoogle.purchases}/>}
+      {!purchases ? <h3>Your last purchase...</h3> : null}
+      {userId.purchases && userId.purchases.length ? (<OrderCards purchases={userId.purchases} />) : null}
+      {userGoogle.purchases && userGoogle.purchases.length ? (<OrderCards purchases={userGoogle.purchases} />) : null}
+      {purchases}
     </div>
   );
 };
