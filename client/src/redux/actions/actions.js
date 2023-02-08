@@ -9,6 +9,7 @@ export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
 export const DELETE_ONE = "DELETE_ONE"
+export const STARS_PROM = "STARS_PROM" 
 
 export const OPEN_CART = "OPEN_CART";
 export const ADD_CART = "ADD_CART";
@@ -250,5 +251,13 @@ export function putUser(id, payload) {
                 payload: error.response.data
             })  
         }
+    }
+}
+
+export function ratingProm(payload) {
+    return{
+        type: STARS_PROM,
+        payload
+
     }
 }

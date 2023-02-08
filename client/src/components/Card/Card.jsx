@@ -32,6 +32,7 @@ export default function Card({
   const [favorite, setFavorite] = useState(found ? found.favorite : true);
   //const cart_add = useSelector((state) => state.add_Cart);
   const [buttonOn, setButtonOn] = useState(add_Cart ? false : true);
+  const starsState = useSelector((state) => state.stars);
 
   useEffect(() => {
     if (!add_Cart.find((p) => p._id === _id)) {
@@ -67,6 +68,11 @@ export default function Card({
       toast.error("removed from favorites");
     }
   };
+
+  const ratingState = [rating]
+  const concat = ratingState.concat(starsState)
+  const rating2 =concat.reduce((a,b)=> a+b)/concat.length;
+  console.log(rating2);
 
   return (
     <div className={s.shell}>

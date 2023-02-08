@@ -20,6 +20,8 @@ import {
   GOOGLE_USER,
   GET_USER,
   PUT_USER,
+  STARS_PROM,
+  idProduct
 } from "../actions/actions";
 
 const initialState = {
@@ -39,6 +41,8 @@ const initialState = {
   authGoogle: [],
   idUser: [],
   putUser: [],
+  stars:[],
+  reviews:[]
 };
 
 function rootReducer(state = initialState, action) {
@@ -187,6 +191,12 @@ function rootReducer(state = initialState, action) {
         ...state,
         putUser: action.payload,
       };
+    case STARS_PROM:
+      return{
+        ...state,
+        stars: [...state.stars,parseInt(action.payload)],
+        reviews: state.stars.length+1
+      }
 
     default:
       return { ...state };
