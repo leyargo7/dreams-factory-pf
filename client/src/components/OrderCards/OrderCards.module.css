@@ -1,0 +1,11 @@
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.total {
+  margin-top: 50px;
+}

@@ -19,6 +19,7 @@
   box-shadow: 0 8px 8px 8px rgba(40, 40, 40, 0.4);
   /* box-shadow: -3px -3px 6px rgb(108 34 177), 3px 3px 6px rgb(108 34 177); */
   color: white;
+
 }
 
 .img {
@@ -30,6 +31,8 @@
   align-items: center;
   box-shadow: 0 8px 8px 8px rgba(40, 40, 40, 0.4);
   padding: 0 80px;
+  
+  
 }
 
 .img img {
