@@ -32,6 +32,10 @@ const UserSchema = new Schema({
     purchases: {
         type: Array,
         default: [],
+    },
+    erased: {
+        type: Boolean,
+        default: false,
     }
 }, {
     timestamps: true,
