@@ -1,35 +1,30 @@
-
 .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 200px;
 }
 
 .title2{
-    color: rgb(198, 18, 214);
+    display: block;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
     text-decoration-line: overline;
-    letter-spacing: 6px;
+    height: 70px;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    padding-top: 17px;
     
 }
-
 
  .empty {
     padding-top: 150px;
     color: white;
-    padding-bottom: 450px;
-    letter-spacing: 2px;
+    padding-bottom: 170px;
+    letter-spacing: 2px;  
  }
 
- .empty h3{
-    display: flex;
-    width: 700px;
-    height: 350px;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.7);
-    border: 1px solid beige;
-    box-shadow: -9px -9px 6px rgb(108, 34, 177), 3px 3px 6px rgb(108, 34, 177);
-    
- }
+ 

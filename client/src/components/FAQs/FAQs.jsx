@@ -1,7 +1,14 @@
 import React from "react";
 import s from "./FAQs.module.css";
+import { useEffect } from "react";
 
 export default function Faqs() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
+
+
     return (
         <div className={s.shell}>
 
