@@ -79,7 +79,7 @@ export default function Detail() {
   // },[]);
 
   const ratingState = [productID.rating]
-  const concat = ratingState.concat(starsState)
+  const concat = ratingState.concat(starsState.filter((ev) => productID._id===ev.product).map((ev) => ev.str))
   const rating2 =concat.reduce((a,b)=> a+b)/concat.length;
 
   if (!productID._id) {
@@ -265,7 +265,9 @@ export default function Detail() {
               />
             </div>
             <div>
-              <Rating2/>
+              <Rating2
+                id={productID._id}
+              />
             </div>
           </div>
         </div>

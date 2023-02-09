@@ -4,22 +4,29 @@ import {FaStar} from "react-icons/fa";
 import s from "./Rating.module.css";
 import { ratingProm } from "../../redux/actions/actions";
 import jwt_decode from "jwt-decode";
-import { Toaster, toast } from "react-hot-toast";
 
-export default function Rating2 () {
+export default function Rating2 ({id}) {
 
     const dispatch = useDispatch();
-    const [rating,setRating] = useState(window.localStorage.getItem('rating'));
+    const [disable,setDisable] = useState(true)
+    // const [rating,setRating] = useState();
+    const [rating,setRating] = useState(localStorage.getItem('rating'));
     const reviewsState = useSelector((state) => state.reviews);
 
     const setLocalStorage = value => {
         setRating(value)
-        window.localStorage.setItem("rating",value)
+        localStorage.setItem("rating",value)
+        setDisable(false)
+        localStorage.setItem("disable",false)
+
     };
 
     const handleStars = (e) => {
-        dispatch(ratingProm(e.target.value))
-        
+        const parse = parseInt(e.target.value);
+        const objRating = {product:id, str: parse}
+        dispatch(ratingProm(objRating))
+        setDisable(false)
+
     };
 
     const token = localStorage.getItem("token");
@@ -39,12 +46,13 @@ export default function Rating2 () {
                    return (
                         <label>
                         <input
-                        // disabled={!disable}
+                            // disabled={!disable}
                             type="radio" 
                             className={s.rating}
                             value ={ratingValue}
                             onClick={(e) => {
                                 handleStars(e)
+                                //setRating(ratingValue)
                                 setLocalStorage(ratingValue)
                             }
                             }

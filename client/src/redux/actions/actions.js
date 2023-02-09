@@ -255,9 +255,10 @@ export function putUser(id, payload) {
 }
 
 export function ratingProm(payload) {
+    console.log(payload);
     return{
         type: STARS_PROM,
         payload
 
     }
-}
+} 

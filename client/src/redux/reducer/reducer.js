@@ -194,7 +194,7 @@ function rootReducer(state = initialState, action) {
     case STARS_PROM:
       return{
         ...state,
-        stars: [...state.stars,parseInt(action.payload)],
+        stars: [...state.stars,action.payload],
         reviews: state.stars.length+1
       }
 
