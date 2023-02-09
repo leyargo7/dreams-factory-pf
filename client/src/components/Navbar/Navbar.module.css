@@ -13,19 +13,21 @@
 }
 
 .link{
-  color: rgb(198, 18, 214);
+  color: white;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
+  cursor: pointer;
 }
 
 .link h2{
   position: relative;
-  top: 5px;
+  bottom: 2px;
+  
 }
 
 
-.link:hover{
-  color: white; 
+.link h2:hover{
+  color: #5D3891; 
 }
 
 .right{
@@ -46,8 +48,10 @@
 }
 
 .btnAdminOpen{
+  position: relative;
+  left: 8%;
+  color: white;
   background-color: black;
-  color: rgb(198, 18, 214);
   border: 1px solid black;
   width: 100px;
   height: 40px;
@@ -55,6 +59,10 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.btnAdminOpen:hover{
+  color: #5d3891;
 }
 
 .login{
@@ -93,17 +101,35 @@
 }
 
 .modalBody{
-  background-color: white;
-  width: 35%;
-  min-width: 400px;
-  height: 70%;
+  background-color: rgba(150, 130, 173, 0.966);
+  width: 500px;
+  min-width: 500px;
+  height: 600px;
   min-height: 400px;
-  border-radius: 1rem;
+  border-radius: 10px;
   position: relative;
   padding: 1rem;
+  box-shadow: 0 0 40px rgba(116, 115, 122, 0.6);
+  border: 2px solid rgba(255,255,255,0.1)
 }
 
+.modalBody *{
+  font-family: 'Poppins',sans-serif;
+    /* color: #ffffff; */
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.modalBody h3{
+  color: black;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
 .modalClose{
+  
   background-color: black;
   color: beige;
   position: absolute;
@@ -112,6 +138,8 @@
   right: 6px;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 5px;
+
 }
 
 .modalForm {
@@ -121,39 +149,72 @@
   
 }
 
+.modalForm .default{
+  margin-right: 270px;
+}
+.modalForm label{
+    font-weight: bold;
+    margin-right: 240px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color:rgb(3, 3, 3);
+
+}
 .modalUser{
-  width: 50%;
+  width: 70%;
   height: 40px;
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  border: none;
+  border: 0.2px solid rgb(3, 3, 3);
   padding: 0 1rem;
-  margin: 0.5rem 0;
+  background-color: rgba(255,255,255,0.07);
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.modalUser::placeholder{
+  color:rgb(49, 42, 42);
+  font-size: 14px;
+  pointer-events: none;
 }
 
 .modalPass{
-  width: 50%;
+  width: 70%;
   height: 40px;
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  border: none;
+  border: 0.2px solid rgb(3, 3, 3);
   padding: 0 1rem;
-  margin: 0.5rem 0;
+  background-color: rgba(255,255,255,0.07);
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
+.modalPass::placeholder{
+  color:rgb(49, 42, 42);
+  font-size: 14px;
+  pointer-events: none;
+}
 .modalButton {
-  width: 50%;
+  width: 70%;
   height: 40px;
   border-radius: 0.5rem;
-  border: 1px solid black;
-  padding: 0 1rem;
-  /* margin: 0.6rem 0; */
   margin-top: 3rem;
-  background-color: black;
-  color: white;
+  background-color: #ffffff;
+  color: #080710;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.modalButton:hover{
+  background-color: rgba(255,255,255,0.47);
 }
 
 .btnOrder {
+  position: relative;
+  bottom: 7px;
   width: 50%;
   height: 40px;
   border-radius: 0.5rem;
@@ -162,11 +223,14 @@
   /* margin: 0.6rem 0; */
   /* margin-top: 3rem; */
   background-color: black;
-  color: rgb(198, 18, 214);
-  
+  color: #ffff;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.btnOrder:hover{
+  color: #5d3891;
 }
 
 .btnOut{
@@ -178,60 +242,66 @@
   /* margin: 0.6rem 0; */
   /* margin-top: 3rem; */
   background-color: black;
-  color: rgb(198, 18, 214);
-  
+  color: #ffff;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
 }
 
-.modalBtnGoogle{
-  background-color: papayawhip;
-  color: black;
-  border: 1px solid black;
-  width: 50%;
-  height: 40px;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  margin-top: .5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+.btnOut:hover{
+  color: #5d3891;
 }
 
-.modalBtnFacebook {
-  background-color: #3b5998;
-  color: white;
-  border: 1px solid black;
-  width: 50%;
+.modalBtnGoogle{
+  width: 70%;
   height: 40px;
   border-radius: 0.5rem;
+  margin-top: 1rem;
+  background-color: papayawhip;
+  color: #080710;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
 }
+ .modalBtnGoogle:hover{
+  background-color: rgb(235, 208, 165);
+ }
+
+ .modalBtnGoogle .google{
+  font-size: 30px;
+  margin-right: 10px;
+ }
 
 .modalSignIn {
   display: flex;
-  flex-direction: row;
-  
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 10px;
+    align-items: flex-start;
   
 }
 
 .modalSignIn p {
-  font-size: 0.9rem;
+  font-size: 16px;
   
 }
 .modalSignIn button {
+  width: 70%;
+  height: 40px;
+  border-radius: 0.5rem;
+  margin-top: 5px;
   background-color: black;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
+  color:white;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
 }
 
+.modalSignIn button:hover{
+  background-color: rgba(37, 31, 31, 0.705);
+}
 
 /* modal register */
 .modalRegister {
@@ -249,14 +319,16 @@
 }
 
 .modalBodyRegister {
-  background-color: white;
-  width: 35%;
-  min-width: 400px;
-  height: 50%;
+  background-color: rgba(150, 130, 173, 0.966);
+  width: 500px;
+  min-width: 500px;
+  height: 700px;
   min-height: 400px;
-  border-radius: 1rem;
+  border-radius: 10px;
   position: relative;
-  padding: 1rem;  
+  padding: 1rem;
+  box-shadow: 0 0 40px rgba(116, 115, 122, 0.6);
+  border: 2px solid rgba(255,255,255,0.1)
 }
 
 .modalCloseRegister {
@@ -268,41 +340,89 @@
   right: 6px;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 5px;
 }
 
+.modalBodyRegister h3{
+  color: black;
+  margin-top: 50px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
 .modalFormRegister {
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+.modalBodyRegister *{
+  font-family: 'Poppins',sans-serif;
+    /* color: #ffffff; */
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
 .modalFormRegister input {
-  width: 50%;
+  width: 70%;
   height: 40px;
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  border: none;
+  border: 0.2px solid rgb(3, 3, 3);
   padding: 0 1rem;
-  margin: 0.3rem 0;
+  background-color: rgba(255,255,255,0.07);
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: 300;
+  
 }
 
+.modalFormRegister input::placeholder{
+  color:rgb(49, 42, 42);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.modalFormRegister label{
+    margin-right: 240px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500px;
+    color:rgb(3, 3, 3);
+}
 .modalBtnRegister {
-  width: 50%;
-  height: 40px;
+  width: 70%;
+  height: 50px;
   border-radius: 0.5rem;
-  border: 1px solid black;
-  padding: 0 1rem;
-  /* margin: 0.6rem 0; */
-  margin-top: 1rem;
-  background-color: black;
-  color: white;
+  margin-top: 3rem;
+  background-color: papayawhip;
+  color: black;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
+.modalBtnRegister:hover{
+  background-color: rgb(235, 208, 165);
+}
+
+.modalBtnRegister .iconReg{
+  font-size: 25px;
+  margin-right: 10px;
+}
 .error {
-  color: red;
+  width:70%;
+  color: rgb(190, 42, 42);
   font-size: 0.8rem;
-  margin: 0;
-  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  outline: 1px solid rgb(187, 77, 77);
+  
+}
+
+.error .logoerror{
+  font-size: 20px;
+  margin-right: 20px;
+  
 }

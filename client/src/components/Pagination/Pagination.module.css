@@ -1,37 +1,39 @@
 .btn {
   user-select: none;
-  border: 3px solid rgba(169, 3, 140,0.7);
+ border-radius: 3px;
   gap: 10px;
   background-color: transparent;
   color: white;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 900;
   margin: 15px 5px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   cursor:pointer;
   font-family: poor Richard;
+  border: 3px solid #8f88fa;
 }
 
 .btn:active {
   transform: translateY(2px);
-  background-color: rgba(139, 0, 140,0.7);
+  background-color: #8f88fa;
 }
 
 .active{
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   user-select: none;
-  border: 2px solid rgba(228, 18, 193, 0.4);
   text-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 900;
   margin: 15px 5px;
-  padding: 4px 9px;
+  padding: 0px 10px;
   cursor:pointer;
-  transform: translateY(2px);
-  background-color: rgba(241 23 203 / 73%);
-  box-shadow: 0 0 10px rgba(1241 23 203 / 73%),
-  0 0 40px rgba(1241 23 203 / 73%),
-  0 0 80px rgba(1241 23 203 / 73%);
+  transform: translateY(2px); 
+  background-color: #8f88fa;
+  box-shadow: 0 0 5px #8f88fa,
+  0 0 10px #8f88fa,
+  0 0 10px #8f88fa;
   font-family: poor Richard;
+  border-radius: 3px;
+  border: none;
 }

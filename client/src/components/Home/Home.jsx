@@ -45,6 +45,10 @@ export default function Home() {
     
   }, [dispatch]); 
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+},[])
+
 
 console.log();
   return (

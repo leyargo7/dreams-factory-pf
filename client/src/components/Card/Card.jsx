@@ -10,9 +10,11 @@ import {
 } from "../../redux/actions/actions";
 
 import s from "./Card.module.css";
-import { ImCart } from "react-icons/im";
+import {RiShoppingCartLine, RiShoppingCartFill} from "react-icons/ri";
 import Rating from "react-rating";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
+import {FaRegHeart,FaHeart} from "react-icons/fa"
+
 
 export default function Card({
   title,
@@ -67,6 +69,7 @@ export default function Card({
   };
 
   return (
+    <div className={s.toast}>
     <div className={s.shell}>
       <div className={s.header}>
         <h4>{title}</h4>
@@ -78,7 +81,7 @@ export default function Card({
       </NavLink>
       <div className={s.footer}>
         <h4 style={{ margin: "10px 0 0 0" }}>
-          <div style={{ userSelect: "none", color: "#ffff74" }}>
+          <div style={{ userSelect: "none", color: "#ffff74", fontSize: "18px" }}>
             <Rating
               initialRating={rating}
               emptySymbol={<BsStar />}
@@ -89,28 +92,53 @@ export default function Card({
           </div>
         </h4>
         <div className={s.footerPrice}>
+          {
+            buttonOn === false ? 
           <button
-            disabled={!buttonOn}
-            className={s.cartBtn}
+            className={s.cartBtnFalse}          
+          >
+            
+            <RiShoppingCartFill />  
+
+          </button>
+          :
+          <button
+            className={s.cartBtnTrue}
             onClick={(e) => handleAddCart(e)}
           >
-            <ImCart />
+            <RiShoppingCartLine />
           </button>
+
+          }
           <h2 style={{ margin: "0 0 10px 0" }}>
-            <span style={{ userSelect: "none", color: "rgb(179, 0, 180)" }}>
+            <span style={{marginRight: "3px", userSelect: "none", color: "rgb(255, 255, 255)" }}>
               $
             </span>
             {price}
           </h2>
-          <button
-            className={favorite === false ? s.btnFalse : s.btnTrue}
+          {
+            favorite === false ? 
+          <button        
+            className={s.btnFalse}
             onClick={(e) => handleAddFavorite(e)}
           >
-            ❤
+                    
+            <FaHeart/>            
           </button>
+          :
+          <button           
+            className={ s.btnTrue }
+            onClick={(e) => handleAddFavorite(e)}
+          >
+            <FaRegHeart/>
+                                 
+          </button>
+          }
         </div>
       </div>
-      <Toaster
+      
+    </div>
+    <Toaster
         position='bottom-right'
         reverseOrder={true}
         toastOptions={{

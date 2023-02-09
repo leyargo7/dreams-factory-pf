@@ -1,3 +1,36 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 50px;
+
+}
+
+.containerPass{
+    background-color: #312e344d;
+    width: 35%;
+    height: 500px;
+}
+
+.containerPass h3{
+    margin-top: 70px;
+}
+.containerAdd{
+    background-color: #312e344d;
+    width: 35%;
+    height: 500px;
+}
+
+.containerAdd h3{
+    margin-top: 80px;
+}
+h2{
+   margin-top: 40px
+}
 h2, h3 {
     color: beige;
 }
@@ -13,21 +46,18 @@ h2, h3 {
 }
 
 .formOne input {
-    width: 100%;
-    text-align: center;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    border-radius: 8px;
 }
 
 .formOne button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
+    background-color: papayawhip;
+    color: rgb(0, 0, 0);
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -36,8 +66,12 @@ h2, h3 {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    font-weight: bold;
 }
 
+.formOne button:hover {
+    background-color: rgb(223, 171, 88);
+}
 .formTwo {
     display: flex;
     flex-direction: column;
@@ -47,11 +81,9 @@ h2, h3 {
 }
 
 .formTwo input {
-    width: 100%;
-    text-align: center;
+    border-radius: 8px;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -59,9 +91,8 @@ h2, h3 {
 }
 
 .formTwo button {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
+    background-color: papayawhip;
+    color: rgb(0, 0, 0);
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -70,5 +101,9 @@ h2, h3 {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    font-weight: bold;
 }
 
+.formTwo button:hover {
+    background-color: rgb(223, 171, 88);
+}

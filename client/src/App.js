@@ -2,12 +2,11 @@ import { Route } from 'react-router-dom';
 import Home from './components/Home/Home.jsx';
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Categories from './components/Categories/Categories.jsx';
-import Favorites  from "./components/Favorites/Favorites.js"
+import Favorites  from "./components/Favorites/Favorites.jsx"
 import Detail from './components/Detail/Detail.jsx';
 import CategorySelector from "./components/CategorySelector/CategorySelector.jsx";
 import Footer from './components/Footer/Footer.jsx'
 import s from "./App.module.css";
-import FAQs from './components/FAQs/FAQs.jsx';
 import Terms from './components/Terms/Terms.jsx';
 import Privacy from './components/Privacy/Privacy.jsx';
 import About from './components/About/About.jsx';
@@ -21,6 +20,7 @@ import ViewUsers from './components/Admin/ViewUsers/ViewUsers.jsx';
 import DeleteUsers from './components/Admin/DeleteUsers/DeleteUsers.jsx';
 import ShoppingHistory from './components/Admin/ShoppingHistory/ShoppingHistory.jsx';
 import AddProducts from './components/Admin/AddProducts/AddProducts.jsx';
+import Acordeon from './components/Acordeon/Acordeon.jsx';
 
 
 
@@ -46,7 +46,7 @@ function App() {
       <Route exact path="/product/:id" component={Detail} />
       <Route exact path="/terms" component={Terms} />
       <Route exact path="/privacy" component={Privacy}/>
-      <Route exact path="/faqs" component={FAQs}/>
+      <Route exact path="/faqs" component={Acordeon}/>
       <Route exact path="/about" component={About}/>
       <Footer />
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { SERVER_URL } from "../../config";
+import { SERVER_URL, FRONT_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clickOpenCart,
@@ -49,11 +49,11 @@ const Cart = () => {
           };
         }),
         back_urls: {
-          success: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app//myorders",
-          failure: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
-          pending: "https://dreams-factory-hyw38wwn0-zoranspiegel.vercel.app/",
+          success: `${FRONT_URL}/myorders`,
+          failure: `${FRONT_URL}`,
+          pending: `${FRONT_URL}`,
         },
-        notification_url: `https://dreams-factory-pf-production.up.railway.app/api/notifications`,
+        notification_url: `${SERVER_URL}/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {
@@ -90,8 +90,8 @@ const Cart = () => {
 
       <div className={style.overlayContent}>
         <div className={style.titleCart}>
-          <h3>PRODUCT</h3>
-          <h3>SUBTOTAL</h3>
+          <h3 style={{ position: "relative", left: "100px" }}>PRODUCT</h3>
+          <h3 style={{ position: "relative", right: "60px" }}>SUBTOTAL</h3>
         </div>
         {cart_add.length > 0 ? (
           cart_add.map((e, i) => {
@@ -102,12 +102,20 @@ const Cart = () => {
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
                 {/*  */}
-                <button name={e._id} onClick={(e) => handleDecrease(e)}>
+                <button
+                  className={style.plusMinus}
+                  name={e._id}
+                  onClick={(e) => handleDecrease(e)}
+                >
                   -
                 </button>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
                 <p>x{e.cant}</p>
-                <button name={e._id} onClick={(e) => handleIncrease(e)}>
+                <button
+                  className={style.plusMinus}
+                  name={e._id}
+                  onClick={(e) => handleIncrease(e)}
+                >
                   +
                 </button>
                 {/*  */}

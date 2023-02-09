@@ -1,6 +1,6 @@
 .container {
   background-color: black;
-  height: 300px;
+  height: 350px;
 }
 .containerLoad {
   background-color: black;
@@ -8,29 +8,34 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  
 }
 .logonavbar {
   padding-top: 20px;
-  height: 70px;
+  height: 90px;
   width: auto;
   margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .linkscontainer {
   display: flex;
   justify-content: center;
+  
   gap: 50px;
   padding-bottom: 50px;
+  
 }
+
 .linkscontainer a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .rights {
   color: white;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .socialcont {
@@ -41,4 +46,19 @@
   gap: 50px;
   padding-bottom: 10px;
   align-items: center;
+  font-size: 20px;
 }
+
+.socialcont .facebook:hover{
+  color: #3b5998;
+}
+
+.socialcont .twitter:hover{
+  color: #55acee;
+}
+
+.socialcont .instagram:hover{
+ color: rgb(223, 140, 115)
+  
+}
+
