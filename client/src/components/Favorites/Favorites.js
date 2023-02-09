@@ -4,13 +4,14 @@ import { NavLink } from "react-router-dom";
 import s from './Favorites.module.css'
 import Card from "../Card/Card";
 
+
 const Favorites = () => {
 
     const user = { email: 'dakshdlaksjd@jaskdj.com' }
 
     let favoritos = useSelector(state => state.favorites)
 
-
+    
 
     if (user) {
         return (

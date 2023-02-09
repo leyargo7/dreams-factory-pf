@@ -18,13 +18,7 @@
   letter-spacing: 5px;
   color: #fff;
   font-size: 28px;
-}
-
-.title{
-  font-size:25px;
-  margin-bottom: 0.5em;
-
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.309);
+  
 }
 
 .header p{
@@ -40,13 +34,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.7);
   justify-content: center;
-  color: #ECEBEB;
+  color: #fff;
   padding-top: 15px;
   font-size: 16px;
   border-radius: 15px;
-  border-bottom: 2px solid black;
+}
+
+
+.title{
+  display: flex;
+}
+
+.title span {
+  font-size: 22px;
+  margin-left: 25px;
+  margin-top: 12px;
+  cursor: pointer;
 }
 
 .cards{
@@ -97,7 +101,7 @@ align-items: center;
 justify-content: space-between;
 height: 90px;
 /* border-radius: calc(40 * 1px) 0 0 0; */
-background: #301E67;
+background: #251D3A;
 transform: translateY(-100%);
 transition: .2s ease-in-out;
 
@@ -127,7 +131,7 @@ transition: .2s ease-in-out;
 .card_header_text{
   font-size: 18px;
 margin: 0 0 .3em;
-color: rgb(223, 202, 159);
+color: #fff;
 font-family: "MockFlowFont";
 }
 
