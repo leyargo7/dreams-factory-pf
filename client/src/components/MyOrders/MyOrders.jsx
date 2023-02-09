@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { getUser } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
-import OrderCards from "../OrderCards/OrderCards"
+import OrderCards from "../OrderCards/OrderCards";
+import { SERVER_URL } from "../../config";
 import s from "./MyOrders.module.css";
 import axios from "axios";
 
@@ -29,7 +30,7 @@ const MyOrders = () => {
       dispatch(getUser(decoded.id));
     }
     if (localStorage.U) {
-      axios.get(`http://localhost:3001/api/v1/user/${JSON.parse(localStorage.U)}`).then(r => setUserGoogle(r.data))
+      axios.get(`${SERVER_URL}/api/v1/user/${JSON.parse(localStorage.U)}`).then(r => setUserGoogle(r.data))
       history.push("/myorders");
     }
   }, [history, dispatch, userGoogle._id]);

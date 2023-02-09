@@ -48,8 +48,10 @@
 }
 
 .btnAdminOpen{
+  position: relative;
+  left: 8%;
+  color: white;
   background-color: black;
-  color: rgb(198, 18, 214);
   border: 1px solid black;
   width: 100px;
   height: 40px;
@@ -57,6 +59,10 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.btnAdminOpen:hover{
+  color: #5d3891;
 }
 
 .login{
@@ -207,6 +213,8 @@
 }
 
 .btnOrder {
+  position: relative;
+  bottom: 7px;
   width: 50%;
   height: 40px;
   border-radius: 0.5rem;
@@ -215,11 +223,14 @@
   /* margin: 0.6rem 0; */
   /* margin-top: 3rem; */
   background-color: black;
-  color: rgb(198, 18, 214);
-  
+  color: #ffff;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.btnOrder:hover{
+  color: #5d3891;
 }
 
 .btnOut{
@@ -231,11 +242,14 @@
   /* margin: 0.6rem 0; */
   /* margin-top: 3rem; */
   background-color: black;
-  color: rgb(198, 18, 214);
-  
+  color: #ffff;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.btnOut:hover{
+  color: #5d3891;
 }
 
 .modalBtnGoogle{

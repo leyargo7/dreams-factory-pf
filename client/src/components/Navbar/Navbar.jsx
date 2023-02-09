@@ -22,6 +22,7 @@ import { RiShoppingCartFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineError } from "react-icons/md";
 import { BsFillPersonFill } from "react-icons/bs";
+import { SERVER_URL } from "../../config";
 
 const Navbar = () => {
   const [user, setUser] = useState({
@@ -159,7 +160,7 @@ const Navbar = () => {
   const connectGoogle = (e) => {
     e.preventDefault();
 
-    window.open("http://localhost:3001/api/v1/login/google/", "_self");
+    window.open(`${SERVER_URL}/api/v1/login/google/`, "_self");
   };
 
   const openToCart = (e) => {
@@ -174,7 +175,7 @@ const Navbar = () => {
     document.getElementById("logoSession").style = "display: flex";
     toast.success("Log Out Successfull");
     await axios
-      .get("http://localhost:3001/api/v1/logout")
+      .get(`${SERVER_URL}/api/v1/logout`)
       .then((res) => {
         console.log("Log Out Successfull");
       })
