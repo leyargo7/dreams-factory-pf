@@ -1,7 +1,13 @@
 import React from "react";
 import s from './Terms.module.css'
+import { useEffect } from "react";
 
 export default function Terms() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
+
     return(
         <div className={s.container}>
             <h2>Terms of use of the Affiliate partner account DreamsFactory.com</h2>

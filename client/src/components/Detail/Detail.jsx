@@ -36,6 +36,10 @@ export default function Detail() {
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
+
   
   useEffect(() => {
     favorites.find((f) => f._id === productID._id) && setFavorite(false) 

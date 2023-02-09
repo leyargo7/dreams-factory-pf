@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { putUser, googleAuth } from "../../redux/actions/actions";
+import { putUser} from "../../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import s from "./LoginSuccess.module.css";
@@ -33,12 +33,14 @@ const LoginSuccess = () => {
     if (response && response.data) {
       setDataUser(response.data);
       localStorage.setItem("U",JSON.stringify(response.data._id));
-      dispatch(googleAuth(response.data));
+      
       if(response.data.address !== "empty"){
         history.push("/");
+        window.location.reload();
       }
     } 
   }
+
 
   const handleAddress = (e) => {
     setAddress({

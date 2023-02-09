@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { info } from "./InfoAbout.jsx";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import s from './About.module.css'
 
 export default function About () {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
+
+    
+
     return(
         <div className={s.abaut}>
         <div className={s.header}>

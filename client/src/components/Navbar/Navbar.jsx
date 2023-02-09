@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clickOpenCart,
@@ -46,17 +47,27 @@ const Navbar = () => {
   const googleUser = useSelector((state) => state.authGoogle);
 
   useEffect(() => {
-    if (localStorage.U || window.localStorage.token) {
+    if(window.localStorage.token){
+      const token = localStorage.getItem("token");
+      const decoded = jwt_decode(token);
+      dispatch(googleAuth(decoded.id));
+
+
       document.getElementById("logoSession").style = "display: none";
+    }
+    if (localStorage.U) {
+      dispatch(googleAuth(JSON.parse(localStorage.U)));
+      document.getElementById("logoSession").style = "display: none";
+
     }
     if(dbUser.message === "user created"){
       document.getElementById("modalRegister").style = "display: none";
       toast.success("User created, please log in");
     }
-    //console.log("isRegister", stateIsRegister);
 
+  }, [dbUser.message, dispatch]);
 
-  }, [dbUser.message, googleUser._id]);
+  //--------------------------------------------
 
   const modalOpen = (e) => {
     e.preventDefault();
@@ -148,6 +159,7 @@ const Navbar = () => {
   
           toast.success("Welcome, Log In Successfull");
           history.push("/");
+          window.location.reload();
         }
       }, 500);
     } else {
@@ -171,7 +183,7 @@ const Navbar = () => {
 
   const logOut = async(e) => {
     window.localStorage.clear();
-    dispatch(googleAuth([]));
+    
     document.getElementById("logoSession").style = "display: flex";
     toast.success("Log Out Successfull");
     await axios.get("http://localhost:3001/api/v1/logout")
@@ -182,14 +194,47 @@ const Navbar = () => {
       console.log("Not properly authenticated ", err);
     }); 
     history.push("/");
+    window.location.reload()
   };
 
+
+  const openAdmin = (e) => {
+    e.preventDefault();
+    if(googleUser.role === "admin"){
+      localStorage.setItem("admin", true);
+      //document.getElementById("logoSession").style = "display: none";
+      history.push("/admin");
+
+    }else{
+      alert("You are not admin");
+    }
+    
+  }
+
+  const openClient = (e) => {
+    e.preventDefault();
+    if(googleUser.role === "client"){
+      localStorage.setItem("client", true);
+      //document.getElementById("logoSession").style = "display: none";
+      history.push("/myaccount");
+
+    }else{
+      alert("You are not client");
+    }
+  }
 
   return (
     <div className={s.nav}>
       <NavLink className={s.searchbar} to="/">
         <img className={s.logonavbar} src={logo} alt="logo" />
       </NavLink>
+      {
+        // boton admin
+        googleUser.role === "admin" ? (<button className={s.btnAdminOpen} onClick={e=>openAdmin(e)}>Admin</button>) : null
+      }
+      {
+        googleUser.role === "client" ? (<button className={s.btnAdminOpen} onClick={e=>openClient(e)}>My Account</button>) : null
+      }
       <div className={s.right}>
         <NavLink className={s.link} to="/about">
           <h2><FaUsers/></h2>

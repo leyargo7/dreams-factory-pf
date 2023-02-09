@@ -1,0 +1,54 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.form label {
+    
+    font-size: 1.2rem;
+    font-weight: 600;
+    color : white;
+}
+
+.form input {
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.form select {
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.renderCate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}

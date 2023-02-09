@@ -22,10 +22,11 @@
 .link h2{
   position: relative;
   bottom: 2px;
+  
 }
 
 
-.link:hover{
+.link h2:hover{
   color: #5D3891; 
 }
 
@@ -44,6 +45,18 @@
   height:70px;
   width: auto;
   margin-top: 8px;
+}
+
+.btnAdminOpen{
+  background-color: black;
+  color: rgb(198, 18, 214);
+  border: 1px solid black;
+  width: 100px;
+  height: 40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .login{
