@@ -3,20 +3,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
 .title2{
-    display: inline-block;
-    color: #000;
-    margin: auto;
-    margin-top: 25px;
+    display: block;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.63);
+    color: #fff;
     text-decoration-line: overline;
-    height: 30px;
+    height: 70px;
     border-radius: 10px;
     letter-spacing: 5px;
     margin-bottom: 40px;
-    font-family: 'Montserrat', sans-serif;
+    padding-top: 17px;
     
 }
 

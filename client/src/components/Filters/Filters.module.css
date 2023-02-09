@@ -1,43 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 .filters{
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 18px;
 }
 
 .btn {
   user-select: none;
   border: none;
-  border-radius: 10px;
-  background-color: #2D033B;
-  color: white;
-  font-size: 0.8rem;
+  border: 2px solid #8a5cbe;
+  background-color: #a176e0; 
+  color: black;
+  font-size: 16px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px 10px;
-  box-shadow: 0px 3px 0 #452399;
+  padding: 3px 10px;
   cursor:pointer;
+  transition: 250ms ease-out;
 }
+
 .btn:hover{
-  background-color: #452399;
+  letter-spacing: 0.1em;
+  background-color: #8a5cbe;
+  box-shadow: 0 0 10px #8a5cbe,
+  0 0 30px #8a5cbe,
+  0 0 10px #8a5cbe
 }
+
 .btn:active {
   transform: translateY(2px);
-  background-color: rgba(139, 0, 40,0.4);
-  box-shadow: 0px 1px 0 rgba(23, 0, 40,0.7);
+  background-color: #8a5cbe;
   font-family: 'Montserrat', sans-serif;
 }
 
 .active{
   user-select: none;
   border: none;
-  border-radius: 10px;
-  color: white;
-  font-size: 0.8rem;
+  color: black;
+  font-size: 0.9rem;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px 10px;
+  padding: 3px 10px;
   cursor:pointer;
   transform: translateY(2px);
-  background-color: rgba(139, 0, 40,0.4);
-  box-shadow: 0px 1px 0 rgba(23, 0, 40,0.7);
+  background-color: #8a5cbe;
+  box-shadow: 0 0 10px #8a5cbe,
+  0 0 30px #8a5cbe,
+  0 0 10px #8a5cbe
 }

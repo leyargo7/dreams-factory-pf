@@ -19,6 +19,9 @@ import MyOrders from "../MyOrders/MyOrders";
 import {FaUsers} from "react-icons/fa"
 import {RiHeartsFill} from "react-icons/ri"
 import {RiShoppingCartFill} from "react-icons/ri"
+import{FcGoogle} from 'react-icons/fc'
+import{MdOutlineError} from 'react-icons/md'
+import {BsFillPersonFill} from 'react-icons/bs'
 
 const Navbar = () => {
   const [user, setUser] = useState({
@@ -260,11 +263,12 @@ const Navbar = () => {
       <div className={s.modalContainer} id="modalcontainer">
         <div className={s.modalBody}>
           <button className={s.modalClose} onClick={(e) => modalClose(e)}>
-            X
+            x
           </button>
-          <h3>Log In</h3>
+          <h3>Login Here</h3>
           <div>
             <form action="" className={s.modalForm}>
+              <label className={s.default} for="email">Email</label>
               <input
                 type="text"
                 name="email"
@@ -272,27 +276,31 @@ const Navbar = () => {
                 value={userLogin.email}
                 className={s.modalUser}
                 onChange={(e) => handleLoginUser(e)}
+                id="email"
               />
+              <label for="password">Password</label>
               <input
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Password"
                 value={userLogin.password}
                 className={s.modalPass}
                 onChange={(e) => handleLoginUser(e)}
+                id='password'
               />
               {isLogg === "wrong email or password" ? (
-                <p className={s.error}>Incorrect email or password</p>
+                <p className={s.error}><MdOutlineError className={s.logoerror}/>Incorrect email or password</p>
               ) : null}
               
               <button className={s.modalButton} onClick={(e) => connectUser(e)}>
-                Next
+                LOGIN
               </button>
               <button
                 className={s.modalBtnGoogle}
                 onClick={(e) => connectGoogle(e)}
               >
-                Log in Google
+                <FcGoogle className={s.google}/> 
+                GOOGLE
               </button>
               {/* <button
                 className={s.modalBtnFacebook}
@@ -301,8 +309,8 @@ const Navbar = () => {
                 Log in Facebook
               </button> */}
               <div className={s.modalSignIn}>
-                <p>Create account with email and password</p>
-                <button onClick={(e) => btnSignUser(e)}>Sign In</button>
+                <p>Don't have an account yet?</p>
+                <button onClick={(e) => btnSignUser(e)}>SIGN IN</button>
               </div>
             </form>
           </div>
@@ -315,11 +323,12 @@ const Navbar = () => {
             className={s.modalCloseRegister}
             onClick={(e) => registerModalClose(e)}
           >
-            X
+            x
           </button>
           <h3>Register</h3>
           <div>
             <form action="" className={s.modalFormRegister}>
+              <label className={s.Regname}>Name:</label>
               <input
                 type="text"
                 name="name"
@@ -327,6 +336,7 @@ const Navbar = () => {
                 value={user.name}
                 onChange={(e) => handleCreateUser(e)}
               />
+              <label className={s.Regaddress}>Address:</label>
               <input
                 type="text"
                 name="address"
@@ -334,6 +344,7 @@ const Navbar = () => {
                 value={user.address}
                 onChange={(e) => handleCreateUser(e)}
               />
+              <label className={s.Regemail}>Email:</label>
               <input
                 type="text"
                 name="email"
@@ -341,6 +352,7 @@ const Navbar = () => {
                 value={user.email}
                 onChange={(e) => handleCreateUser(e)}
               />
+              <label className={s.Regpassword}>Password:</label>
               <input
                 type="password"
                 name="password"
@@ -363,8 +375,8 @@ const Navbar = () => {
               <button
                 className={s.modalBtnRegister}
                 onClick={e=>validatePassword(e)}
-              >
-                Register
+              ><BsFillPersonFill className={s.iconReg}/>
+                REGISTER
               </button>
  
             </form>
