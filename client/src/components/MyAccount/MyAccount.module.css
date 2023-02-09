@@ -1,3 +1,15 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 200px;
+    
+
+}
+
 h2, h3 {
     color: beige;
 }
@@ -13,11 +25,8 @@ h2, h3 {
 }
 
 .formOne input {
-    width: 100%;
-    text-align: center;
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -25,7 +34,6 @@ h2, h3 {
 }
 
 .formOne button {
-    width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -47,11 +55,9 @@ h2, h3 {
 }
 
 .formTwo input {
-    width: 100%;
-    text-align: center;
+   
     padding: 12px 20px;
     margin: 8px 0;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -59,7 +65,6 @@ h2, h3 {
 }
 
 .formTwo button {
-    width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;

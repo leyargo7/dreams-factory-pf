@@ -75,44 +75,49 @@ const MyAccount = () => {
     <div>
       <h2>Data you can update</h2>
       <hr />
-
-      <h3>Change Password</h3>
-      <div className={s.formOne}>
-        <input
-          type="password"
-          placeholder="current password"
-          name="currentPass"
-          value={password.currentPass}
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="New Password"
-          name="password"
-          value={password.password}
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="Repeat Password"
-          name="password2"
-          value={password.password2}
-          onChange={(e) => handleChange(e)}
-        />
-        <button onClick={validatePass}>Update</button>
-      </div>
-
+      <div className={s.container}>
+        <div className={s.containerPass}>
+          <h3>Change Password</h3>
+          <div className={s.formOne}>
+            <input
+              type="password"
+              placeholder="current password"
+              name="currentPass"
+              value={password.currentPass}
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="password"
+              placeholder="New Password"
+              name="password"
+              value={password.password}
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="password"
+              placeholder="Repeat Password"
+              name="password2"
+              value={password.password2}
+              onChange={(e) => handleChange(e)}
+            />
+            <button onClick={validatePass}>Update</button>
+          </div>
+       </div>
       <hr />
-      <h3>Change Address</h3>
-      <div className={s.formTwo}>
-        <input
-          type="text"
-          placeholder={user.address}
-          name="address"
-          value={address.address}
-          onChange={(e) => handleChangeAddress(e)}
-        />
-        <button onClick={e=>sendAddress(e)}>Update</button>
+      <div className={s.containerAdd}>
+        <h3>Change Address</h3>
+        <div className={s.formTwo}>
+          <input
+            type="text"
+            placeholder={user.address}
+            name="address"
+            value={address.address}
+            onChange={(e) => handleChangeAddress(e)}
+          />
+          <button onClick={e=>sendAddress(e)}>Update</button>
+        </div>
+
+      </div>
       </div>
     </div>
   );

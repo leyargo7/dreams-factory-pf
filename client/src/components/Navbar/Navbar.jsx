@@ -10,7 +10,7 @@ import {
   googleAuth,
 } from "../../redux/actions/actions";
 import { NavLink, useHistory } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import logo from "../../images/logo2.jpg";
 import login from "../../images/login3.jpg";
 import s from "./Navbar.module.css";
@@ -22,6 +22,7 @@ import {RiShoppingCartFill} from "react-icons/ri"
 import{FcGoogle} from 'react-icons/fc'
 import{MdOutlineError} from 'react-icons/md'
 import {BsFillPersonFill} from 'react-icons/bs'
+
 
 const Navbar = () => {
   const [user, setUser] = useState({
@@ -115,7 +116,7 @@ const Navbar = () => {
     if (user.password === user.password2) {
       createUser();
     } else {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
     }
   };
 
@@ -139,8 +140,9 @@ const Navbar = () => {
       history.push("/");
       
       
-    } else {
-      alert("Complete all fields");
+    } else {  
+      
+      toast.error("Complete all fields");
     }
 
   };
@@ -163,7 +165,7 @@ const Navbar = () => {
         }
       }, 500);
     } else {
-      alert("Complete all fields");
+      toast.error("Complete all fields");
     }
   };
 
@@ -206,7 +208,7 @@ const Navbar = () => {
       history.push("/admin");
 
     }else{
-      alert("You are not admin");
+      toast.error("You are not admin");
     }
     
   }
@@ -219,7 +221,7 @@ const Navbar = () => {
       history.push("/myaccount");
 
     }else{
-      alert("You are not client");
+     toast.error("You are not client");
     }
   }
 
@@ -383,7 +385,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
+        <Toaster />    
       <Cart />
     </div>
   );
