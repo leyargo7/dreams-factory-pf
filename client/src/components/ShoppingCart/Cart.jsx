@@ -53,7 +53,7 @@ const Cart = () => {
           failure: "http://localhost:3000",
           pending: "http://localhost:3000",
         },
-        notification_url: `https://f6e5-2803-9800-9445-bb98-553c-b0cd-e968-7939.sa.ngrok.io/api/notifications`,
+        notification_url: `https://4e85-186-81-100-12.ngrok.io/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {
