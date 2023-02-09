@@ -15,7 +15,12 @@ import MyOrders from './components/MyOrders/MyOrders.jsx';
 import Login from './components/Login/Login.jsx';
 import ErrorLogin from './components/ErrorLogin/ErrorLogin.jsx';
 import LoginSuccess from './components/GoogleLogin/LoginSuccess.jsx';
-import MyPerfil from './components/MyPerfil/MyPerfil.jsx';
+import MyAccount from './components/MyAccount/MyAccount.jsx';
+import Admin from './components/Admin/Admin.jsx';
+import ViewUsers from './components/Admin/ViewUsers/ViewUsers.jsx';
+import DeleteUsers from './components/Admin/DeleteUsers/DeleteUsers.jsx';
+import ShoppingHistory from './components/Admin/ShoppingHistory/ShoppingHistory.jsx';
+import AddProducts from './components/Admin/AddProducts/AddProducts.jsx';
 
 
 
@@ -26,7 +31,12 @@ function App() {
       <Route path="/" component={Navbar} />
       <Route path="/" component={CategorySelector} />
       <Route exact path="/" component={Home} />
-      <Route exact path="/myperfil" component={MyPerfil} /> 
+      <Route exact path="/myaccount" component={MyAccount} /> 
+      <Route exact path="/admin" component={Admin} />
+      <Route exact path="/admin/users" component={ViewUsers} />
+      <Route exact path="/admin/deletedusers" component={DeleteUsers} />
+      <Route exact path="/admin/shoppinghistory" component={ShoppingHistory} />
+      <Route exact path="/admin/addproduct" component={AddProducts} />
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/myorders" component={MyOrders} />

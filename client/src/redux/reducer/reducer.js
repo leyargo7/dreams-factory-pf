@@ -1,5 +1,6 @@
 import {
   GET_PRODUCTS,
+  POST_PRODUCT,
   GET_PRODUCT_BY_NAME,
   GET_CATEGORIES,
   CLEAN_CATEGORIES,
@@ -18,10 +19,13 @@ import {
   ERROR_LOGIN,
   ERROR_FOR_HOME,
   GOOGLE_USER,
+  GET_ALL_USERS,
   GET_USER,
   PUT_USER,
   STARS_PROM,
-  idProduct
+  UPDATE_PASSWORD,
+  DELETE_USER,
+  USERS_DELETED,
 } from "../actions/actions";
 
 const initialState = {
@@ -32,6 +36,7 @@ const initialState = {
   clickOpenCart: false,
   add_Cart: [],
   copyProducts: [],
+  postProduct: [],
   user: [],
   errorLogin: [],
   isRegister: false,
@@ -42,7 +47,12 @@ const initialState = {
   idUser: [],
   putUser: [],
   stars:[],
-  reviews:[]
+  reviews:[],
+  allUsers: [],
+  deletedUsers: [],
+  usersDelete: [],
+  updatePass: [],
+
 };
 
 function rootReducer(state = initialState, action) {
@@ -64,6 +74,14 @@ function rootReducer(state = initialState, action) {
         copyProducts: search,
       };
     }
+
+    case POST_PRODUCT:
+      return {
+        ...state,
+        postProduct: action.payload,
+      };
+
+
     case GET_CATEGORIES:
       return {
         ...state,
@@ -180,6 +198,12 @@ function rootReducer(state = initialState, action) {
         authGoogle: action.payload,
       };
 
+      case GET_ALL_USERS:
+        return {
+          ...state,
+          allUsers: action.payload,
+        }
+
     case GET_USER:
       return {
         ...state,
@@ -196,6 +220,24 @@ function rootReducer(state = initialState, action) {
         ...state,
         stars: [...state.stars,action.payload],
         reviews: state.stars.length+1
+      }
+
+      case UPDATE_PASSWORD:
+      return {
+        ...state,
+        updatePass: action.payload,
+      }
+    
+    case DELETE_USER:
+      return {
+        ...state,
+        deletedUsers: action.payload,
+      }
+    
+    case USERS_DELETED:
+      return {
+        ...state,
+        usersDelete: action.payload,
       }
 
     default:

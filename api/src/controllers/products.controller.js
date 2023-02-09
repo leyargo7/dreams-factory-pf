@@ -1,6 +1,6 @@
-
 const Product = require('../models/Products')
-
+const uploadImage = require('../config/cloudinary');
+const fs = require('fs-extra');
 
 
 const getProducts = async(req, res) => {
@@ -43,14 +43,20 @@ const createProduct = async(req, res) => {
         }
         else{
             const product = new Product(req.body);
+            if(req.files?.image){
+                const result = await uploadImage(req.files.image.tempFilePath)
+                product.img = result.secure_url;
+
+                await fs.unlink(req.files.image.tempFilePath)
+            }
             await product.save();
-            res.json(product);
+            //res.json(product);
         }
     }catch(err){
         res.status(400).json({msg: err.message});
     }
 
-    res.json({msg: 'create Product'});
+    //res.json({msg: 'create Product'});
 };
 
 const updateProduct = async(req, res) => {
