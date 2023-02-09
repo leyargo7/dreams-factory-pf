@@ -90,8 +90,8 @@ const Cart = () => {
 
       <div className={style.overlayContent}>
         <div className={style.titleCart}>
-          <h3>PRODUCT</h3>
-          <h3>SUBTOTAL</h3>
+          <h3  style={{position: "relative", left: "100px" }}>PRODUCT</h3>
+          <h3 style={{position: "relative", right: "60px" }}>SUBTOTAL</h3>
         </div>
         {cart_add.length > 0 ? (
           cart_add.map((e, i) => {
@@ -102,12 +102,12 @@ const Cart = () => {
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
                 {/*  */}
-                <button name={e._id} onClick={(e) => handleDecrease(e)}>
+                <button className={style.plusMinus} name={e._id} onClick={(e) => handleDecrease(e)}>
                   -
                 </button>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
                 <p>x{e.cant}</p>
-                <button name={e._id} onClick={(e) => handleIncrease(e)}>
+                <button className={style.plusMinus} name={e._id} onClick={(e) => handleIncrease(e)}>
                   +
                 </button>
                 {/*  */}

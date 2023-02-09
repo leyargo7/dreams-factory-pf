@@ -268,7 +268,7 @@ const Navbar = () => {
           <h3>Login Here</h3>
           <div>
             <form action="" className={s.modalForm}>
-              <label className={s.default} for="email">Email</label>
+              <label className={s.default}>Email</label>
               <input
                 type="text"
                 name="email"
@@ -276,9 +276,8 @@ const Navbar = () => {
                 value={userLogin.email}
                 className={s.modalUser}
                 onChange={(e) => handleLoginUser(e)}
-                id="email"
               />
-              <label for="password">Password</label>
+              <label>Password</label>
               <input
                 type="password"
                 name="password"
@@ -286,7 +285,6 @@ const Navbar = () => {
                 value={userLogin.password}
                 className={s.modalPass}
                 onChange={(e) => handleLoginUser(e)}
-                id='password'
               />
               {isLogg === "wrong email or password" ? (
                 <p className={s.error}><MdOutlineError className={s.logoerror}/>Incorrect email or password</p>

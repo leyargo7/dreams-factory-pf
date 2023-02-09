@@ -19,6 +19,7 @@ export default function About () {
             Hello! We are the creators of Dreams Factory, a website where you can build your pc gamer, and meet their properties. We studied at "SoyHenry" to become Full Stack Developers, learning various technologies and tools to perform successfully in the workplace. In this section you will find the information of each one of us, and our respective links to Linkedin and GitHub. Thank you for visiting our website!
             </p>
         </div>
+        <br />
             <ul className={s.cards}>
                 {info.map((user) => {
                     return(
