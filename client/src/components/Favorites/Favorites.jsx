@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import s from './Favorites.module.css'
@@ -10,7 +10,9 @@ const Favorites = () => {
 
     let favoritos = useSelector(state => state.favorites)
 
-
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
 
     if (user) {
         return (

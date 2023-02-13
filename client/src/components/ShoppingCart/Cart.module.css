@@ -58,15 +58,35 @@
   
   
   .overlay .closebtn {
+    border-radius: 20%;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
     position: absolute;
     top: 80px;
-    right: 45px;
+    right: 20px;
     font-size: 20px;
   }
   .closebtn:hover {
     transform: scale(1.1);
   }
   
+.btnX{
+    background-color: grey;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    grid-column: 1 / 3;
+    font-size: 16px;
+    font-weight: 700;
+    pointer-events: none;
+    transition-duration: 0.4s;
+  }
+
   .btn {
     background-color: #4caf50;
     border: none;
@@ -200,4 +220,22 @@
     background-color: red;
     color: white;
     transform: scale(1.1);
+  }
+
+  .plusMinus{
+    align-self: center;
+    padding: 0;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    font-size: 1rem;
+    padding-top: 3px;
+  }
+
+  .plusMinus:hover{
+    background-color: black;
+    color: white;
   }

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { SERVER_URL } from "../../config";
+import React, { useEffect, useState } from "react";
+import { SERVER_URL, FRONT_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clickOpenCart,
@@ -12,6 +12,7 @@ import style from "./Cart.module.css";
 import jwt_decode from "jwt-decode";
 
 const Cart = () => {
+  const [isAuth, setIsAuth] = useState(null)
   const dispatch = useDispatch();
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
@@ -24,7 +25,18 @@ const Cart = () => {
       document.getElementById("myNav").style.width = "0%";
     }
   }, [openCart]);
-
+  
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    const decoded = token ? jwt_decode(token) : null;
+    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
+    if(ID){
+      setIsAuth(ID);
+    }else{
+      setIsAuth(null);
+    }
+  },[localStorage]);
+  
   const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
     dispatch(clickOpenCart(false));
@@ -32,15 +44,11 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
-    const decoded = token ? jwt_decode(token) : null;
-    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
-    console.log("ID: ", ID);
-    if (ID) {
+    if (isAuth) {
       const body = {
         items: cart_add.map((p) => {
           return {
-            category_id: ID,
+            category_id: isAuth,
             title: p.title,
             description: p.description,
             picture_url: p.img,
@@ -49,11 +57,11 @@ const Cart = () => {
           };
         }),
         back_urls: {
-          success: "http://localhost:3000/myorders",
-          failure: "http://localhost:3000",
-          pending: "http://localhost:3000",
+          success: `${FRONT_URL}/myorders`,
+          failure: `${FRONT_URL}`,
+          pending: `${FRONT_URL}`,
         },
-        notification_url: `https://f6e5-2803-9800-9445-bb98-553c-b0cd-e968-7939.sa.ngrok.io/api/notifications`,
+        notification_url: `https://ff06-186-81-100-12.ngrok.io/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {
@@ -90,8 +98,8 @@ const Cart = () => {
 
       <div className={style.overlayContent}>
         <div className={style.titleCart}>
-          <h3>PRODUCT</h3>
-          <h3>SUBTOTAL</h3>
+          <h3 style={{ position: "relative", left: "100px" }}>PRODUCT</h3>
+          <h3 style={{ position: "relative", right: "60px" }}>SUBTOTAL</h3>
         </div>
         {cart_add.length > 0 ? (
           cart_add.map((e, i) => {
@@ -102,12 +110,20 @@ const Cart = () => {
                 </div>
                 <h3 className={style.dataTitle}>{e.title}</h3>
                 {/*  */}
-                <button name={e._id} onClick={(e) => handleDecrease(e)}>
+                <button
+                  className={style.plusMinus}
+                  name={e._id}
+                  onClick={(e) => handleDecrease(e)}
+                >
                   -
                 </button>
                 <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
                 <p>x{e.cant}</p>
-                <button name={e._id} onClick={(e) => handleIncrease(e)}>
+                <button
+                  className={style.plusMinus}
+                  name={e._id}
+                  onClick={(e) => handleIncrease(e)}
+                >
                   +
                 </button>
                 {/*  */}
@@ -122,7 +138,7 @@ const Cart = () => {
           <div className={style.totalPrice}>
             $
             {cart_add.reduce((acc, e) => {
-              let total = (acc + e.price) * e.cant;
+              let total = (acc + e.price * e.cant);
               let totalFixed = parseFloat(total.toFixed(2));
 
               return totalFixed;
@@ -135,9 +151,10 @@ const Cart = () => {
             <p>&#128465;</p> Clean Cart
           </button>
         </div>
-        <button className={style.btn} onClick={(e) => checkout(e)}>
+        <button disabled={!isAuth} className={isAuth ? style.btn : style.btnX} onClick={(e) => checkout(e)}>
           CHECKOUT
         </button>
+        {!isAuth ? <p>You must be logged first...</p> : null}
         <br />
       </div>
     </div>

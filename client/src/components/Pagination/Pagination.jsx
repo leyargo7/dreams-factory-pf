@@ -14,8 +14,9 @@ export default function Pagination({
     if(currentPage===0)return 0;
     if(currentPage===1)return 1;
     if(currentPage===2)return 2;
-    if(currentPage===20)return 4;
-    if(currentPage===21)return 5;
+    if(currentPage===20)return 3;
+    if(currentPage===21)return 4;
+    if(currentPage===22)return 5;
     return 3;
   }
   const paddingRight = () => {

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { info } from "./InfoAbout.jsx";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import s from './About.module.css'
+import {IoIosArrowForward, IoIosArrowDown} from "react-icons/io"
 
 export default function About () {
 
@@ -9,20 +10,45 @@ export default function About () {
         window.scrollTo(0,0)
     },[])
 
-    
+    const [active, setActive] = useState(false)
+
+    const change = () => {
+        if(active){
+            setActive(false)
+        }
+        else{
+            setActive(true)
+        }
+    }
 
     return(
         <div className={s.abaut}>
         <div className={s.header}>
-            <h1 className={s.title}>ABOUT US</h1>               
+        <div className={s.title} onClick={() => change(true)}>
+            <h1>ABOUT US</h1>
+            {
+                !active ?
+                <span><IoIosArrowForward/></span> :
+
+                <span><IoIosArrowDown/></span>
+            }               
+        </div>
+          {
+            active ? 
             <p>
             Hello! We are the creators of Dreams Factory, a website where you can build your pc gamer, and meet their properties. We studied at "SoyHenry" to become Full Stack Developers, learning various technologies and tools to perform successfully in the workplace. In this section you will find the information of each one of us, and our respective links to Linkedin and GitHub. Thank you for visiting our website!
+            </p> : 
+            <p hidden>
+            Hello! We are the creators of Dreams Factory, a website where you can build your pc gamer, and meet their properties. We studied at "SoyHenry" to become Full Stack Developers, learning various technologies and tools to perform successfully in the workplace. In this section you will find the information of each one of us, and our respective links to Linkedin and GitHub. Thank you for visiting our website!
             </p>
+          }
+            
+
         </div>
             <ul className={s.cards}>
-                {info.map((user) => {
+                {info.map((user,i) => {
                     return(
-                        <li>
+                        <li key={i}>
                             <div className={s.card}>
                                 <img src="https://blog.soyhenry.com/content/images/2022/01/Currcula-Henry.png" className={s.card_image}alt=""/>
                                 <div className={s.card_overlay}>

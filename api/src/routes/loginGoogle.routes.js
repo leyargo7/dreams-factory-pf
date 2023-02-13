@@ -4,9 +4,9 @@ const passport = require("passport");
 const User = require("../models/User");
 const router = Router();
 
-const home = "http://localhost:3000";
-const successLoginUrl = "http://localhost:3000/login/success";
-const errorLoginUrl = "http://localhost:3000/login/error";
+const home = `${process.env.FRONT_URL}`;
+const successLoginUrl = `${process.env.FRONT_URL}/login/success`;
+const errorLoginUrl = `${process.env.FRONT_URL}/login/error`;
 
 
 router.get("/login/google", passport.authenticate("google", { scope: ["profile", "email"] }));
