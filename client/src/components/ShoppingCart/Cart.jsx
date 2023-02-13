@@ -61,7 +61,7 @@ const Cart = () => {
           failure: `${FRONT_URL}`,
           pending: `${FRONT_URL}`,
         },
-        notification_url: `${SERVER_URL}/api/notifications`,
+        notification_url: `https://ff06-186-81-100-12.ngrok.io/api/notifications`,
       };
       axios
         .post(`${SERVER_URL}/api/payment`, body, {

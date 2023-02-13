@@ -10,7 +10,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: `https://dreams-factory-pf-production.up.railway.app/api/v1/auth/google/callback`,
+      callbackURL: `http://localhost:3001/api/v1/auth/google/callback`,
       passReqToCallback: true,
     },
     async (req, accessToken, refreshToken, profile, cb) => {

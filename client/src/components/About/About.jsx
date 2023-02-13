@@ -46,9 +46,9 @@ export default function About () {
 
         </div>
             <ul className={s.cards}>
-                {info.map((user) => {
+                {info.map((user,i) => {
                     return(
-                        <li>
+                        <li key={i}>
                             <div className={s.card}>
                                 <img src="https://blog.soyhenry.com/content/images/2022/01/Currcula-Henry.png" className={s.card_image}alt=""/>
                                 <div className={s.card_overlay}>
