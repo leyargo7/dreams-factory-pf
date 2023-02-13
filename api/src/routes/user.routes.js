@@ -5,7 +5,7 @@ const { isUserAuthenticated } = require("../middlewares/auth");
 const User = require("../models/User");
 const router = Router();
 
-router.get("/auth/user", isUserAuthenticated, (req, res) => {
+router.get("/auth/user", (req, res) => {
   res.json(req.user);
 });
 

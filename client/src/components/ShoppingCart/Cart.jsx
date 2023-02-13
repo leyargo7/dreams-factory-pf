@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SERVER_URL, FRONT_URL } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -12,6 +12,7 @@ import style from "./Cart.module.css";
 import jwt_decode from "jwt-decode";
 
 const Cart = () => {
+  const [isAuth, setIsAuth] = useState(null)
   const dispatch = useDispatch();
   const openCart = useSelector((state) => state.clickOpenCart);
   const cart_add = useSelector((state) => state.add_Cart);
@@ -24,7 +25,18 @@ const Cart = () => {
       document.getElementById("myNav").style.width = "0%";
     }
   }, [openCart]);
-
+  
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    const decoded = token ? jwt_decode(token) : null;
+    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
+    if(ID){
+      setIsAuth(ID);
+    }else{
+      setIsAuth(null);
+    }
+  },[localStorage]);
+  
   const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
     dispatch(clickOpenCart(false));
@@ -32,15 +44,11 @@ const Cart = () => {
 
   const checkout = (e) => {
     e.preventDefault();
-    const token = localStorage.getItem("token");
-    const decoded = token ? jwt_decode(token) : null;
-    const ID = decoded ? JSON.stringify(decoded.id) : localStorage.U;
-    console.log("ID: ", ID);
-    if (ID) {
+    if (isAuth) {
       const body = {
         items: cart_add.map((p) => {
           return {
-            category_id: ID,
+            category_id: isAuth,
             title: p.title,
             description: p.description,
             picture_url: p.img,
@@ -130,7 +138,7 @@ const Cart = () => {
           <div className={style.totalPrice}>
             $
             {cart_add.reduce((acc, e) => {
-              let total = (acc + e.price) * e.cant;
+              let total = (acc + e.price * e.cant);
               let totalFixed = parseFloat(total.toFixed(2));
 
               return totalFixed;
@@ -143,9 +151,10 @@ const Cart = () => {
             <p>&#128465;</p> Clean Cart
           </button>
         </div>
-        <button className={style.btn} onClick={(e) => checkout(e)}>
+        <button disabled={!isAuth} className={isAuth ? style.btn : style.btnX} onClick={(e) => checkout(e)}>
           CHECKOUT
         </button>
+        {!isAuth ? <p>You must be logged first...</p> : null}
         <br />
       </div>
     </div>

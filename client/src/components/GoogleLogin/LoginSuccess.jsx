@@ -3,7 +3,6 @@ import axios from "axios";
 import { putUser} from "../../redux/actions/actions";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { SERVER_URL } from "../../config";
 import s from "./LoginSuccess.module.css";
 
 const LoginSuccess = () => {
@@ -26,7 +25,7 @@ const LoginSuccess = () => {
 
   const fetchAuthUser = async () => {
     const response = await axios
-      .get(`${SERVER_URL}/api/v1/auth/user`, { withCredentials: true })
+      .get("https://dreams-factory-pf-production.up.railway.app/api/v1/auth/user", { withCredentials: true })
       .catch((err) => {
         console.log("Not properly authenticated");
       })

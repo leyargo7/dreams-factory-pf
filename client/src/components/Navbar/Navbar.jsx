@@ -137,21 +137,21 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    if (isLogg.auth) {
+      toast.success("Welcome, Log In Successfull");
+      localStorage.setItem("token", JSON.stringify(isLogg.token));
+      document.getElementById("logoSession").style = "display: none";
+      document.getElementById("modalcontainer").style = "display: none";
+      history.push("/");      
+      window.location.reload();
+    }
+  }, [isLogg]);
+
   const connectUser = (e) => {
     e.preventDefault();
     if (userLogin.email && userLogin.password) {
       dispatch(loginUser(userLogin));
-      setTimeout(() => {
-        if (isLogg.auth) {
-          modalClose(e);
-          localStorage.setItem("token", JSON.stringify(isLogg.token));
-          document.getElementById("logoSession").style = "display: none";
-
-          toast.success("Welcome, Log In Successfull");
-          history.push("/");
-          window.location.reload();
-        }
-      }, 500);
     } else {
       toast.error("Complete all fields");
     }

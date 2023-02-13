@@ -57,7 +57,7 @@ const ViewUsers = () => {
             <div key={i} className={s.dataP}>
               <p>{user.name}</p>
               <p>{user.email}</p>
-              <button className={s.btnShopping} onClick={e=>handleShopping(e, user.purchases)}>Shopping history</button>
+              //<button className={s.btnShopping} onClick={e=>handleShopping(e, user.purchases)}>Shopping history</button>
               <button className={s.btnDelete} onClick={e=>handleDelete(e, user._id)}>Delete</button>
             </div>
           );
