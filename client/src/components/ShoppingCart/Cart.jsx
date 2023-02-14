@@ -32,7 +32,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (openCart) {
-      document.getElementById("myNav").style.width = "40%";
+      document.getElementById("myNav").style.width = "30%";
     } else {
       document.getElementById("myNav").style.width = "0%";
     }
@@ -80,6 +80,7 @@ const Cart = () => {
 
   const cleanCart = (e) => {
     e.preventDefault();
+    setTotal(0)
     dispatch(deleteCart());
   };
 
@@ -101,80 +102,80 @@ const Cart = () => {
         &times;
       </button>
 
-      
-        <div className={style.titleCart}>
-          <h3>PRODUCT</h3>
-        </div>
-        <div>
-          <div>
 
-            {cart_add.length > 0 ? (
-              cart_add.map((e, i) => {
-                return (
-                 <div className={style.containerData}> 
-                  <div className={style.data} key={i}>
-                    <div>
-                      <img src={e.img} alt='img' className={style.imgCart} />
-                    </div>
-                    <div> 
-                      <h3 className={style.dataTitle}>{e.title}</h3>
+      <div className={style.titleCart}>
+        <h3>PRODUCT</h3>
+      </div>
+      <div>
+        <div>
+
+          {cart_add.length > 0 ? (
+            cart_add.map((e, i) => {
+              return (
+                <div>
+                  <div className={style.containerData}>
+                    <div className={style.data} key={i}>
+                      <div>
+                        <img src={e.img} alt='img' className={style.imgCart} />
+                      </div>
                     </div>
                     <div className={style.containerBoton}>
+                      <div>
+                        <h3 className={style.dataTitle}>{e.title}</h3>
+                      </div>
                       <div className={style.containerPrice}>
                         <button className={style.buton} name={e._id} onClick={(e) => handleDecrease(e)}>
-                          -
+                          ⏪
                         </button>
                         <h3 className={style.dataPrice}>{`$ ${e.price}`}</h3>
                         <p>x{e.cant}</p>
                         <button className={style.buton} name={e._id} onClick={(e) => handleIncrease(e)}>
-                          +
+                          ⏩
                         </button>
-                      </div>
-                      <div className={style.vacioCart}>
-                        <button onClick={(e) => cleanCart(e)}>
-                          <p>&#128465;</p> Clean Cart
-                        </button>
-                        </div>
                       </div>
                     </div>
-                  </div>)
-              })
+                  </div>
+                </div>
+              )
+            })
 
 
-            ) : (
-              <p style={{ color: "white" }}>empty cart</p>
-            )}
-            </div>
-
-          <div className={style.barra}>
-            <h4>Te faltan $ <span>{parseInt(String(`${500 - total}`), 10)}</span> ENVIO GRATIS</h4>
-            <div className={style.containerBarra}>
-
-              <div className={style.barrita} style={{
-                width: `${total / 500 * 100}%`
-              }}></div>
-            </div>
-          </div>
-            <div className={style.total}>
-              <h3>Total</h3>
-              <div className={style.totalPrice}>
-                $
-                {total}
-              </div>
-            </div>
-          <div className={style.containerBtn}>
-            <div>
-              <button className={style.btn} onClick={closeNav}>CONTINUE BUYING</button>
-            </div>
-            <div>
-              <button className={style.btn} onClick={(e) => checkout(e)}>
-                CHECKOUT
-              </button>
-            </div>
-          </div>
+          ) : (
+            <p style={{ color: "white" }}>empty cart</p>
+          )}
+        </div>
+        <div className={style.vacioCart}>
+          <button onClick={(e) => cleanCart(e)}>
+            <p>&#128465;</p> Clean Cart
+          </button>
         </div>
 
-      </div>
+        {total < 500 && <div className={style.barra}>
+          <h4>Te faltan $ <span>{parseInt(String(`${500 - total}`), 10)}</span> ENVIO GRATIS</h4>
+          <div className={style.containerBarra}>
+
+            <div className={style.barrita} style={{
+              width: `${total / 500 * 100}%`
+            }}></div>
+          </div>
+        </div>}
+        <div className={style.total}>
+          <h3>Total</h3>
+          <div className={style.totalPrice}>
+            $
+            {total}
+          </div>
+        </div>
+         <div className={style.containerBtn}>
+          <div>
+            <button className={style.btn} onClick={(e) => checkout(e)}>
+              CHECKOUT
+            </button>
+          </div>
+        </div>
+       </div> 
+
+    </div>
 
   );
 };

@@ -11,6 +11,12 @@ code {
     monospace;
 }
 
+
+.accordion-button {
+  border-top-left-radius: #060923;
+  border-top-right-radius: #f4f4f4;
+} 
+
 .accordion-button:not(.collapsed) {
   background-color: rgba(169, 3, 140,0.7);
   color: white;
@@ -24,11 +30,7 @@ code {
   box-shadow: rgba(169, 3, 140,0.7) !important;
 }
 
-.accordion-button {
-  border-top-left-radius: #060923;
-  border-top-right-radius: #f4f4f4;
-}
-
-.pagination {
+ .pagination {
   display: inline;
-}
+} 
+

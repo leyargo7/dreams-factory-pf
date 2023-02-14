@@ -15,7 +15,7 @@
     position: relative;
     box-shadow: none;
     box-shadow:
-      -8px -8px 10px rgba(169, 3, 140,0.7),
+     -8px -8px 10px rgba(169, 3, 140,0.7),
      8px -8px 10px rgba(169, 3, 140,0.7),
      8px 8px 10px rgba(169, 3, 140,0.7),
      -8px 8px 10px rgba(169, 3, 140,0.7);
@@ -31,7 +31,3 @@
     color: white;
     margin-bottom: 10px;
   }
-
-  
-
- 
