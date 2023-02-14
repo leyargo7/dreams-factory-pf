@@ -3,7 +3,7 @@
   width: 500px;
   margin-top: 30px;
   padding-left: 10px;
-  background-color: #cfc5c5bf;
+  background-color: transparent;
   transition: transform 250ms ease-in-out;
   font-size: 14px;
   line-height: 18px;
@@ -12,10 +12,10 @@
   background-size: 18px 18px;
   background-position: 95% center;
   border-radius: 50px;
-  border: 1px solid #575756;
+  border: 1px black;
   transition: all 250ms ease-in-out;
 }
 
 .search::placeholder{
-  color:black
+  color:white;
 }
